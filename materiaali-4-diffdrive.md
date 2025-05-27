@@ -20,7 +20,7 @@ Kun ``cmd_vel`` -topic hallitsee robotin nopeuksia, ``odom`` -topic tarjoaa tiet
 
 ### Odometry
 
-``[/[SeBot_namespace]]`` ``/odom``-topic: Tämä julkaisee tietoa robotin sijainnista ja orientaatiosta suhteessa alkuperäiseen lähtöpisteeseen.
+``/odom``-topic: Tämä julkaisee tietoa robotin sijainnista ja orientaatiosta suhteessa alkuperäiseen lähtöpisteeseen.
 
 Odometriikan laskenta perustuu tässä tapauksessa pelkästään moottoreiden enkoodereiden tuottamaan tietoon. On tärkeää huomioida, että tämä menetelmä ei ole täysin tarkka, sillä renkaiden ja alustan välinen vuorovaikutus, kuten liukuminen ja kitka, aiheuttaa väistämättä virheitä sijainnin ja liikkeen arvioinnissa. Vaikka tämä laskentamenetelmä ei takaa täydellistä tarkkuutta, se tarjoaa kuitenkin luotettavan perustan robotin sijainnin ja liikkeen seuraamiselle. Koska tässä esimerkissä muita antureita ei ole käytössä, enkooderipohjainen odometriikka on robotin ainoa käytettävissä oleva navigointimenetelmä.
 
@@ -160,7 +160,7 @@ Transformaatioiden laskennan ja julkaisun sijainti riippuu robotin järjestelmä
 
 Transformaatiot voidaan toteuttaa suoraan ``odom``-nodessa, jos odometria toimii järjestelmän ainoana sijaintilähteenä. Tämä lähestymistapa on erityisen sopiva yksinkertaisille järjestelmille, joissa ei ole käytössä muita antureita.
 
-Jos kuitenkin käytössä on useita sensoreita, on suositeltavaa käyttää EKF (Extended Kalman Filter) -nodea. EKF yhdistää kaikki saatavilla olevat tiedot, kuten enkooderit, IMU:n, LiDAR:n ja GPS:n, ja tuottaa tarkemman arvion robotin sijainnista ja orientaatiosta. Tämä parantaa paikannustarkkuutta ja kompensoi yksittäisten sensorien mahdollisia virheitä.
+Jos kuitenkin käytössä on useita sensoreita, on suositeltavaa käyttää ROS2:n yleisesti käytettyihin paketteihin kuuluvan ´´robot_localizationin´´ EKF (Extended Kalman Filter) -nodea. EKF yhdistää kaikki saatavilla olevat tiedot, kuten enkooderit, IMU:n, LiDAR:n ja GPS:n, ja tuottaa tarkemman arvion robotin sijainnista ja orientaatiosta. Tämä parantaa paikannustarkkuutta ja kompensoi yksittäisten sensorien mahdollisia virheitä.
 
 **Tilanne IMU:n (Inertial Measurement Unit) kanssa:**
 
@@ -440,7 +440,7 @@ Kun julkaiset transformaatioiden ketjun ``odom`` -> ``base_footprint``, se ilmes
 
 ![kääntösäde](kuvat/frames2.png)
 
-Kun siirrytään kohti autonomista ajoa, TF-treehen lisätään myös ``map``-kehys. Tämä muodostaa transformaatioiden ketjun ``map`` -> ``odom`` -> ``base_footprint``, jolloin robotin sijaintia voidaan seurata tarkasti sekä kartalla että paikallisessa koordinaatistossa. Tämä mahdollistaa robotin etenemisen tarkastelun sekä paikallisesti että globaalisti. Tässä harjoituksessa tehdään hieman keinotekoinen ``map``-kehys, jotta monta SeBotia voi liikkua samassa ``ROS_DOMAIN_ID``-verkossa.
+Kun siirrytään kohti autonomista ajoa, TF-treehen lisätään myös ``map``-kehys. Tämä muodostaa transformaatioiden ketjun ``map`` -> ``odom`` -> ``base_footprint``, jolloin robotin sijaintia voidaan seurata tarkasti sekä kartalla että paikallisessa koordinaatistossa. Tämä mahdollistaa robotin etenemisen tarkastelun sekä paikallisesti että globaalisti. Jos tätä harjoitusta tehdään monen SeBotin kanssa samassa ``ROS_DOMAIN_ID``:ssä, on tarpeen luoda hieman keinotekoinen ``map``-kehys. Tästä esitetään mallin tuonnempana ``launch``-tiedoston yhteydessä.
 
 ### Twist
 
@@ -575,7 +575,7 @@ Robotin ajaminen yksittäisillä komentorivikehotteilla on työlästä. Varsinai
 sudo apt install ros-jazzy-teleop-twist-keyboard
 ros2 run teleop_twist_keyboard teleop_twist_keyboard.py
 
-#ros2 run teleop_twist_keyboard teleop_twist_keyboard.py --ros-args -r /cmd_vel /[SeBot_namespace]/cmd_vel # Jos käytössä on namespace
+#ros2 run teleop_twist_keyboard teleop_twist_keyboard.py --ros-args -r /cmd_vel:=/[SeBot_namespace]/cmd_vel # Jos käytössä on namespace
 
 ```
 

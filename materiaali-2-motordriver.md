@@ -20,19 +20,19 @@ ROS2-nodea varten meillä on nyt valmiina osio, joka lähettää nopeusohjeen mo
 	- Tilavalvonnassa: Nopeus- ja PWM-arvot mahdollistavat moottorien tilan seurannan ja varmistavat, että ne toimivat odotetusti ja ilman häiriöitä.
 
 3. **ROS_DOMAIN_ID ja namespace**: ROS2:n hyödyntämä DDS (Data Distribution Service) väliohjelmisto huolehtii kaikesta tietoliikenteen reitittämisestä ROS2 sovellusten (_node_) välillä. Koska tässä harjoituksessa voi olla useampi tietokone ja robotti samassa WLAN-verkossa, kaikki viestit "kuuluvat" kaikille nodeille kaikkien koneiden välillä. Tämän harjoituksen tapauksessa tämä on epätoivottavaa, sillä kukin opiskelija haluaa epäilemättä kontrolloida vain omaa SeBottiaan. Asiaan on kaksi ratkaisua:
-  - vaihtaa ROS_DOMAIN_ID ympäristömuuttujan arvoksi yksilöllinen numero (vakioarvo 0:n sijaan). Kukin ROS2 node viestii vain oman ROS_DOMAIN_ID:nsä "sisällä".
-  - hyödyntää _namespace_-toimintoa, jolla käynnistettävien nodejen kaikkien _topicien_, _servicejen_ ja _actionien_ (eli _interfacejen_) eteen lisätään automaattisesti annettu namespace-nimi. Tällöin esimerkiksi noden koodissa luotava /odom topic muunnetaan /[namespace]/odom muotoon.
+  - vaihtaa ``ROS_DOMAIN_ID`` ympäristömuuttujan arvoksi yksilöllinen numero (vakioarvo 0:n sijaan). Kukin ROS2 node viestii vain oman ``ROS_DOMAIN_ID``:nsä "sisällä".
+  - hyödyntää ``_namespace_``-toimintoa, jolla käynnistettävien nodejen kaikkien _topicien_, _servicejen_ ja _actionien_ (eli _interfacejen_) eteen lisätään automaattisesti annettu namespace-nimi. Tällöin esimerkiksi noden koodissa luotava /odom topic muunnetaan /[namespace]/odom muotoon.
 
-Tässä harjoituksessa kokeillaan ensimmäistä vaihtoehtoa, jotta emme sotkeennu liian monimutkaiseen kokonaisuuteen. Näin ollen kannattaa ohittaa kaikki namespacen käyttöön viittaavat kohdat, jotka on merkitty materiaaliin hakasulkeilla, esimerkiksi ``[/[SeBot_namespace]]``.
+>Tässä harjoituksessa kokeillaan ensimmäistä vaihtoehtoa, jotta emme sotkeennu liian monimutkaiseen kokonaisuuteen. Näin ollen kannattaa ohittaa kaikki namespacen käyttöön viittaavat kohdat, jotka on merkitty materiaaliin hakasulkeilla, esimerkiksi ``/[SeBot_namespace]``.
 
-Kun haluat muuttaa ROS_DOMAIN_ID-arvoa, kirjoita komentokehotteeseen
+Kun haluat muuttaa ``ROS_DOMAIN_ID``-arvoa, kirjoita komentokehotteeseen
 
 ```bash
 #export ROS_DOMAIN_ID=[arvo], esimerkiksi
 export ROS_DOMAIN_ID=1
 ```
 
-Tämä on voimassa vain kyseisessä komentokehotteessa. Jos haluat saada uuden ROS_DOMAIN_ID arvon voimaan aina komentokehotteen käynnistyessä, lisää ylläoleva rivi kotihakemistosta löytyvään ```.bashrc```-tiedoston loppuun:
+Tämä on voimassa vain kyseisessä komentokehotteessa. Jos haluat saada uuden ``ROS_DOMAIN_ID`` arvon voimaan aina komentokehotteen käynnistyessä, lisää ylläoleva rivi kotihakemistosta löytyvään ```.bashrc```-tiedoston loppuun:
 ```bash
 nano ~/.bashrc # Tai muu editori
 ```
@@ -159,7 +159,7 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
   
   Mikäli virheitä ei ilmene ``motordriver.py`` pitäisi toimia oikein sarjaliikenteen ja komentojen käsittelyn osalta. 
   
-  **Huomaa, että vielä tässä vaiheessa kaikki samassa verkossa olevat SeBotit ottavat vastaan kaikki viestit samoista topiceista, jos ne on yllä olevan mukaan samoiksi määritetty koodeissa.** Jos harjoitusta tekee useampi opiskelija samaan aikaan, kannattaa syöttää skriptille käynnistyksen yhteydessä namespace-asetus (tai hyödyntää eri ```ROS_DOMAIN_ID```-ympäristömuuttujan arvoja).
+  **Huomaa, että kaikki samassa WLAN-verkossa ja ``ROS_DOMAIN_ID``:ssä olevat SeBotit ottavat vastaan kaikki viestit samoista topiceista, jos ne on yllä olevan mukaan samoiksi määritetty koodeissa.** Jos harjoitusta tekee useampi opiskelija samaan aikaan, kannattaa hyödyntää eri ``ROS_DOMAIN_ID``-ympäristömuuttujan arvoja (tai syöttää skriptille käynnistyksen yhteydessä namespace-asetus).
   
   ```bash
   python3 motordriver.py
@@ -178,7 +178,7 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
   /motor_command
   ```
 
->  Jos samassa WLANissa on useita saman ```ROS_DOMAIN_ID```:n ROS2-sovelluksia kukin omalla namespace-asetuksellaan, listalla näkyy useita topiceja, esimerkiksi
+>  Jos samassa WLANissa on useita saman ``ROS_DOMAIN_ID``:n ROS2-sovelluksia kukin omalla namespace-asetuksellaan, listalla näkyy useita topiceja, esimerkiksi
 >
 >  ```bash
 >  ros2 topic list
@@ -564,7 +564,7 @@ Voimme taas käynnistä noden yksinkertaisesti (huom: source... pitää olla aje
 python3 motordriver.py
 #python3 motordriver.py --ros-args -r __ns:=/[SeBot_namespace]
 ```
-Ja tarkistaa, että kumpikin node on käynnissä (huomioiden jälleen, että tässä vaiheessa kaikkien samassa DOMAIN_ID:ssä olevien SeBotin topicit ovat samoja, jos ne on niin koodeihin kirjoitettu).
+Ja tarkistaa, että kumpikin node on käynnissä (huomioiden jälleen, että tässä vaiheessa kaikkien samassa ``ROS_DOMAIN_ID``:ssä olevien SeBotin topicit ovat samoja, jos ne on niin koodeihin kirjoitettu).
 
 ```bash
 ros2 topic list
