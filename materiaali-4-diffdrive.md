@@ -569,10 +569,12 @@ ros2 topic pub /cmd_vel geometry_msgs/Twist \
 	}"
 ```
 ### Lisätehtävä: Teleop_twist_keyboard
-Robotin ajaminen yksittäisillä komentorivikehotteilla on työlästä. Varsinaisesti ideana on toki se, että robotin ohjauskokonaisuus antaa näitä komentoja enemmän tai vähemmän itsenäisesti ("autonominen ajaminen"), mutta tämän harjoituksen puitteissa hyvä väliaskel on ottaa käyttöön jokin manuaalisen etäohjaamisen mahdollistava ROS2 paketti. Helpointa on kokeilla ohjausta näppäimistöllä, minkä mahdollistaa [``teleop_twist_keyboard``](https://index.ros.org/r/teleop_twist_keyboard/).
+Robotin ajaminen yksittäisillä komentorivikehotteilla on työlästä. Varsinaisesti ideana on toki se, että robotin ohjauskokonaisuus antaa näitä komentoja enemmän tai vähemmän itsenäisesti ("autonominen ajaminen"), mutta tämän harjoituksen puitteissa hyvä väliaskel on ottaa käyttöön jokin manuaalisen etäohjaamisen mahdollistava ROS2 paketti. Helpointa on kokeilla ohjausta näppäimistöllä, minkä mahdollistaa [teleop_twist_keyboard](https://index.ros.org/r/teleop_twist_keyboard/).
 ```bash
 sudo apt install ros-jazzy-teleop-twist-keyboard
-ros2 run teleop_twist_keyboard teleop_twist_keyboard.py [--ros-args -r /cmd_vel /[SeBot_namespace]/cmd_vel]
+ros2 run teleop_twist_keyboard teleop_twist_keyboard.py
+#ros2 run teleop_twist_keyboard teleop_twist_keyboard.py --ros-args -r /cmd_vel /[SeBot_namespace]/cmd_vel # Jos käytössä on namespace
+
 ```
 
 ``teleop_twist_keyboard`` voidaan ohjata julkaisemaan twist-viestejä myös johonkin muuhun topiciin parametrillä ``--ros-args --remap cmd_vel:=[joku_muu_topic]``. Jos harjoituksessa on mukana vain yksi SeBot tai kukin toimii omassa ``ROS_DOMAIN_ID``:ssä, käytämme oletuksena ``/cmd_vel``-topicia, eikä topicia pitäisi olla tarpeen säätää, sillä ``/cmd_vel`` on yleisesti käytetty standardi ROS 2:ssa.
@@ -644,12 +646,14 @@ cd ~/ros2_ws
 colcon build --packages-select diffdrive
 
 # Testataan toiminta
-ros2 run diffdrive odom [--ros-args -r __ns:=/[SeBot_namespace]]
-ros2 run diffdrive cmd_vel [--ros-args -r __ns:=/[SeBot_namespace]]
+ros2 run diffdrive odom
+ros2 run diffdrive cmd_vel
+#ros2 run diffdrive odom --ros-args -r __ns:=/[SeBot_namespace]
+#ros2 run diffdrive cmd_vel --ros-args -r __ns:=/[SeBot_namespace]
 
-# odom.py ja cmd_vel.py tiedostot sisältävät kohdat joissa parametrejä haetaan ulkoisesta tiedostosta.
-# Tässä esimerkki siitä
-ros2 run diffdrive odom --ros-args --params-file ~/ros2_ws/config/params.yaml [-r __ns:=/[SeBot_namespace]]
+# odom.py ja cmd_vel.py tiedostot sisältävät kohdat joissa skriptin muuttujille haetaan arvot käynnistysparametreinä. Nämä parametrit voi syöttää käynnistysvaiheessa myös ulkoisesta tiedostosta.
+# Tässä esimerkki, jossa haetaan parametrit ~/ros2_ws/config/params.yaml tiedostosta. Alempana luodaan tähän tiedostoon tarvittava sisältö.
+ros2 run diffdrive odom --ros-args --params-file ~/ros2_ws/config/params.yaml
 ```
 
 ### Launch -tiedostot
@@ -780,12 +784,17 @@ cd ~/ros2_ws
 colcon build --packages-select diffdrive
 ```
 
+##### Source
+```bash
+source ~/ros2_ws/install/setup.bash
+```
+
 ##### Käynnistetään
 ```bash
 ros2 launch diffdrive diffdrive.launch.py
 ```
 
-##### Testataan
+##### Testataan (toisessa päätteessä)
 ```bash
 ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
 ```
