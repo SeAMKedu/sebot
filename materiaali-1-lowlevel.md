@@ -2,7 +2,7 @@
 
 ### Yleiskuvaus
 
-![ohjain ja moottorit](kuvat/yleiskuva.jpg)
+![ohjain ja moottorit](kuvat/yleiskuva.png)
 
 - Raspberry PI 5
 - Arduino Micro
