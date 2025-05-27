@@ -34,11 +34,16 @@ export ROS_DOMAIN_ID=1
 
 Tämä on voimassa vain kyseisessä komentokehotteessa. Jos haluat saada uuden ROS_DOMAIN_ID arvon voimaan aina komentokehotteen käynnistyessä, lisää ylläoleva rivi kotihakemistosta löytyvään ```.bashrc```-tiedoston loppuun:
 ```bash
->> nano ~/.bashrc
-
+nano ~/.bashrc # Tai muu editori
+```
+**~/.bashrc**
+```
+...
 export ROS_DOMAIN_ID=1
->> ctrl+o, ctrl+x # Tallenna ja poistu nano-ohjelmasta
 
+>>ctrl+o, ctrl+x # Tallenna ja poistu nano-ohjelmasta
+```
+```bash
 source ~/.bashrc # Lataa .bashrc-tiedosto uudestaan tässä komentokehotteessa
 ```
 
@@ -113,17 +118,17 @@ if __name__ == '__main__':
 
 ```python
     self.subscriber = self.create_subscription(
-        String,								          # msg_type
-        'motor_command',					      # topic_name
-        self.motor_command_callback,		# callback
-        10									            # quos
+        String,				# msg_type
+        'motor_command',		# topic_name
+        self.motor_command_callback,	# callback
+        10				# quos
     )
 ```
 
 ##### create_subscription -funktion parametrit:
 1. msg_type
 	
-	Määrittelee viestityypin, jota topicilla käytetään. 
+ 	Määrittelee viestityypin, jota topicilla käytetään. 
 2. topic_name
 	
 	Topicin nimi, jota node tilaa. Tämä tulee kirjoittaa ilman edeltävää kenoviivaa /, jotta topicin nimestä tulee suhteellinen (eikä absoluuttinen) ja siten namespace-asetus voi toimia.
@@ -157,9 +162,10 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
   **Huomaa, että vielä tässä vaiheessa kaikki samassa verkossa olevat SeBotit ottavat vastaan kaikki viestit samoista topiceista, jos ne on yllä olevan mukaan samoiksi määritetty koodeissa.** Jos harjoitusta tekee useampi opiskelija samaan aikaan, kannattaa syöttää skriptille käynnistyksen yhteydessä namespace-asetus (tai hyödyntää eri ```ROS_DOMAIN_ID```-ympäristömuuttujan arvoja).
   
   ```bash
-  python3 motordriver.py [--ros-args -r __ns:=/[SeBot_namespace]]
+  python3 motordriver.py
+  #python3 motordriver.py --ros-args -r __ns:=/[SeBot_namespace]
   ```
-  ```namespace```a ennen tulee olla kenoviiva /. Namespacena tässä harjoituksessa kannattaa käyttää oman SeBotin ip-osoitteen jälkimmäistä tavua, esimerkiksi
+  ```namespace```a ennen tulee olla kenoviiva /. Namespacena tässä harjoituksessa voisi käyttää oman SeBotin ip-osoitteen jälkimmäistä tavua, esimerkiksi
   ```bash
   python3 motordriver.py --ros-args -r __ns:=/SeBot11
   ```
@@ -172,15 +178,15 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
   /motor_command
   ```
 
-  Jos samassa WLANissa on useita saman ```ROS_DOMAIN_ID```:n ROS2-sovelluksia kukin omalla namespace-asetuksellaan, listalla näkyy useita topiceja, esimerkiksi
-
-  ```
-  ros2 topic list
-
-  /SeBot11/motor_command
-  /SeBot12/motor_command
-  /SeBot13/motor_command
-  ```
+>  Jos samassa WLANissa on useita saman ```ROS_DOMAIN_ID```:n ROS2-sovelluksia kukin omalla namespace-asetuksellaan, listalla näkyy useita topiceja, esimerkiksi
+>
+>  ```
+>  ros2 topic list
+>
+>  /SeBot11/motor_command
+>  /SeBot12/motor_command
+>  /SeBot13/motor_command
+>  ```
 
 3. ##### Lähetä nopeuskomento ROS2-topicia käyttäen
 
