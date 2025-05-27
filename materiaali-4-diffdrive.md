@@ -232,19 +232,20 @@ class OdomNode(Node):
     self.get_logger().info(f'Pyörän säde: {self.wheel_radius}')
     self.get_logger().info(f'Pyörien etäisyys: {self.wheel_base}')
     self.get_logger().info(f'Anturin kierros: {self.ticks_per_revolution}')
-    
-    # Otetaan framelle etuliite parametrinä tai jos parametriä ei syötetä, otetaan se namespace-tiedosta.
-    self.declare_parameter('frame_prefix', '')
-    frame_prefix_param = self.get_parameter('frame_prefix').get_parameter_value().string_value
-    if frame_prefix_param:
-        self.frame_prefix = frame_prefix_param + '_'
-    else:
-        ns = self.get_namespace().strip('/')
-        self.frame_prefix = f'{ns}_' if ns and ns != '' else ''
 
-    if self.frame_prefix:
-            self.get_logger().info(f'Käytetään frame-etuliitettä: "{self.frame_prefix}"') 
+    ## Otetaan framelle etuliite parametrinä tai jos parametriä ei syötetä, otetaan se namespace-tiedosta.
+    #self.declare_parameter('frame_prefix', '')
+    #frame_prefix_param = self.get_parameter('frame_prefix').get_parameter_value().string_value
+    #if frame_prefix_param:
+    #    self.frame_prefix = frame_prefix_param + '_'
+    #else:
+    #    ns = self.get_namespace().strip('/')
+    #    self.frame_prefix = f'{ns}_' if ns and ns != '' else ''
+
+    #if self.frame_prefix:
+    #        self.get_logger().info(f'Käytetään frame-etuliitettä: "{self.frame_prefix}"') 
     
+
     self.left_encoder = Encoder(self.wheel_radius, self.ticks_per_revolution)
     self.right_encoder = Encoder(self.wheel_radius, self.ticks_per_revolution)
 
@@ -317,8 +318,10 @@ class OdomNode(Node):
 
     odom_msg = Odometry()
     odom_msg.header.stamp = self.get_clock().now().to_msg()
-    odom_msg.header.frame_id = self.frame_prefix + 'odom' # Lisätään framen nimen eteen namespacen (tai parametrin) mukainen etuliite.
-    odom_msg.child_frame_id = self.frame_prefix + 'base_footprint'
+    #odom_msg.header.frame_id = self.frame_prefix + 'odom' # Lisätään framen nimen eteen namespacen (tai parametrin) mukainen etuliite.
+    #odom_msg.child_frame_id = self.frame_prefix + 'base_footprint'
+    odom_msg.header.frame_id = 'odom'
+    odom_msg.child_frame_id = 'base_footprint'
 
     # pose sisältää kaksi osaa:
     # position (geometry_msgs/Point)
@@ -345,8 +348,10 @@ class OdomNode(Node):
 
     t = TransformStamped()
     t.header.stamp = self.get_clock().now().to_msg()
-    t.header.frame_id = self.frame_prefix + 'odom'
-    t.child_frame_id = self.frame_prefix + 'base_footprint'
+    #t.header.frame_id = self.frame_prefix + 'odom'
+    #t.child_frame_id = self.frame_prefix + 'base_footprint'
+    t.header.frame_id = 'odom'
+    t.child_frame_id = 'base_footprint'
 
     t.transform.translation.x = self.odom_x ##
     t.transform.translation.y = self.odom_y ##
@@ -386,25 +391,28 @@ Nyt voimme testata ohjelman toimintaa. Suorita seuraavat komennot eri terminaale
 
 ```bash
 # Käynnistä motordriver node (muista source)
-ros2 run motordriver motordriver [--ros-args -r __ns:/[SeBot_namespace]]
+ros2 run motordriver motordriver #[--ros-args -r __ns:/[SeBot_namespace]]
 
 # Testataan odom -nodea
-python3 odom.py [--ros-args -r __ns:/[SeBot_namespace]]
+python3 odom.py
+#python3 odom.py --ros-args -r __ns:/[SeBot_namespace]
 
 # Tulostetaan mitä /odom -topic näyttää
-ros2 topic echo [/[SeBot_namespace]]/odom
+ros2 topic echo /odom
+#ros2 topic echo /[SeBot_namespace]/odom
 
 # Aja eteenpäin
-ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;-100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;-100;'}"
+#ros2 topic pub /[SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;-100;'}"
 
 # Aja taaksepäin
-ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;-100;100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;-100;100;'}"
 
 # Pyöri paikallaan
-ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
 
 # Aja ympyrää
-ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;150;-100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;150;-100;'}"
 ```
 
 Kun sekä ``odom`` että ``transformaatio`` toimivat oikein, voit visualisoida nämä RVizissä, jolloin punainen Odometry-nuoli ja robotin malli osoittavat samaan suuntaan ja sijaitsevat kohdakkain.
@@ -533,21 +541,28 @@ Nyt on aika kokeilla ohjelmaa. Pidä ``motordriver``- ja ``odom``-nodet sekä RV
 python3 cmd_vel.py
 
 # Robotti liikkuu eteenpäin 0.5 m/s:
-ros2 topic pub [/[SeBot_namespace]]/cmd_vel geometry_msgs/Twist \
+ros2 topic pub /cmd_vel geometry_msgs/Twist \
+	"{ \
+		linear: {x: 0.5, y: 0.0, z: 0.0}, \
+		angular: {x: 0.0, y: 0.0, z: 0.0} \
+	}"
+# Sama huomioiden namespace (jos se on käytössä):
+ros2 topic pub /[SeBot_namespace]/cmd_vel geometry_msgs/Twist \
 	"{ \
 		linear: {x: 0.5, y: 0.0, z: 0.0}, \
 		angular: {x: 0.0, y: 0.0, z: 0.0} \
 	}"
 
+
 # Robotti kääntyy vastapäivään paikallaan (kulmanopeus 1 rad/s):
-ros2 topic pub [/[SeBot_namespace]]/cmd_vel geometry_msgs/Twist \
+ros2 topic pub /cmd_vel geometry_msgs/Twist \
 	"{ \
 		linear: {x: 0.0, y: 0.0, z: 0.0}, \
 		angular: {x: 0.0, y: 0.0, z: 1.0} \
 	}"
 
 # Robotti liikkuu kaarella myötäpäivään (eteenpäin + käännös):
-ros2 topic pub [/[SeBot_namespace]]/cmd_vel geometry_msgs/Twist \
+ros2 topic pub /cmd_vel geometry_msgs/Twist \
 	"{ \
 		linear: {x: 0.3, y: 0.0, z: 0.0}, \
 		angular: {x: 0.0, y: 0.0, z: -0.5} \
@@ -560,7 +575,7 @@ sudo apt install ros-jazzy-teleop-twist-keyboard
 ros2 run teleop_twist_keyboard teleop_twist_keyboard.py [--ros-args -r /cmd_vel /[SeBot_namespace]/cmd_vel]
 ```
 
-``teleop_twist_keyboard`` voidaan ohjata julkaisemaan twist-viestejä myös johonkin muuhun topiciin parametrillä ``--ros-args --remap cmd_vel:=[joku_muu_topic]``. Jos harjoituksessa on mukana vain yksi SeBot, käytämme oletuksena ``/cmd_vel``-topicia, eikä topicia pitäisi olla tarpeen säätää, sillä ``/cmd_vel`` on yleisesti käytetty standardi ROS 2:ssa.
+``teleop_twist_keyboard`` voidaan ohjata julkaisemaan twist-viestejä myös johonkin muuhun topiciin parametrillä ``--ros-args --remap cmd_vel:=[joku_muu_topic]``. Jos harjoituksessa on mukana vain yksi SeBot tai kukin toimii omassa ``ROS_DOMAIN_ID``:ssä, käytämme oletuksena ``/cmd_vel``-topicia, eikä topicia pitäisi olla tarpeen säätää, sillä ``/cmd_vel`` on yleisesti käytetty standardi ROS 2:ssa.
 
 Mikäli haluat ohjata robottia peliohjaimella, kannattaa tutustua ``[teleop_twist_joy](https://index.ros.org/r/teleop_twist_joy/#jazzy)``-pakettiin. Tämä asennetaan ja ajetaan komennoilla
 ```bash
@@ -652,8 +667,8 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    NAMESPACE = 'SeBotxx' # korvaa xx oman Sebotin tunnisteella, esimerkiksi IP-osoitteen viimeisellä tavulla.
-    FRAME_PREFIX = NAMESPACE+"_" # luodaan robot_state_publisherin tukeman frame_prefix-parametrin arvo
+    # NAMESPACE = 'SeBotxx' # korvaa xx oman Sebotin tunnisteella, esimerkiksi IP-osoitteen viimeisellä tavulla.
+    # FRAME_PREFIX = NAMESPACE+"_" # luodaan robot_state_publisherin tukeman frame_prefix-parametrin arvo
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
@@ -679,8 +694,9 @@ def generate_launch_description():
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
-            namespace = NAMESPACE,
-            parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc, 'frame_prefix': FRAME_PREFIX}],
+            #namespace = NAMESPACE,
+            #parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc, 'frame_prefix': FRAME_PREFIX}],
+            parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
             #arguments=[urdf] # 26.5.2025 tämä on tarpeeton rivi, sillä robot_state_publisher ei parsi komentokehotteen argumentteja.
             ),
 
@@ -723,16 +739,16 @@ def generate_launch_description():
 
           ),
         
-        # Lisätään muunnos map->[namespace]_odom jotta kaikki robotit saadaan mukaan samaan TF-puuhun. 
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='map_to_robot_odom',
-            namespace=NAMESPACE,
-            arguments=['0', '0', '0', '0', '0', '0',  # x y z yaw pitch roll
-                       'map', f'{FRAME_PREFIX}odom'],
-            output='screen'
-        ),
+        ## Lisätään muunnos map->[namespace]_odom jotta kaikki robotit saadaan mukaan samaan TF-puuhun. 
+        #Node(
+        #    package='tf2_ros',
+        #    executable='static_transform_publisher',
+        #    name='map_to_robot_odom',
+        #    namespace=NAMESPACE,
+        #    arguments=['0', '0', '0', '0', '0', '0',  # x y z yaw pitch roll
+        #               'map', f'{FRAME_PREFIX}odom'],
+        #    output='screen'
+        #),
     ])
 ```
 
@@ -771,7 +787,7 @@ ros2 launch diffdrive diffdrive.launch.py
 
 ##### Testataan
 ```bash
-ros2 topic pub [/SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
 ```
 
 ### Automaattinen käynnistyminen robotin käynnistyessä
