@@ -23,9 +23,9 @@ ROS2-nodea varten meillä on nyt valmiina osio, joka lähettää nopeusohjeen mo
   - vaihtaa ROS_DOMAIN_ID ympäristömuuttujan arvoksi yksilöllinen numero (vakioarvo 0:n sijaan). Kukin ROS2 node viestii vain oman ROS_DOMAIN_ID:nsä "sisällä".
   - hyödyntää _namespace_-toimintoa, jolla käynnistettävien nodejen kaikkien _topicien_, _servicejen_ ja _actionien_ (eli _interfacejen_) eteen lisätään automaattisesti annettu namespace-nimi. Tällöin esimerkiksi noden koodissa luotava /odom topic muunnetaan /[namespace]/odom muotoon.
 
-Tässä harjoituksessa kokeillaan jälkimmäistä vaihtoehtoa, jotta voimme tarvittaessa kommunikoida myös muiden SeBottien kanssa. Asiaan palataan sopivissa kohdin tätä materiaalia. Jos samassa verkossa ei ole muita SeBoteja, kannattaa ohittaa kaikki namespacen käyttöön viittaavat kohdat. Jos samassa verkossa on myös muita SeBoteja mutta niiden kanssa ei haluta kommunikoida, kannattaa valita kullekin botille oma ROS_DOMAIN_ID ja taas ohittaa tässä materiaalissa olevat namespaceen viittaavat kohdat.
+Tässä harjoituksessa kokeillaan ensimmäistä vaihtoehtoa, jotta emme sotkeennu liian monimutkaiseen kokonaisuuteen. Näin ollen kannattaa ohittaa kaikki namespacen käyttöön viittaavat kohdat, jotka on merkitty materiaaliin hakasulkeilla, esimerkiksi ``[/[SeBot_namespace]]``.
 
-Jos haluat muuttaa ROS_DOMAIN_ID-arvoa, kirjoita komentokehotteeseen
+Kun haluat muuttaa ROS_DOMAIN_ID-arvoa, kirjoita komentokehotteeseen
 
 ```bash
 #export ROS_DOMAIN_ID=[arvo], esimerkiksi
