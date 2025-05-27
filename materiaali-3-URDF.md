@@ -153,8 +153,9 @@ def generate_launch_description():
     ])
 ```
 
-Huomaa, että namespace-asetus voidaan kirjoittaa kätevästi osaksi launch-tiedoston node-luokan parametrilistaa, jolloin se tulee aina huomioiduksi automaattisesti. Voimme ajaa launch-tiedoston omassa hakemistossa ilman kääntämistä ja tarkistaa sen toiminta
+>Huomaa, että namespace-asetus voidaan kirjoittaa kätevästi osaksi launch-tiedoston node-luokan parametrilistaa, jolloin se tulee aina huomioiduksi automaattisesti. Voimme ajaa launch-tiedoston omassa hakemistossa ilman kääntämistä ja tarkistaa sen toiminta
 
+Kokeillaan käynnistää ``diffdrive.launch.py`` ennen sen kääntämistä mukaan pakettiin:
 ```
 cd ~/ros2_ws/src/diffdrive/launch
 ros2 launch diffdrive.launch.py
@@ -207,7 +208,7 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch diffdrive diffdrive.launch.py
 ```
 
-Käyttämällä ``view_frames``-komentoa ROS 2:ssa voit saada käsityksen järjestelmässäsi olevien TF-kehysten hierarkiasta ja suhteista. Koska olet julkaissut robottisi URDF-mallin, voit tarkastella näitä kehyksiä, jotka URDF määrittelee, robotin runkoon ja pyöriin liittyen.
+Käyttämällä ROS2 vakiopakettien mukana tulevan ``tf2_tools``:in ``view_frames`` sovellusta voit saada käsityksen järjestelmässäsi olevien TF-kehysten hierarkiasta ja suhteista. Koska olet julkaissut robottisi URDF-mallin, voit tarkastella näitä kehyksiä, jotka URDF määrittelee, robotin runkoon ja pyöriin liittyen.
 
 ```bash
 ros2 run tf2_tools view_frames -o robotframes

@@ -165,10 +165,10 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
   python3 motordriver.py
   #python3 motordriver.py --ros-args -r __ns:=/[SeBot_namespace]
   ```
-  ```namespace```a ennen tulee olla kenoviiva /. Namespacena tässä harjoituksessa voisi käyttää oman SeBotin ip-osoitteen jälkimmäistä tavua, esimerkiksi
-  ```bash
-  python3 motordriver.py --ros-args -r __ns:=/SeBot11
-  ```
+  >```namespace```a ennen tulee olla kenoviiva /. Namespacena tässä harjoituksessa voisi käyttää oman SeBotin ip-osoitteen jälkimmäistä tavua, esimerkiksi
+  >```bash
+  >python3 motordriver.py --ros-args -r __ns:=/SeBot11
+  >```
 
 2. ##### Katsotaan näkyykö topic listassa  
 
@@ -180,7 +180,7 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
 
 >  Jos samassa WLANissa on useita saman ```ROS_DOMAIN_ID```:n ROS2-sovelluksia kukin omalla namespace-asetuksellaan, listalla näkyy useita topiceja, esimerkiksi
 >
->  ```
+>  ```bash
 >  ros2 topic list
 >
 >  /SeBot11/motor_command
@@ -265,10 +265,8 @@ source ~/ros2_ws/install/setup.bash
 Kun ohjelma on käännetty osaksi järjestelmää se voidaan käynnistää komennolla
 
 ```bash
-ros2 run motordriver motordriver [--ros-arg -r __ns:=/[SeBot_namespace]]
-
-# Esimerkiksi
-ros2 run motordriver motordriver --ros-arg -r __ns:=/SeBot11
+ros2 run motordriver motordriver
+#ros2 run motordriver motordriver --ros-arg -r __ns:=/[SeBot_namespace]
 ```
 Huomaa, että --ros-arg -r __ns:=/[SeBot_namespace] on eräs ilmentymä ROS2 ajonaikaisista _uudelleenohjauksista_. Valitsin -r viittaa sanaan _remap_, eli (interfacejen) uudelleenohjaus. Tässä kohdin jokainen opiskelija voi valita namespacekseen esimerkiksi SeBotinsa IP-numeron jälkimmäisen tavun. Tai jonkin muun yksilöivän tunnisteen. Myöhemmin tutustumme myös erilliseen _parametrien_ syöttövalitsimeen -p.
 
@@ -563,7 +561,8 @@ Luomme ajastimen, joka pyörii 100Hz taajuudella. Ohjaimelle tulevaa ohjauskäsk
 
 Voimme taas käynnistä noden yksinkertaisesti (huom: source... pitää olla ajettuna):
 ```bash
-python3 motordriver.py [--ros-args -r __ns:=/[SeBot_namespace]]
+python3 motordriver.py
+#python3 motordriver.py --ros-args -r __ns:=/[SeBot_namespace]
 ```
 Ja tarkistaa, että kumpikin node on käynnissä (huomioiden jälleen, että tässä vaiheessa kaikkien samassa DOMAIN_ID:ssä olevien SeBotin topicit ovat samoja, jos ne on niin koodeihin kirjoitettu).
 
@@ -576,12 +575,15 @@ ros2 topic list
 
 Moottorin pyörittämisen pitäisi toimia samalla tavalla kuin aiemmin
 ```bash
-ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/msg/String "{data: 'SPD;100;-100;'}"
+ros2 topic pub /motor_command std_msgs/msg/String "{data: 'SPD;100;-100;'}"
+#ros2 topic pub /[SeBot_namespace]/motor_command std_msgs/msg/String "{data: 'SPD;100;-100;'}"
 ```
 Ja lisäksi meidän pitäisi saada arvoja (muista source käsky jos ajat vanhassa ikkunassa)
 
 ```bash
-ros2 topic echo [/[SeBot_namespace]]/motor_data
+ros2 topic echo /motor_data
+#ros2 topic echo /[SeBot_namespace]/motor_data
+
 
 	encoder1: 22663
 	encoder2: 23018
@@ -617,7 +619,7 @@ Ja nyt voimme käynnistää node:n
 ros2 run motordriver motordriver
 ```
 
-Näin olemme luoneet noden, joka välittää ``motor_command``-topiciin julkaistut komennot moottoriohjaimelle ja julkaisee ``[SeBot_namespace/]`` ``motor_data``-topicista moottorin nopeustiedot sekä enkooderin arvot. Jos haluamme, voimme lisätä PWM ohjaus arvot myös luomaamme ``MotordriverMessage``-viesti tyyppiin ja näin pääsemme halutessamme lukemaan mitä PWM arvoja SPD komento moottorille antaa.
+Näin olemme luoneet noden, joka välittää ``motor_command``-topiciin julkaistut komennot moottoriohjaimelle ja julkaisee ``/[SeBot_namespace]`` ``/motor_data``-topicista moottorin nopeustiedot sekä enkooderin arvot. Jos haluamme, voimme lisätä PWM ohjaus arvot myös luomaamme ``MotordriverMessage``-viesti tyyppiin ja näin pääsemme halutessamme lukemaan mitä PWM arvoja SPD komento moottorille antaa.
 
 Lisätään **~/ros2\_ws/src/motordriver\_msgs/msg/MotordriverMessage.msg** tiedostoon:
 
@@ -765,13 +767,13 @@ class MotordriverNode(Node):
 Nyt voit lisätä parametrin komentorivillä. Vertaa aiemmassa kohdassa tehtyyn ``namespace``-asetukseen, joka tehtiin -r (joka on sama kuin --remap) valitsimella.
 
 ```bash
-python3 motordriver.py --ros-args -p simulation:=False [-r __ns:=/[SeBot_namespace]]
+python3 motordriver.py --ros-args -p simulation:=False #-r __ns:=/[SeBot_namespace]
 ```
 
 Tai kääntämisen jälkeen:
 
 ```bash
-ros2 run motordriver motordriver --ros-args -p simulation:=False [-r __ns:=/[SeBot_namespace]]
+ros2 run motordriver motordriver --ros-args -p simulation:=False #-r __ns:=/[SeBot_namespace]
 ```
 
 Lisätään parametri asetustiedostoon (False = käytetään oikeaa sarjaporttia). Launch tiedostoa varten.

@@ -391,11 +391,12 @@ Nyt voimme testata ohjelman toimintaa. Suorita seuraavat komennot eri terminaale
 
 ```bash
 # Käynnistä motordriver node (muista source)
-ros2 run motordriver motordriver #[--ros-args -r __ns:/[SeBot_namespace]]
+ros2 run motordriver motordriver 
+#ros2 run motordriver motordriver [--ros-args -r __ns:=/[SeBot_namespace]]
 
 # Testataan odom -nodea
 python3 odom.py
-#python3 odom.py --ros-args -r __ns:/[SeBot_namespace]
+#python3 odom.py --ros-args -r __ns:=/[SeBot_namespace]
 
 # Tulostetaan mitä /odom -topic näyttää
 ros2 topic echo /odom
@@ -546,7 +547,7 @@ ros2 topic pub /cmd_vel geometry_msgs/Twist \
 		linear: {x: 0.5, y: 0.0, z: 0.0}, \
 		angular: {x: 0.0, y: 0.0, z: 0.0} \
 	}"
-# Sama huomioiden namespace (jos se on käytössä):
+# Sama huomioiden namespace:
 ros2 topic pub /[SeBot_namespace]/cmd_vel geometry_msgs/Twist \
 	"{ \
 		linear: {x: 0.5, y: 0.0, z: 0.0}, \
@@ -573,6 +574,7 @@ Robotin ajaminen yksittäisillä komentorivikehotteilla on työlästä. Varsinai
 ```bash
 sudo apt install ros-jazzy-teleop-twist-keyboard
 ros2 run teleop_twist_keyboard teleop_twist_keyboard.py
+
 #ros2 run teleop_twist_keyboard teleop_twist_keyboard.py --ros-args -r /cmd_vel /[SeBot_namespace]/cmd_vel # Jos käytössä on namespace
 
 ```
@@ -652,6 +654,7 @@ ros2 run diffdrive cmd_vel
 #ros2 run diffdrive cmd_vel --ros-args -r __ns:=/[SeBot_namespace]
 
 # odom.py ja cmd_vel.py tiedostot sisältävät kohdat joissa skriptin muuttujille haetaan arvot käynnistysparametreinä. Nämä parametrit voi syöttää käynnistysvaiheessa myös ulkoisesta tiedostosta.
+
 # Tässä esimerkki, jossa haetaan parametrit ~/ros2_ws/config/params.yaml tiedostosta. Alempana luodaan tähän tiedostoon tarvittava sisältö.
 ros2 run diffdrive odom --ros-args --params-file ~/ros2_ws/config/params.yaml
 ```
@@ -766,7 +769,10 @@ launch tiedostossa määrittelimme nyt ``parameters=["~ros2_ws/config/params.yam
 
 **~/ros2\_ws/config/params.yaml**
 
-```
+```yaml
+motordriver_node:
+  ros__parameters:
+    simulation: False
 odom_node:
   ros__parameters:
     wheel_radius: 0.2
