@@ -4,13 +4,26 @@
 
 ![ohjain ja moottorit](kuvat/yleiskuva.png)
 
-- Raspberry PI 5
-- Arduino Micro
-- [Moottoriohjain L293D](https://www.partco.fi/fi/elektroniikan-komponentit/aktiivit/mikropiirit-listana/ic-l/262-l293d.html)
-- 2 x [DC-MOOTTORI VAIHTEISTOLLA 6-24VDC +ENKOODERI](https://www.partco.fi/fi/saehkoemekaniikka/moottorit/dc-moottorit/21183-mot-ams60085m.html)
-- [DC 12V/24V to 5V USB C 5A 25W](https://www.amazon.com/dp/B0DDPL9QJR)
+- Raspberry PI 5, [esimerkiksi Botland](https://botland.store/raspberry-pi-5-modules-and-kits/23905-raspberry-pi-5-8gb-5056561803326.html). Myös vanhemmat Raspberryt soveltuvat hyvin.
+- [Raspberry virtalähde](https://botland.store/raspberry-pi-5-power-supply/23906-raspberry-pi-27w-usb-c-power-supply-official-51v-5a-psu-for-raspberry-pi-5-white-5056561803401.html) Robottia on hyvä pitää verkkovirrassa kehitysvaiheen ajan.
+- [32GB muistikortti](https://botland.store/raspberry-pi-memory-cards/25873-raspberry-microsd-32-gb-memory-card-5056561804200.html)
+- [Arduino Micro](https://botland.store/arduino-basic-boards/1481-arduino-micro-module-a000053-7630049200159.html)
+- [USB A - Micro USB](https://botland.store/usb-20-cables/17430-cable-microusb-b-usb-a-20-hi-speed-015m-black-4040849957369.html) Raspberryn ja Arduinon sarjaporttiliikennettä varten
+- [Moottoriohjain L293D](https://botland.store/drivers-for-dc-motors/176-l293d-two-channel-36v-06a-motor-driver-5pcs-5904422350253.html)
+- 2 x [DC-moottori vaihteistolla ja enkooderilla 12VDC](https://www.aliexpress.com/item/1005006217803283.html?spm=a2g0o.productlist.main.29.31698cddQydl2q&algo_pvid=af0cf6cd-9f25-4eb1-b422-3434cb6787d7&algo_exp_id=af0cf6cd-9f25-4eb1-b422-3434cb6787d7-14&pdp_ext_f=%7B%22order%22%3A%2232%22%2C%22eval%22%3A%221%22%7D&pdp_npi=4%40dis%21EUR%2110.51%218.41%21%21%2184.99%2167.99%21%4021038df617443630303392462edc8c%2112000042604759092%21sea%21FI%216207330698%21X&curPageLogUid=twZpCBgxq1fC&utparam-url=scene%3Asearch%7Cquery_from%3A)
+- [Stepdown converter säädettävä jännitteenalentaja 5A 25W](https://botland.store/converters-step-down/8103-step-down-voltage-regulator-xl4015-13v-36v-5a-5904422336202.html)
+- [USB C kaapeli](https://botland.store/usb-c-cables/18762-green-cell-powerstream-usb-type-c-usb-type-c-quick-charge-cable-12-m-black-5907813963599.html) virtajohdoksi jännitteenalentimen ja Raspberryn väliin
+- [3s (12,6V) LiPo akku](https://botland.store/battery-li-half-3s-111-v/2394-li-pol-dualsky-800mah-25c-3s-111v-eco-s-package-6941047104662.html). Isompi akku on eduksi jos robottia haluaa käyttää pitkästi akkuvirralla.
 
-![https://i.pinimg.com/originals/6b/b7/9e/6bb79e8a76dcf47cfbf6a1a6f38ac640.png](kuvat/simple.png)
+Jos piirilevyn tekee itse, voi tarvita myös oheisia (tai niiden kaltaisia, suunnittelusi mukaan) osia
+- [Juotoslevyt](https://www.aliexpress.com/item/1005007014530064.html?spm=a2g0o.productlist.main.45.6c8b272b52aYQS&algo_pvid=d0078849-9223-47ab-a4a2-498410346850&algo_exp_id=d0078849-9223-47ab-a4a2-498410346850-42&pdp_ext_f=%7B%22order%22%3A%229%22%2C%22eval%22%3A%221%22%7D&pdp_npi=4%40dis%21EUR%218.49%212.80%21%21%2167.57%2122.28%21%40211b876e17484499413794147e29d4%2112000039073325488%21sea%21FI%216207330698%21X&curPageLogUid=f3axRd5dcNw9&utparam-url=scene%3Asearch%7Cquery_from%3A)
+- [Riviliittimet](https://www.tme.eu/fi/en/details/dg128-5.0-02p14/pcb-terminal-blocks/degson-electronics/dg128-5-0-02p-14/)
+- [Headerit](https://botland.store/connectors-goldpin/8505-socket-1x20pin-254mm-5904422311780.html)
+- [M2.5 Korokkeet](https://www.tme.eu/fi/en/details/tfm-m2.5x10_dr222o/metal-spacers/dremec/222x10of/)
+- [M2.5 ruuvit](https://www.tme.eu/fi/en/details/b2.5x6_bn15857/bolts/bossard/3108702/)
+Lisäksi sopivia johtimia, LEDeja ym.
+
+![https://i.pinimg.com/originals/6b/b7/9e/6bb79e8a76dcf47cfbf6a1a6f38ac640.png](kuvat/simple.png) 
 
 Kahdella pyörällä liikkuvan robotin liike perustuu renkaiden moottoreiden toimintaan, jotka saavat ohjeensa ylemmältä tasolta. ROS-ympäristössä nämä ohjeet annetaan yleensä cmd_vel-viesteissä, joissa määritellään robotin lineaarinen nopeus ja pyörimisnopeus. Näitä tietoja hyödyntäen robottiin kytketty ROS-node laskee kullekin renkaalle tarvittavat pyörimissuunnat ja nopeudet, jotka välitetään moottoriohjaimelle.
 
