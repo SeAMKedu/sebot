@@ -257,7 +257,7 @@ source ~/ros2_ws/install/setup.bash
 Ja lisätään sama komento ``~/.bashrc`` -tiedostoon, jotta se on aina automaattisesti käytössä.
 
 ```bash
->>nano ~/.bashrc # Tai muu haluamasi editori
+nano ~/.bashrc # Tai muu haluamasi editori
 source ~/ros2_ws/install/setup.bash
 ```
 
@@ -273,7 +273,9 @@ Huomaa, että --ros-arg -r __ns:=/[SeBot_namespace] on eräs ilmentymä ROS2 ajo
 Ja testataan taas
 
 ```bash
-ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+
+#ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
 
 # Esimerkiksi
 ros2 topic pub /SeBot11/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
@@ -416,7 +418,10 @@ class MotordriverNode(Node):
     self.arduino = serial.Serial("/dev/ttyACM0", 115200, timeout=1)
     if not self.arduino.isOpen():
       raise Exception("Ei yhteyttä moottoriohjaimeen")
-
+    # moottori pysähtyy jos ei saa uutta komentoa 1s kuluessa
+    
+    self.arduino.write(("ALIVE;1;\n").encode())
+    
     self.subscriber = self.create_subscription(
         String,
         'motor_command', # suhteellinen viittaus. Jos eteen kirjoittaa kenoviivan, esimerkiksi '/motor_command', siitä tulee absoluuttinen, eikä namespace-asetus enää vaikuta siihen.

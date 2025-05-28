@@ -542,38 +542,22 @@ Nyt on aika kokeilla ohjelmaa. Pidä ``motordriver``- ja ``odom``-nodet sekä RV
 python3 cmd_vel.py
 
 # Robotti liikkuu eteenpäin 0.5 m/s:
-ros2 topic pub /cmd_vel geometry_msgs/Twist \
-	"{ \
-		linear: {x: 0.5, y: 0.0, z: 0.0}, \
-		angular: {x: 0.0, y: 0.0, z: 0.0} \
-	}"
+ros2 topic pub /cmd_vel geometry_msgs/Twist "{linear: {x: 0.5, y: 0.0, z: 0.0},	angular: {x: 0.0, y: 0.0, z: 0.0}}"
 # Sama huomioiden namespace:
-ros2 topic pub /[SeBot_namespace]/cmd_vel geometry_msgs/Twist \
-	"{ \
-		linear: {x: 0.5, y: 0.0, z: 0.0}, \
-		angular: {x: 0.0, y: 0.0, z: 0.0} \
-	}"
+ros2 topic pub /[SeBot_namespace]/cmd_vel geometry_msgs/Twist "{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
 
 
 # Robotti kääntyy vastapäivään paikallaan (kulmanopeus 1 rad/s):
-ros2 topic pub /cmd_vel geometry_msgs/Twist \
-	"{ \
-		linear: {x: 0.0, y: 0.0, z: 0.0}, \
-		angular: {x: 0.0, y: 0.0, z: 1.0} \
-	}"
+ros2 topic pub /cmd_vel geometry_msgs/Twist "{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.0}}"
 
 # Robotti liikkuu kaarella myötäpäivään (eteenpäin + käännös):
-ros2 topic pub /cmd_vel geometry_msgs/Twist \
-	"{ \
-		linear: {x: 0.3, y: 0.0, z: 0.0}, \
-		angular: {x: 0.0, y: 0.0, z: -0.5} \
-	}"
+ros2 topic pub /cmd_vel geometry_msgs/Twist "{linear: {x: 0.3, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: -0.5}}"
 ```
 ### Lisätehtävä: Teleop_twist_keyboard
 Robotin ajaminen yksittäisillä komentorivikehotteilla on työlästä. Varsinaisesti ideana on toki se, että robotin ohjauskokonaisuus antaa näitä komentoja enemmän tai vähemmän itsenäisesti ("autonominen ajaminen"), mutta tämän harjoituksen puitteissa hyvä väliaskel on ottaa käyttöön jokin manuaalisen etäohjaamisen mahdollistava ROS2 paketti. Helpointa on kokeilla ohjausta näppäimistöllä, minkä mahdollistaa [teleop_twist_keyboard](https://index.ros.org/r/teleop_twist_keyboard/).
 ```bash
 sudo apt install ros-jazzy-teleop-twist-keyboard
-ros2 run teleop_twist_keyboard teleop_twist_keyboard.py
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 #ros2 run teleop_twist_keyboard teleop_twist_keyboard.py --ros-args -r /cmd_vel:=/[SeBot_namespace]/cmd_vel # Jos käytössä on namespace
 
@@ -711,7 +695,7 @@ def generate_launch_description():
             package='tf2_web_republisher_py',
             executable='tf2_web_republisher',
             name='tf2_web_republisher',
-            namespace = NAMESPACE,
+            #namespace = NAMESPACE,
             output='screen',
           ),
 
@@ -719,14 +703,14 @@ def generate_launch_description():
             package='motordriver',
             executable='motordriver',
             name='motordriver',
-            namespace = NAMESPACE,
+            #namespace = NAMESPACE,
             output='screen',
           ),
         Node(
             package='diffdrive',
             executable='odom',
             name='odom_node',
-            namespace = NAMESPACE,
+            #namespace = NAMESPACE,
             output='screen',
             parameters=[os.path.join(
               colcon_prefix_path,
@@ -737,7 +721,7 @@ def generate_launch_description():
             package='diffdrive',
             executable='cmd_vel',
             name='cmd_vel_node',
-            namespace = NAMESPACE,
+            #namespace = NAMESPACE,
             output='screen',
             parameters=[os.path.join(
               colcon_prefix_path,
