@@ -702,9 +702,13 @@ def generate_launch_description():
         Node(
             package='motordriver',
             executable='motordriver',
-            name='motordriver',
+            name='motordriver_node',
             #namespace = NAMESPACE,
             output='screen',
+            parameters=[os.path.join(
+              colcon_prefix_path,
+              'config',
+              'params.yaml')]
           ),
         Node(
             package='diffdrive',

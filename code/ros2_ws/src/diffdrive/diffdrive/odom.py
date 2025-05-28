@@ -11,8 +11,6 @@ from motordriver_msgs.msg import MotordriverMessage
 
 import math
 
-# Varmistetaan, että encoder-niminen moduuli löytyy, 
-# vaikka ROS2 pakettia ei olisi "sourcetettu" eli ympäristöön ei olisi asetettu tarvittavia polkuja ja ympäristömuuttujia.
 try:
     from .encoder import Encoder
 except:
@@ -37,6 +35,19 @@ class OdomNode(Node):
     self.get_logger().info(f'Pyörien etäisyys: {self.wheel_base}')
     self.get_logger().info(f'Anturin kierros: {self.ticks_per_revolution}')
 
+    ## Otetaan framelle etuliite parametrinä tai jos parametriä ei syötetä, otetaan se namespace-tiedosta.
+    #self.declare_parameter('frame_prefix', '')
+    #frame_prefix_param = self.get_parameter('frame_prefix').get_parameter_value().string_value
+    #if frame_prefix_param:
+    #    self.frame_prefix = frame_prefix_param + '_'
+    #else:
+    #    ns = self.get_namespace().strip('/')
+    #    self.frame_prefix = f'{ns}_' if ns and ns != '' else ''
+
+    #if self.frame_prefix:
+    #        self.get_logger().info(f'Käytetään frame-etuliitettä: "{self.frame_prefix}"') 
+    
+
     self.left_encoder = Encoder(self.wheel_radius, self.ticks_per_revolution)
     self.right_encoder = Encoder(self.wheel_radius, self.ticks_per_revolution)
 
@@ -57,18 +68,18 @@ class OdomNode(Node):
         10
     )
 
-    # TransformBroadcaster tarvitsee viitteen pääluokkaan saadakseen tarvittavan kontekstin 
-    # (noden  asetukset tai muun jaetun datan). Tämä tapahtuu antamalla self parametrina. 
+    # TransformBroadcaster tarvitsee viitteen pääluokkaan saadakseen tarvittavan kontekstin
+    # (noden  asetukset tai muun jaetun datan). Tämä tapahtuu antamalla self parametrina.
     self.tf_broadcaster = TransformBroadcaster(self)
 
     self.prev_time = self.get_clock().now().nanoseconds
 
-    timer_period = 0.1 # seconds
+    timer_period = 0.1 # Sekuntia
     self.timer = self.create_timer(timer_period, self.timer_callback)
     self.update = True
 
   def update_encoders_callback(self, message):
-    # tallennetaan messagessa olevat tiedot, jotta niitä voidaan käsitellä timer_callback:ssa
+    # Tallennetaan messagessa olevat tiedot, jotta niitä voidaan käsitellä timer_callback:ssa
     self.left_encoder.update(message.encoder1)
     self.right_encoder.update(-message.encoder2)
     self.update = True
@@ -84,17 +95,17 @@ class OdomNode(Node):
     d_right = self.right_encoder.deltam()
 
     # Kuljettu matka (delta_distance) lasketaan ottamalla vasemman ja oikean pyörän kulkema matka
-    # jaettuna kahdella. Robotin liikkuma matka suoraviivaisesti keskilinjan (robottia keskeltä 
+    # jaettuna kahdella. Robotin liikkuma matka suoraviivaisesti keskilinjan (robottia keskeltä
     # halkova akseli) pitkin.
-    # Kulman muutos (delta_theta) lasketaan ottamalla vasemman ja oikean pyörän kulkeman matkan erotus ja 
+    # Kulman muutos (delta_theta) lasketaan ottamalla vasemman ja oikean pyörän kulkeman matkan erotus ja
     # jakamalla se pyörien välisellä etäisyydellä
     # Jos pyörät liikkuvat yhtä paljon samaan suuntaan (𝑑_left=𝑑_right -> delta_theta=0), robotti liikkuu
     # suoraan eteen- tai taaksepäin.
-    # Jos pyörät liikkuvat yhtä paljon erisuuntiin (𝑑_left=-𝑑_right -> delta_distance=0), robotti pyörii 
-    # paikallaan    
+    # Jos pyörät liikkuvat yhtä paljon erisuuntiin (𝑑_left=-𝑑_right -> delta_distance=0), robotti pyörii
+    # paikallaan
     delta_distance = (d_left + d_right) / 2.0
     delta_theta = (d_left - d_right) / self.wheel_base
-    
+
     if delta_distance != 0:
       robot_x = math.cos( delta_theta ) * delta_distance
       robot_y = -math.sin( delta_theta ) * delta_distance
@@ -104,11 +115,13 @@ class OdomNode(Node):
     linear_y = delta_distance * math.cos(self.odom_theta) / elapsed
     linear_x = delta_distance * math.sin(self.odom_theta) / elapsed
     angular_z = delta_theta / elapsed
-    
+
     self.odom_theta = delta_theta + self.odom_theta
 
     odom_msg = Odometry()
     odom_msg.header.stamp = self.get_clock().now().to_msg()
+    #odom_msg.header.frame_id = self.frame_prefix + 'odom' # Lisätään framen nimen eteen namespacen (tai parametrin) mukainen etuliite.
+    #odom_msg.child_frame_id = self.frame_prefix + 'base_footprint'
     odom_msg.header.frame_id = 'odom'
     odom_msg.child_frame_id = 'base_footprint'
 
@@ -127,7 +140,7 @@ class OdomNode(Node):
     odom_msg.pose.pose.orientation.z = quat[2] ##
     odom_msg.pose.pose.orientation.w = quat[3] ##
 
-    # Nopeudet (valinnainen)
+    # Nopeudet (valinnainen, ei käytössä tässä sovelluksessa)
     odom_msg.twist.twist.linear.x = linear_x
     odom_msg.twist.twist.linear.y = linear_y
     odom_msg.twist.twist.angular.z = angular_z
@@ -137,6 +150,8 @@ class OdomNode(Node):
 
     t = TransformStamped()
     t.header.stamp = self.get_clock().now().to_msg()
+    #t.header.frame_id = self.frame_prefix + 'odom'
+    #t.child_frame_id = self.frame_prefix + 'base_footprint'
     t.header.frame_id = 'odom'
     t.child_frame_id = 'base_footprint'
 
@@ -144,10 +159,11 @@ class OdomNode(Node):
     t.transform.translation.y = self.odom_y ##
     t.transform.translation.z = 0.0
 
-    # z: Quaternionin osa, joka liittyy rotaatioon  z-akselin suuntaan. Tämä ei yksinään ole kulma, 
+    # z: Quaternionin osa, joka liittyy rotaatioon  z-akselin suuntaan. Tämä ei yksinään ole kulma,
     # vaan osa rotaation akselin ja kulman yhteistä esitystä.
-    # w: Quaternionin skaalarikomponentti, joka määrittää, kuinka suuri osa rotaatiosta tulee akselin 
-    # ympäriltä. Suhteessa muihin quaternion-komponentteihin, tämä määrittää kulman.    
+    # w: Quaternionin skaalarikomponentti, joka määrittää, kuinka suuri osa rotaatiosta tulee akselin
+    # ympäriltä. Suhteessa muihin quaternion-komponentteihin, tämä määrittää kulman.
+
     t.transform.rotation.z = math.sin(self.odom_theta / 2.0) ##
     t.transform.rotation.w = math.cos(self.odom_theta / 2.0) ##
 

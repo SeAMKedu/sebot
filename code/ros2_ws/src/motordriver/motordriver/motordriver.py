@@ -23,7 +23,7 @@ class MotordriverNode(Node):
     # jos simulation parametria ei löydy niin oletuksena se on True
     self.declare_parameter('simulation', True)
     self.simulation = self.get_parameter('simulation').value
-    self.get_logger().info(f'Käynnistetään motor_controller simulaatiossa: {self.simulation}')
+    self.get_logger().info(f'Käynnistetään motor_controller simulaatiossa: {self.simulation}. Voit muuttaa tämän parametriä ajamalla: ros2 run motordriver motordriver --ros-args -p simulation:=[False/True]')
     if self.simulation:
       self.arduino = SimSerial()
     else:
@@ -44,11 +44,11 @@ class MotordriverNode(Node):
         10
     )
 
-    timer_period = 0.01  # seconds
+    timer_period = 0.01  # Sekuntia
     self.timer = self.create_timer(timer_period, self.timer_callback)
 
   def timer_callback(self):
-    # Create a message
+    # Luodaan viesti
     if self.msg != "x\n":
         self.arduino.write(self.msg.encode())
     
@@ -72,7 +72,7 @@ class MotordriverNode(Node):
             msg.pwm1 = int(answer[4])
             msg.pwm2 = int(answer[5])
 
-            # Publish the message
+            # Julkaistaan viesti
             self.publisher.publish(msg)
           except Exception as err:
             pass
