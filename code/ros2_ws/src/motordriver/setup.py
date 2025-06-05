@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'motordriver = motordriver.motordriver:main',
+            'motordriver_battery = motordriver.motordriver_battery:main'
         ],
     },
 )

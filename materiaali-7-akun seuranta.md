@@ -85,6 +85,19 @@ float32 battery
 Tämän jälkeen muokataan ``motordriver`` nodea siten, että se huomioi myös tämän lisätyn kentän
 **~/ros2_ws/src/motordriver/motordriver/motordriver.py**
 ```python
+... # luokan MotordriverNode konstruktoriin päivitetään mukaan jännitesimulointi, jos ajetaan simulaatiossa.
+    # jos simulation parametria ei löydy niin oletuksena se on True
+    self.declare_parameter('simulation', False)
+    self.simulation = self.get_parameter('simulation').value
+    self.get_logger().info(f'Käynnistetään motor_controller simulaatiossa: {self.simulation}')
+    if self.simulation:
+      self.arduino = SimSerial()
+      self.voltageDifference = 0
+      self.startingVoltage = 12.6
+    else:
+      self.arduino = serial.Serial("/dev/ttyACM0", 115200, timeout=1)
+      if not self.arduino.isOpen():
+        raise Exception("Ei yhteyttä moottoriohjaimeen")
 ...
   def timer_callback(self):
     # Create a message
@@ -101,8 +114,11 @@ Tämän jälkeen muokataan ``motordriver`` nodea siten, että se huomioi myös t
         if self.arduino.inWaiting()>0:
           while self.arduino.inWaiting()>0: 
             answer=self.arduino.readline().decode("utf8").split(";")
-          msg = MotordriverMessage()
-
+            if(self.simulation):
+              self.voltageDifference -= 0.001 
+              answer.append(float(self.startingVoltage+self.voltageDifference))
+          msg = MotordriverMessageBattery()
+          
           try:
             msg.encoder1 = int(answer[0])
             msg.encoder2 = int(answer[1])
@@ -114,7 +130,7 @@ Tämän jälkeen muokataan ``motordriver`` nodea siten, että se huomioi myös t
             # Publish the message
             self.publisher.publish(msg)
           except Exception as err:
-            self.get_logger().info(f'Virhe')
+            self.get_logger().info(f'Virhe: {err}')
             pass
 
     self.timercount += 1
@@ -155,12 +171,16 @@ class BatteryRedirector(Node):
         self.sub = self.create_subscription(MotordriverMessage, '/motor_data', self.callback, 10)
         self.pub = self.create_publisher(Float32, '/battery_voltage', 10)
         self.previous_time = time.time()
+        self.get_logger().info(f"Akun jännitteen lukuaika asetettu arvoon {self.publish_interval:.2f} s")
 
     def callback(self, msg):
-        if time.time() - previous_time > self.publish_interval:
+        time_now = time.time()
+        time_interval = time_now - self.previous_time
+        if time_interval > self.publish_interval:
             battery_msg = Float32()
             battery_msg.data = msg.battery
             self.pub.publish(battery_msg)
+            self.previous_time = time_now
 
 def main(args=None):
   rclpy.init(args=args)
@@ -204,9 +224,9 @@ class BatteryAlert(Node):
 
         # Julkaistaan yhden kerran oletuksena /battery_alertissa False, jotta siellä näkyy varmasti jotain.
         battery_alert_msg = Bool()
-        battery_alert_msg.data = previous_alert_state
+        battery_alert_msg.data = self.previous_alert_state
         self.pub.publish(battery_alert_msg)
-                
+    
         # Määritellään GPIO nasta hälytys-LEDille
         self.LED_PIN = 18
         # Valitaan GPIO-siru (vakio Raspberry Pille)
@@ -219,8 +239,10 @@ class BatteryAlert(Node):
     # Tämä callback kutsutaan kun /battery_alert topiciin tulee viestejä.
     def alert_callback(self, msg):
         if msg.data == True:
+            pass
             lgpio.gpio_write(self.chip, self.LED_PIN, 1)  
         else:
+            pass
             lgpio.gpio_write(self.chip, self.LED_PIN, 0)  
 
     def voltage_callback(self, msg):
@@ -229,11 +251,11 @@ class BatteryAlert(Node):
         else:
             alert_state = False
         
-        if previous_alert_state != alert_state: # Julkaistaan /battery_alert tieto vain jos se on muuttunut edellisestä.
+        if self.previous_alert_state != alert_state: # Julkaistaan /battery_alert tieto vain jos se on muuttunut edellisestä.
             battery_alert_msg = Bool()
             battery_alert_msg.data = alert_state
             self.pub.publish(battery_alert_msg)
-            previous_alert_state = alert_state
+            self.previous_alert_state = alert_state
 
 def main(args=None):
   rclpy.init(args=args)
@@ -253,6 +275,7 @@ def main(args=None):
 
 if __name__ == '__main__':
   main()
+
 
 ```
 
