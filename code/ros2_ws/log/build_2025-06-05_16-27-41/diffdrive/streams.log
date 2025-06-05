@@ -1,0 +1,3 @@
+[1.729s] Invoking command in '/home/turtle/sebot/code/ros2_ws/build/diffdrive': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/diffdrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/turtle/sebot/code/ros2_ws/build/diffdrive/build
+[2.121s] running develop
+[2.383s] Removing /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive.egg-link (link to .)

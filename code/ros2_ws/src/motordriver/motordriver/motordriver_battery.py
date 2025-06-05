@@ -5,6 +5,7 @@ from std_msgs.msg import String
 
 import serial
 import time
+import random
 
 from motordriver_msgs.msg import MotordriverMessageBattery
 try:
@@ -25,6 +26,8 @@ class MotordriverNode(Node):
     self.get_logger().info(f'Käynnistetään motor_controller simulaatiossa: {self.simulation}')
     if self.simulation:
       self.arduino = SimSerial()
+      self.voltageDifference = 0
+      self.startingVoltage = 12.6
     else:
       self.arduino = serial.Serial("/dev/ttyACM0", 115200, timeout=1)
       if not self.arduino.isOpen():
@@ -38,7 +41,7 @@ class MotordriverNode(Node):
     )
 
     self.publisher = self.create_publisher(
-        MotordriverMessage,
+        MotordriverMessageBattery,
         'motor_data',
         10
     )
@@ -61,8 +64,12 @@ class MotordriverNode(Node):
         if self.arduino.inWaiting()>0:
           while self.arduino.inWaiting()>0: 
             answer=self.arduino.readline().decode("utf8").split(";")
+            if(self.simulation):
+              self.voltageDifference -= 0.001 
+              answer.append(float(self.startingVoltage+self.voltageDifference))
+              print(answer)
           msg = MotordriverMessageBattery()
-
+          
           try:
             msg.encoder1 = int(answer[0])
             msg.encoder2 = int(answer[1])
@@ -74,7 +81,7 @@ class MotordriverNode(Node):
             # Publish the message
             self.publisher.publish(msg)
           except Exception as err:
-            self.get_logger().info(f'Virhe')
+            self.get_logger().info(f'Virhe: {err}')
             pass
 
     self.timercount += 1

@@ -1,0 +1,766 @@
+[0.000000] (-) TimerEvent: {}
+[0.000545] (diffdrive) JobQueued: {'identifier': 'diffdrive', 'dependencies': OrderedDict()}
+[0.000817] (motordriver) JobQueued: {'identifier': 'motordriver', 'dependencies': OrderedDict()}
+[0.000859] (motordriver_msgs) JobQueued: {'identifier': 'motordriver_msgs', 'dependencies': OrderedDict()}
+[0.000914] (diffdrivec) JobQueued: {'identifier': 'diffdrivec', 'dependencies': OrderedDict([('motordriver_msgs', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs')])}
+[0.002138] (motordriver_msgs) JobStarted: {'identifier': 'motordriver_msgs'}
+[0.020781] (diffdrive) JobStarted: {'identifier': 'diffdrive'}
+[0.034664] (motordriver) JobStarted: {'identifier': 'motordriver'}
+[0.049802] (motordriver_msgs) JobProgress: {'identifier': 'motordriver_msgs', 'progress': 'cmake'}
+[0.050232] (motordriver_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/turtle/sebot/code/ros2_ws/src/motordriver_msgs', '-DCMAKE_INSTALL_PREFIX=/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs'], 'cwd': '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:'), ('USER', 'turtle'), ('LC_TIME', 'fi_FI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/turtle'), ('CYCLONEDDS_URI', '/home/turtle/cyclone-husarnet.xml'), ('OLDPWD', '/home/turtle/sebot/code'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1712'), ('SYSTEMD_EXEC_PID', '2006'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '121490'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/turtle/ros2_ws/install:/home/turtle/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'turtle'), ('JOURNAL_STREAM', '8:22452'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'turtle'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939'), ('INVOCATION_ID', 'ba71e16a6f47455ebfba3109c1e93931'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.31IM62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble')]), 'shell': False}
+[0.099639] (-) TimerEvent: {}
+[0.200075] (-) TimerEvent: {}
+[0.300518] (-) TimerEvent: {}
+[0.400947] (-) TimerEvent: {}
+[0.458573] (motordriver_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.501215] (-) TimerEvent: {}
+[0.601734] (-) TimerEvent: {}
+[0.622667] (motordriver_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.647786] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.702003] (-) TimerEvent: {}
+[0.802494] (-) TimerEvent: {}
+[0.845061] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.850622] (motordriver_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.853895] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.854136] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.859959] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.902719] (-) TimerEvent: {}
+[1.003159] (-) TimerEvent: {}
+[1.031821] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.038657] (motordriver_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.039551] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.040157] (motordriver_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.087805] (motordriver_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.103462] (-) TimerEvent: {}
+[1.203927] (-) TimerEvent: {}
+[1.304357] (-) TimerEvent: {}
+[1.356509] (motordriver_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.404617] (-) TimerEvent: {}
+[1.505138] (-) TimerEvent: {}
+[1.605588] (-) TimerEvent: {}
+[1.617113] (motordriver_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.640832] (motordriver) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/motordriver', 'build', '--build-base', '/home/turtle/sebot/code/ros2_ws/build/motordriver/build', 'install', '--record', '/home/turtle/sebot/code/ros2_ws/build/motordriver/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/turtle/sebot/code/ros2_ws/src/motordriver', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US:', 'USER': 'turtle', 'LC_TIME': 'fi_FI.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/turtle', 'CYCLONEDDS_URI': '/home/turtle/cyclone-husarnet.xml', 'OLDPWD': '/home/turtle/sebot/code', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'fi_FI.UTF-8', 'MANAGERPID': '1712', 'SYSTEMD_EXEC_PID': '2006', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '121490', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/turtle/ros2_ws/install:/home/turtle/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'turtle', 'JOURNAL_STREAM': '8:22452', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'turtle', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939', 'INVOCATION_ID': 'ba71e16a6f47455ebfba3109c1e93931', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'fi_FI.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'LC_TELEPHONE': 'fi_FI.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.31IM62', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'fi_FI.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'fi_FI.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'fi_FI.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/turtle/sebot/code/ros2_ws/build/motordriver', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/turtle/sebot/code/ros2_ws/build/motordriver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'fi_FI.UTF-8', 'LC_PAPER': 'fi_FI.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp'}, 'shell': False}
+[1.647400] (diffdrive) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/diffdrive', 'build', '--build-base', '/home/turtle/sebot/code/ros2_ws/build/diffdrive/build', 'install', '--record', '/home/turtle/sebot/code/ros2_ws/build/diffdrive/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/turtle/sebot/code/ros2_ws/src/diffdrive', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US:', 'USER': 'turtle', 'LC_TIME': 'fi_FI.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/turtle', 'CYCLONEDDS_URI': '/home/turtle/cyclone-husarnet.xml', 'OLDPWD': '/home/turtle/sebot/code', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'fi_FI.UTF-8', 'MANAGERPID': '1712', 'SYSTEMD_EXEC_PID': '2006', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '121490', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/turtle/ros2_ws/install:/home/turtle/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'turtle', 'JOURNAL_STREAM': '8:22452', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'turtle', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939', 'INVOCATION_ID': 'ba71e16a6f47455ebfba3109c1e93931', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'fi_FI.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'LC_TELEPHONE': 'fi_FI.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.31IM62', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'fi_FI.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'fi_FI.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'fi_FI.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/turtle/sebot/code/ros2_ws/build/diffdrive', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/turtle/sebot/code/ros2_ws/build/diffdrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'fi_FI.UTF-8', 'LC_PAPER': 'fi_FI.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp'}, 'shell': False}
+[1.705866] (-) TimerEvent: {}
+[1.783758] (motordriver_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.801547] (motordriver_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.806089] (-) TimerEvent: {}
+[1.834571] (motordriver_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.906438] (-) TimerEvent: {}
+[2.002883] (motordriver_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.006577] (-) TimerEvent: {}
+[2.009561] (motordriver) StdoutLine: {'line': b'running egg_info\n'}
+[2.010405] (motordriver) StdoutLine: {'line': b'creating ../../build/motordriver/motordriver.egg-info\n'}
+[2.010853] (motordriver) StdoutLine: {'line': b'writing ../../build/motordriver/motordriver.egg-info/PKG-INFO\n'}
+[2.011429] (motordriver) StdoutLine: {'line': b'writing dependency_links to ../../build/motordriver/motordriver.egg-info/dependency_links.txt\n'}
+[2.011864] (motordriver) StdoutLine: {'line': b'writing entry points to ../../build/motordriver/motordriver.egg-info/entry_points.txt\n'}
+[2.012128] (motordriver) StdoutLine: {'line': b'writing requirements to ../../build/motordriver/motordriver.egg-info/requires.txt\n'}
+[2.012238] (motordriver) StdoutLine: {'line': b'writing top-level names to ../../build/motordriver/motordriver.egg-info/top_level.txt\n'}
+[2.012772] (motordriver) StdoutLine: {'line': b"writing manifest file '../../build/motordriver/motordriver.egg-info/SOURCES.txt'\n"}
+[2.015928] (motordriver) StdoutLine: {'line': b"reading manifest file '../../build/motordriver/motordriver.egg-info/SOURCES.txt'\n"}
+[2.017256] (motordriver) StdoutLine: {'line': b"writing manifest file '../../build/motordriver/motordriver.egg-info/SOURCES.txt'\n"}
+[2.017606] (motordriver) StdoutLine: {'line': b'running build\n'}
+[2.017745] (motordriver) StdoutLine: {'line': b'running build_py\n'}
+[2.017999] (motordriver) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/build/motordriver/build\n'}
+[2.018109] (motordriver) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib\n'}
+[2.018389] (motordriver) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver\n'}
+[2.018509] (motordriver) StdoutLine: {'line': b'copying motordriver/motordriver_battery.py -> /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver\n'}
+[2.019040] (motordriver) StdoutLine: {'line': b'copying motordriver/motordriver.py -> /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver\n'}
+[2.019275] (motordriver) StdoutLine: {'line': b'copying motordriver/simserial.py -> /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver\n'}
+[2.019955] (motordriver) StdoutLine: {'line': b'copying motordriver/__init__.py -> /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver\n'}
+[2.020408] (motordriver) StdoutLine: {'line': b'running install\n'}
+[2.020666] (motordriver) StdoutLine: {'line': b'running install_lib\n'}
+[2.022206] (motordriver) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver\n'}
+[2.022801] (motordriver) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver/motordriver_battery.py -> /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver\n'}
+[2.022937] (motordriver) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver/motordriver.py -> /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver\n'}
+[2.023234] (motordriver) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver/simserial.py -> /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver\n'}
+[2.023403] (motordriver) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/motordriver/build/lib/motordriver/__init__.py -> /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver\n'}
+[2.024238] (motordriver) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver/motordriver_battery.py to motordriver_battery.cpython-310.pyc\n'}
+[2.030376] (motordriver) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver/motordriver.py to motordriver.cpython-310.pyc\n'}
+[2.031102] (motordriver) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver/simserial.py to simserial.cpython-310.pyc\n'}
+[2.031610] (motordriver) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver/__init__.py to __init__.cpython-310.pyc\n'}
+[2.031851] (motordriver) StdoutLine: {'line': b'running install_data\n'}
+[2.032072] (motordriver) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/motordriver/share/ament_index\n'}
+[2.032248] (motordriver) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/motordriver/share/ament_index/resource_index\n'}
+[2.032532] (motordriver) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/motordriver/share/ament_index/resource_index/packages\n'}
+[2.032996] (motordriver) StdoutLine: {'line': b'copying resource/motordriver -> /home/turtle/sebot/code/ros2_ws/install/motordriver/share/ament_index/resource_index/packages\n'}
+[2.033111] (motordriver) StdoutLine: {'line': b'copying package.xml -> /home/turtle/sebot/code/ros2_ws/install/motordriver/share/motordriver\n'}
+[2.033216] (motordriver) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.034947] (motordriver) StdoutLine: {'line': b'Copying ../../build/motordriver/motordriver.egg-info to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver-0.0.0-py3.10.egg-info\n'}
+[2.037139] (motordriver) StdoutLine: {'line': b'running install_scripts\n'}
+[2.096133] (motordriver) StdoutLine: {'line': b'Installing motordriver script to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/motordriver\n'}
+[2.096653] (motordriver) StdoutLine: {'line': b'Installing motordriver_battery script to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/motordriver\n'}
+[2.097289] (motordriver) StdoutLine: {'line': b"writing list of installed files to '/home/turtle/sebot/code/ros2_ws/build/motordriver/install.log'\n"}
+[2.106836] (-) TimerEvent: {}
+[2.107958] (diffdrive) StdoutLine: {'line': b'running egg_info\n'}
+[2.108437] (diffdrive) StdoutLine: {'line': b'creating ../../build/diffdrive/diffdrive.egg-info\n'}
+[2.108861] (diffdrive) StdoutLine: {'line': b'writing ../../build/diffdrive/diffdrive.egg-info/PKG-INFO\n'}
+[2.109000] (diffdrive) StdoutLine: {'line': b'writing dependency_links to ../../build/diffdrive/diffdrive.egg-info/dependency_links.txt\n'}
+[2.109370] (diffdrive) StdoutLine: {'line': b'writing entry points to ../../build/diffdrive/diffdrive.egg-info/entry_points.txt\n'}
+[2.109513] (diffdrive) StdoutLine: {'line': b'writing requirements to ../../build/diffdrive/diffdrive.egg-info/requires.txt\n'}
+[2.109695] (diffdrive) StdoutLine: {'line': b'writing top-level names to ../../build/diffdrive/diffdrive.egg-info/top_level.txt\n'}
+[2.109901] (diffdrive) StdoutLine: {'line': b"writing manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'\n"}
+[2.112158] (diffdrive) StdoutLine: {'line': b"reading manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'\n"}
+[2.114199] (diffdrive) StdoutLine: {'line': b"writing manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'\n"}
+[2.114779] (diffdrive) StdoutLine: {'line': b'running build\n'}
+[2.115586] (diffdrive) StdoutLine: {'line': b'running build_py\n'}
+[2.115839] (motordriver) CommandEnded: {'returncode': 0}
+[2.117220] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/build/diffdrive/build\n'}
+[2.117479] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib\n'}
+[2.117826] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive\n'}
+[2.118122] (diffdrive) StdoutLine: {'line': b'copying diffdrive/odom.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive\n'}
+[2.118441] (diffdrive) StdoutLine: {'line': b'copying diffdrive/cmd_vel.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive\n'}
+[2.118682] (diffdrive) StdoutLine: {'line': b'copying diffdrive/encoder.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive\n'}
+[2.119043] (diffdrive) StdoutLine: {'line': b'copying diffdrive/__init__.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive\n'}
+[2.119160] (diffdrive) StdoutLine: {'line': b'copying diffdrive/testi.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive\n'}
+[2.119424] (diffdrive) StdoutLine: {'line': b'copying diffdrive/pi_led.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive\n'}
+[2.119571] (diffdrive) StdoutLine: {'line': b'running install\n'}
+[2.120097] (diffdrive) StdoutLine: {'line': b'running install_lib\n'}
+[2.120399] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive\n'}
+[2.120585] (diffdrive) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/odom.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive\n'}
+[2.120827] (diffdrive) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/cmd_vel.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive\n'}
+[2.121081] (diffdrive) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/encoder.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive\n'}
+[2.121569] (diffdrive) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/__init__.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive\n'}
+[2.121853] (diffdrive) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/testi.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive\n'}
+[2.122116] (diffdrive) StdoutLine: {'line': b'copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/pi_led.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive\n'}
+[2.122709] (diffdrive) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/odom.py to odom.cpython-310.pyc\n'}
+[2.123104] (diffdrive) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/cmd_vel.py to cmd_vel.cpython-310.pyc\n'}
+[2.123223] (diffdrive) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/encoder.py to encoder.cpython-310.pyc\n'}
+[2.123595] (diffdrive) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/__init__.py to __init__.cpython-310.pyc\n'}
+[2.124469] (diffdrive) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/testi.py to testi.cpython-310.pyc\n'}
+[2.124646] (diffdrive) StdoutLine: {'line': b'byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/pi_led.py to pi_led.cpython-310.pyc\n'}
+[2.124885] (diffdrive) StdoutLine: {'line': b'running install_data\n'}
+[2.125000] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index\n'}
+[2.125259] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index\n'}
+[2.125630] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index/packages\n'}
+[2.125739] (diffdrive) StdoutLine: {'line': b'copying resource/diffdrive -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index/packages\n'}
+[2.125840] (diffdrive) StdoutLine: {'line': b'copying package.xml -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive\n'}
+[2.125940] (diffdrive) StdoutLine: {'line': b'creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch\n'}
+[2.126103] (diffdrive) StdoutLine: {'line': b'copying launch/diffdrive_battery.launch.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch\n'}
+[2.126247] (diffdrive) StdoutLine: {'line': b'copying launch/diffdrive.launch.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch\n'}
+[2.126532] (diffdrive) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.126706] (diffdrive) StdoutLine: {'line': b'Copying ../../build/diffdrive/diffdrive.egg-info to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive-0.0.0-py3.10.egg-info\n'}
+[2.127929] (diffdrive) StdoutLine: {'line': b'running install_scripts\n'}
+[2.145826] (motordriver) JobEnded: {'identifier': 'motordriver', 'rc': 0}
+[2.152095] (diffdrive) StdoutLine: {'line': b'Installing cmd_vel script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive\n'}
+[2.152636] (diffdrive) StdoutLine: {'line': b'Installing odom script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive\n'}
+[2.152806] (diffdrive) StdoutLine: {'line': b'Installing pi_led script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive\n'}
+[2.153040] (diffdrive) StdoutLine: {'line': b"writing list of installed files to '/home/turtle/sebot/code/ros2_ws/build/diffdrive/install.log'\n"}
+[2.173540] (diffdrive) CommandEnded: {'returncode': 0}
+[2.180238] (diffdrive) JobEnded: {'identifier': 'diffdrive', 'rc': 0}
+[2.207119] (-) TimerEvent: {}
+[2.307597] (-) TimerEvent: {}
+[2.411621] (motordriver_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[2.412016] (-) TimerEvent: {}
+[2.512418] (-) TimerEvent: {}
+[2.612864] (-) TimerEvent: {}
+[2.713418] (-) TimerEvent: {}
+[2.718052] (motordriver_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.813639] (-) TimerEvent: {}
+[2.914133] (-) TimerEvent: {}
+[3.014689] (-) TimerEvent: {}
+[3.085060] (motordriver_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.114982] (-) TimerEvent: {}
+[3.124204] (motordriver_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[3.132321] (motordriver_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[3.181069] (motordriver_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[3.181642] (motordriver_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[3.181789] (motordriver_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[3.181888] (motordriver_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[3.214966] (motordriver_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[3.215144] (-) TimerEvent: {}
+[3.288254] (motordriver_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.292189] (motordriver_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.308488] (motordriver_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.315375] (-) TimerEvent: {}
+[3.386629] (motordriver_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[3.400788] (motordriver_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs\n'}
+[3.411811] (motordriver_msgs) CommandEnded: {'returncode': 0}
+[3.414438] (motordriver_msgs) JobProgress: {'identifier': 'motordriver_msgs', 'progress': 'build'}
+[3.414531] (motordriver_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs', '--', '-j16', '-l16'], 'cwd': '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:'), ('USER', 'turtle'), ('LC_TIME', 'fi_FI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/turtle'), ('CYCLONEDDS_URI', '/home/turtle/cyclone-husarnet.xml'), ('OLDPWD', '/home/turtle/sebot/code'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1712'), ('SYSTEMD_EXEC_PID', '2006'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '121490'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/turtle/ros2_ws/install:/home/turtle/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'turtle'), ('JOURNAL_STREAM', '8:22452'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'turtle'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939'), ('INVOCATION_ID', 'ba71e16a6f47455ebfba3109c1e93931'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.31IM62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble')]), 'shell': False}
+[3.415617] (-) TimerEvent: {}
+[3.504257] (motordriver_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[3.515907] (-) TimerEvent: {}
+[3.526633] (motordriver_msgs) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[3.546517] (motordriver_msgs) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_copy_motordriver_msgs\n'}
+[3.616320] (-) TimerEvent: {}
+[3.716906] (-) TimerEvent: {}
+[3.817309] (-) TimerEvent: {}
+[3.831936] (motordriver_msgs) StdoutLine: {'line': b'[  5%] Built target motordriver_msgs__cpp\n'}
+[3.856018] (motordriver_msgs) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[3.857305] (motordriver_msgs) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[3.863080] (motordriver_msgs) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[3.867877] (motordriver_msgs) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_generator_c.dir/rosidl_generator_c/motordriver_msgs/msg/detail/motordriver_message__functions.c.o\x1b[0m\n'}
+[3.872640] (motordriver_msgs) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_generator_c.dir/rosidl_generator_c/motordriver_msgs/msg/detail/motordriver_message_battery__functions.c.o\x1b[0m\n'}
+[3.917518] (-) TimerEvent: {}
+[3.923964] (motordriver_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[3.924718] (motordriver_msgs) StdoutLine: {'line': b'creating motordriver_msgs.egg-info\n'}
+[3.925115] (motordriver_msgs) StdoutLine: {'line': b'writing motordriver_msgs.egg-info/PKG-INFO\n'}
+[3.925226] (motordriver_msgs) StdoutLine: {'line': b'writing dependency_links to motordriver_msgs.egg-info/dependency_links.txt\n'}
+[3.925412] (motordriver_msgs) StdoutLine: {'line': b'writing top-level names to motordriver_msgs.egg-info/top_level.txt\n'}
+[3.925895] (motordriver_msgs) StdoutLine: {'line': b"writing manifest file 'motordriver_msgs.egg-info/SOURCES.txt'\n"}
+[3.927934] (motordriver_msgs) StdoutLine: {'line': b"reading manifest file 'motordriver_msgs.egg-info/SOURCES.txt'\n"}
+[3.928706] (motordriver_msgs) StdoutLine: {'line': b"writing manifest file 'motordriver_msgs.egg-info/SOURCES.txt'\n"}
+[3.963255] (motordriver_msgs) StdoutLine: {'line': b'[ 17%] Built target ament_cmake_python_build_motordriver_msgs_egg\n'}
+[4.017754] (-) TimerEvent: {}
+[4.019432] (motordriver_msgs) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library libmotordriver_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[4.103162] (motordriver_msgs) StdoutLine: {'line': b'[ 20%] Built target motordriver_msgs__rosidl_generator_c\n'}
+[4.118244] (-) TimerEvent: {}
+[4.127435] (motordriver_msgs) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.129166] (motordriver_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[4.132099] (motordriver_msgs) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[4.147580] (motordriver_msgs) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motordriver_msgs/msg/motordriver_message__type_support.cpp.o\x1b[0m\n'}
+[4.155321] (motordriver_msgs) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motordriver_msgs/msg/motordriver_message_battery__type_support.cpp.o\x1b[0m\n'}
+[4.157164] (motordriver_msgs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motordriver_msgs/msg/detail/motordriver_message__type_support.cpp.o\x1b[0m\n'}
+[4.170709] (motordriver_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.cpp.o\x1b[0m\n'}
+[4.185568] (motordriver_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motordriver_msgs/msg/detail/dds_fastrtps/motordriver_message__type_support.cpp.o\x1b[0m\n'}
+[4.186200] (motordriver_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motordriver_msgs/msg/detail/dds_fastrtps/motordriver_message_battery__type_support.cpp.o\x1b[0m\n'}
+[4.218871] (-) TimerEvent: {}
+[4.319547] (-) TimerEvent: {}
+[4.420703] (-) TimerEvent: {}
+[4.421757] (motordriver_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motordriver_msgs/msg/motordriver_message_battery__type_support.cpp.o\x1b[0m\n'}
+[4.422782] (motordriver_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motordriver_msgs/msg/motordriver_message__type_support.cpp.o\x1b[0m\n'}
+[4.452457] (motordriver_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motordriver_msgs/msg/detail/motordriver_message_battery__type_support_c.cpp.o\x1b[0m\n'}
+[4.460161] (motordriver_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/motordriver_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motordriver_msgs/msg/detail/motordriver_message__type_support_c.cpp.o\x1b[0m\n'}
+[4.481588] (motordriver_msgs) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.c.o\x1b[0m\n'}
+[4.481819] (motordriver_msgs) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motordriver_msgs/msg/detail/motordriver_message__type_support.c.o\x1b[0m\n'}
+[4.521489] (-) TimerEvent: {}
+[4.535497] (motordriver_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking CXX shared library libmotordriver_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[4.613841] (motordriver_msgs) StdoutLine: {'line': b'[ 64%] \x1b[32m\x1b[1mLinking C shared library libmotordriver_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[4.621833] (-) TimerEvent: {}
+[4.667779] (motordriver_msgs) StdoutLine: {'line': b'[ 64%] Built target motordriver_msgs__rosidl_typesupport_c\n'}
+[4.710235] (motordriver_msgs) StdoutLine: {'line': b'[ 64%] Built target motordriver_msgs__rosidl_typesupport_introspection_c\n'}
+[4.722068] (-) TimerEvent: {}
+[4.822623] (-) TimerEvent: {}
+[4.854681] (motordriver_msgs) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX shared library libmotordriver_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[4.879305] (motordriver_msgs) StdoutLine: {'line': b'[ 69%] \x1b[32m\x1b[1mLinking CXX shared library libmotordriver_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[4.891045] (motordriver_msgs) StdoutLine: {'line': b'[ 71%] \x1b[32m\x1b[1mLinking CXX shared library libmotordriver_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[4.922844] (-) TimerEvent: {}
+[4.947915] (motordriver_msgs) StdoutLine: {'line': b'[ 71%] Built target motordriver_msgs__rosidl_typesupport_cpp\n'}
+[4.987693] (motordriver_msgs) StdoutLine: {'line': b'[ 71%] Built target motordriver_msgs__rosidl_typesupport_introspection_cpp\n'}
+[5.023152] (-) TimerEvent: {}
+[5.027136] (motordriver_msgs) StdoutLine: {'line': b'[ 71%] Built target motordriver_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[5.040397] (motordriver_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libmotordriver_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[5.123571] (-) TimerEvent: {}
+[5.183648] (motordriver_msgs) StdoutLine: {'line': b'[ 74%] Built target motordriver_msgs__rosidl_typesupport_fastrtps_c\n'}
+[5.223800] (-) TimerEvent: {}
+[5.228733] (motordriver_msgs) StdoutLine: {'line': b'[ 74%] Built target motordriver_msgs\n'}
+[5.277896] (motordriver_msgs) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[5.324024] (-) TimerEvent: {}
+[5.424487] (-) TimerEvent: {}
+[5.524983] (-) TimerEvent: {}
+[5.625550] (-) TimerEvent: {}
+[5.648401] (motordriver_msgs) StdoutLine: {'line': b'[ 76%] Built target motordriver_msgs__py\n'}
+[5.698270] (motordriver_msgs) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_generator_py.dir/rosidl_generator_py/motordriver_msgs/msg/_motordriver_message_battery_s.c.o\x1b[0m\n'}
+[5.699863] (motordriver_msgs) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_generator_py.dir/rosidl_generator_py/motordriver_msgs/msg/_motordriver_message_s.c.o\x1b[0m\n'}
+[5.725790] (-) TimerEvent: {}
+[5.826463] (-) TimerEvent: {}
+[5.926913] (-) TimerEvent: {}
+[5.945478] (motordriver_msgs) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/motordriver_msgs/libmotordriver_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[6.027202] (-) TimerEvent: {}
+[6.032391] (motordriver_msgs) StdoutLine: {'line': b'[ 84%] Built target motordriver_msgs__rosidl_generator_py\n'}
+[6.082562] (motordriver_msgs) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[6.082780] (motordriver_msgs) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[6.084239] (motordriver_msgs) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/motordriver_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[6.127519] (-) TimerEvent: {}
+[6.227965] (-) TimerEvent: {}
+[6.253685] (motordriver_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.256088] (motordriver_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.279400] (motordriver_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.328234] (-) TimerEvent: {}
+[6.333250] (motordriver_msgs) StdoutLine: {'line': b'[100%] Built target motordriver_msgs__rosidl_typesupport_c__pyext\n'}
+[6.336696] (motordriver_msgs) StdoutLine: {'line': b'[100%] Built target motordriver_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[6.361309] (motordriver_msgs) StdoutLine: {'line': b'[100%] Built target motordriver_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[6.386100] (motordriver_msgs) CommandEnded: {'returncode': 0}
+[6.387895] (motordriver_msgs) JobProgress: {'identifier': 'motordriver_msgs', 'progress': 'install'}
+[6.405639] (motordriver_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs'], 'cwd': '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:'), ('USER', 'turtle'), ('LC_TIME', 'fi_FI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/turtle'), ('CYCLONEDDS_URI', '/home/turtle/cyclone-husarnet.xml'), ('OLDPWD', '/home/turtle/sebot/code'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1712'), ('SYSTEMD_EXEC_PID', '2006'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '121490'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/turtle/ros2_ws/install:/home/turtle/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'turtle'), ('JOURNAL_STREAM', '8:22452'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'turtle'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939'), ('INVOCATION_ID', 'ba71e16a6f47455ebfba3109c1e93931'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.31IM62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble')]), 'shell': False}
+[6.422302] (motordriver_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.422654] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/rosidl_interfaces/motordriver_msgs\n'}
+[6.422958] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs\n'}
+[6.423236] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg\n'}
+[6.423685] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message.h\n'}
+[6.424288] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[6.424683] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail\n'}
+[6.424789] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__struct.h\n'}
+[6.425110] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__functions.h\n'}
+[6.425597] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__struct.h\n'}
+[6.425705] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.h\n'}
+[6.425920] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.h\n'}
+[6.426306] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__functions.c\n'}
+[6.426742] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__functions.c\n'}
+[6.426855] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__functions.h\n'}
+[6.427148] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message_battery.h\n'}
+[6.427506] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/library_path.sh\n'}
+[6.427807] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/library_path.dsv\n'}
+[6.428482] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_generator_c.so\n'}
+[6.428613] (-) TimerEvent: {}
+[6.430938] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_generator_c.so" to ""\n'}
+[6.431068] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs\n'}
+[6.431476] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg\n'}
+[6.431583] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[6.431837] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail\n'}
+[6.432042] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_fastrtps_c.h\n'}
+[6.432189] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_fastrtps_c.h\n'}
+[6.432472] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[6.434268] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[6.434438] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs\n'}
+[6.434597] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg\n'}
+[6.435089] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail\n'}
+[6.435249] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.c\n'}
+[6.435401] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_introspection_c.h\n'}
+[6.435779] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_introspection_c.h\n'}
+[6.435883] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.c\n'}
+[6.435985] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[6.436517] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_introspection_c.so\n'}
+[6.438018] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[6.438171] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_c.so\n'}
+[6.439761] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_c.so" to ""\n'}
+[6.439933] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs\n'}
+[6.440262] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg\n'}
+[6.440424] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message_battery.hpp\n'}
+[6.440753] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail\n'}
+[6.440984] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__struct.hpp\n'}
+[6.441308] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.hpp\n'}
+[6.441797] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.hpp\n'}
+[6.441903] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__struct.hpp\n'}
+[6.442350] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__builder.hpp\n'}
+[6.442484] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__traits.hpp\n'}
+[6.442863] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__traits.hpp\n'}
+[6.443003] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__builder.hpp\n'}
+[6.443488] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message.hpp\n'}
+[6.443777] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[6.444099] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs\n'}
+[6.444236] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg\n'}
+[6.444551] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail\n'}
+[6.444789] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/dds_fastrtps\n'}
+[6.445001] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.445104] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.445427] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[6.446046] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[6.448282] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[6.448631] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs\n'}
+[6.449306] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg\n'}
+[6.449690] (motordriver_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail\n'}
+[6.449794] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.cpp\n'}
+[6.449894] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.cpp\n'}
+[6.449995] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.450095] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.450261] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[6.452063] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[6.452176] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_cpp.so\n'}
+[6.453997] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[6.454103] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/pythonpath.sh\n'}
+[6.454385] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/pythonpath.dsv\n'}
+[6.454778] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info\n'}
+[6.455203] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[6.455389] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[6.455705] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[6.455927] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[6.456200] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs\n'}
+[6.456301] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.456759] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.456987] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[6.457279] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg\n'}
+[6.457856] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message.py\n'}
+[6.458315] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message_battery.py\n'}
+[6.458745] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message_battery_s.c\n'}
+[6.458988] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/__init__.py\n'}
+[6.459389] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message_s.c\n'}
+[6.459766] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/libmotordriver_msgs__rosidl_generator_py.so\n'}
+[6.460337] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[6.460989] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/__init__.py\n'}
+[6.461278] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.461780] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[6.521887] (motordriver_msgs) StdoutLine: {'line': b"Listing '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs'...\n"}
+[6.522077] (motordriver_msgs) StdoutLine: {'line': b"Compiling '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/__init__.py'...\n"}
+[6.522261] (motordriver_msgs) StdoutLine: {'line': b"Listing '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg'...\n"}
+[6.522413] (motordriver_msgs) StdoutLine: {'line': b"Compiling '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/__init__.py'...\n"}
+[6.522515] (motordriver_msgs) StdoutLine: {'line': b"Compiling '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message.py'...\n"}
+[6.522611] (motordriver_msgs) StdoutLine: {'line': b"Compiling '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message_battery.py'...\n"}
+[6.527769] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.528809] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.528966] (-) TimerEvent: {}
+[6.529736] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.531564] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.532645] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.534380] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.534529] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_generator_py.so\n'}
+[6.536434] (motordriver_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_generator_py.so" to ""\n'}
+[6.536888] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessage.idl\n'}
+[6.536994] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessageBattery.idl\n'}
+[6.537321] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessage.msg\n'}
+[6.537664] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessageBattery.msg\n'}
+[6.538030] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/package_run_dependencies/motordriver_msgs\n'}
+[6.538500] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/parent_prefix_path/motordriver_msgs\n'}
+[6.538895] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/ament_prefix_path.sh\n'}
+[6.539234] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/ament_prefix_path.dsv\n'}
+[6.539705] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/path.sh\n'}
+[6.539816] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/path.dsv\n'}
+[6.540113] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.bash\n'}
+[6.540663] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.sh\n'}
+[6.541229] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.zsh\n'}
+[6.541663] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.dsv\n'}
+[6.542180] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.dsv\n'}
+[6.542762] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/packages/motordriver_msgs\n'}
+[6.543180] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_cExport.cmake\n'}
+[6.543505] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[6.543890] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[6.544161] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[6.544459] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[6.544855] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[6.545158] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cExport.cmake\n'}
+[6.545462] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[6.545788] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_cppExport.cmake\n'}
+[6.546101] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[6.546384] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[6.547276] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[6.547583] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[6.547866] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[6.548160] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[6.548539] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_pyExport.cmake\n'}
+[6.548925] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[6.549179] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[6.549447] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[6.550141] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[6.550440] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[6.550815] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[6.551051] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[6.551411] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[6.551751] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgsConfig.cmake\n'}
+[6.552011] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgsConfig-version.cmake\n'}
+[6.552364] (motordriver_msgs) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.xml\n'}
+[6.556552] (motordriver_msgs) CommandEnded: {'returncode': 0}
+[6.576688] (motordriver_msgs) JobEnded: {'identifier': 'motordriver_msgs', 'rc': 0}
+[6.578240] (diffdrivec) JobStarted: {'identifier': 'diffdrivec'}
+[6.601429] (diffdrivec) JobProgress: {'identifier': 'diffdrivec', 'progress': 'cmake'}
+[6.603915] (diffdrivec) Command: {'cmd': ['/usr/bin/cmake', '/home/turtle/sebot/code/ros2_ws/src/diffdrivec', '-DCMAKE_INSTALL_PREFIX=/home/turtle/sebot/code/ros2_ws/install/diffdrivec'], 'cwd': '/home/turtle/sebot/code/ros2_ws/build/diffdrivec', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:'), ('USER', 'turtle'), ('LC_TIME', 'fi_FI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib:/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/turtle'), ('CYCLONEDDS_URI', '/home/turtle/cyclone-husarnet.xml'), ('OLDPWD', '/home/turtle/sebot/code'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1712'), ('SYSTEMD_EXEC_PID', '2006'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '121490'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/turtle/ros2_ws/install:/home/turtle/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'turtle'), ('JOURNAL_STREAM', '8:22452'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'turtle'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939'), ('INVOCATION_ID', 'ba71e16a6f47455ebfba3109c1e93931'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.31IM62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/turtle/sebot/code/ros2_ws/build/diffdrivec'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble')]), 'shell': False}
+[6.629249] (-) TimerEvent: {}
+[6.720982] (diffdrivec) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[6.729523] (-) TimerEvent: {}
+[6.830044] (-) TimerEvent: {}
+[6.832717] (diffdrivec) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[6.846573] (diffdrivec) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[6.930325] (-) TimerEvent: {}
+[6.992205] (diffdrivec) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[6.997676] (diffdrivec) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[6.998036] (diffdrivec) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[6.998518] (diffdrivec) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[7.002527] (diffdrivec) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[7.030560] (-) TimerEvent: {}
+[7.130998] (-) TimerEvent: {}
+[7.171597] (diffdrivec) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[7.177392] (diffdrivec) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[7.177814] (diffdrivec) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.178253] (diffdrivec) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.187803] (diffdrivec) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[7.231236] (-) TimerEvent: {}
+[7.331733] (-) TimerEvent: {}
+[7.432187] (-) TimerEvent: {}
+[7.439679] (diffdrivec) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[7.532513] (-) TimerEvent: {}
+[7.632977] (-) TimerEvent: {}
+[7.657076] (diffdrivec) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[7.733337] (-) TimerEvent: {}
+[7.804342] (diffdrivec) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[7.826866] (diffdrivec) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[7.833676] (-) TimerEvent: {}
+[7.861406] (diffdrivec) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[7.904333] (diffdrivec) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[7.933943] (-) TimerEvent: {}
+[7.950042] (diffdrivec) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[8.034179] (-) TimerEvent: {}
+[8.101576] (diffdrivec) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[8.115674] (diffdrivec) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)\n'}
+[8.134387] (-) TimerEvent: {}
+[8.205406] (diffdrivec) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[8.234718] (-) TimerEvent: {}
+[8.243241] (diffdrivec) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[8.334974] (-) TimerEvent: {}
+[8.392384] (diffdrivec) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[8.392792] (diffdrivec) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[8.435409] (-) TimerEvent: {}
+[8.535835] (-) TimerEvent: {}
+[8.542306] (diffdrivec) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[8.543909] (diffdrivec) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[8.636329] (-) TimerEvent: {}
+[8.675918] (diffdrivec) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[8.711405] (diffdrivec) StdoutLine: {'line': b'-- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[8.736549] (-) TimerEvent: {}
+[8.749549] (diffdrivec) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.11 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[8.836850] (-) TimerEvent: {}
+[8.937416] (-) TimerEvent: {}
+[9.030826] (diffdrivec) StdoutLine: {'line': b'-- Found motordriver_msgs: 0.0.0 (/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake)\n'}
+[9.037612] (-) TimerEvent: {}
+[9.046718] (diffdrivec) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[9.137959] (-) TimerEvent: {}
+[9.192279] (diffdrivec) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[9.192528] (diffdrivec) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/turtle/sebot/code/ros2_ws/src/diffdrivec/include\n'}
+[9.192638] (diffdrivec) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[9.194066] (diffdrivec) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[9.196905] (diffdrivec) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[9.197025] (diffdrivec) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[9.198320] (diffdrivec) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[9.201217] (diffdrivec) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.238389] (-) TimerEvent: {}
+[9.239619] (diffdrivec) StdoutLine: {'line': b'-- Generating done\n'}
+[9.246701] (diffdrivec) StdoutLine: {'line': b'-- Build files have been written to: /home/turtle/sebot/code/ros2_ws/build/diffdrivec\n'}
+[9.261930] (diffdrivec) CommandEnded: {'returncode': 0}
+[9.262778] (diffdrivec) JobProgress: {'identifier': 'diffdrivec', 'progress': 'build'}
+[9.264777] (diffdrivec) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/turtle/sebot/code/ros2_ws/build/diffdrivec', '--', '-j16', '-l16'], 'cwd': '/home/turtle/sebot/code/ros2_ws/build/diffdrivec', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:'), ('USER', 'turtle'), ('LC_TIME', 'fi_FI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib:/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/turtle'), ('CYCLONEDDS_URI', '/home/turtle/cyclone-husarnet.xml'), ('OLDPWD', '/home/turtle/sebot/code'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1712'), ('SYSTEMD_EXEC_PID', '2006'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '121490'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/turtle/ros2_ws/install:/home/turtle/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'turtle'), ('JOURNAL_STREAM', '8:22452'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'turtle'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939'), ('INVOCATION_ID', 'ba71e16a6f47455ebfba3109c1e93931'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.31IM62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/turtle/sebot/code/ros2_ws/build/diffdrivec'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble')]), 'shell': False}
+[9.338624] (-) TimerEvent: {}
+[9.376876] (diffdrivec) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/encoder.dir/src/encoder.cpp.o\x1b[0m\n'}
+[9.377080] (diffdrivec) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/cmd_vel_node.dir/src/cmd_vel.cpp.o\x1b[0m\n'}
+[9.439132] (-) TimerEvent: {}
+[9.539622] (-) TimerEvent: {}
+[9.640301] (-) TimerEvent: {}
+[9.678783] (diffdrivec) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX static library libencoder.a\x1b[0m\n'}
+[9.740566] (-) TimerEvent: {}
+[9.752080] (diffdrivec) StdoutLine: {'line': b'[ 50%] Built target encoder\n'}
+[9.801639] (diffdrivec) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/odom_node.dir/src/odom.cpp.o\x1b[0m\n'}
+[9.840827] (-) TimerEvent: {}
+[9.941316] (-) TimerEvent: {}
+[10.041837] (-) TimerEvent: {}
+[10.142315] (-) TimerEvent: {}
+[10.243124] (-) TimerEvent: {}
+[10.343784] (-) TimerEvent: {}
+[10.444248] (-) TimerEvent: {}
+[10.544866] (-) TimerEvent: {}
+[10.645302] (-) TimerEvent: {}
+[10.745978] (-) TimerEvent: {}
+[10.846550] (-) TimerEvent: {}
+[10.946988] (-) TimerEvent: {}
+[11.047567] (-) TimerEvent: {}
+[11.148390] (-) TimerEvent: {}
+[11.249046] (-) TimerEvent: {}
+[11.349803] (-) TimerEvent: {}
+[11.450325] (-) TimerEvent: {}
+[11.550846] (-) TimerEvent: {}
+[11.651293] (-) TimerEvent: {}
+[11.751949] (-) TimerEvent: {}
+[11.852560] (-) TimerEvent: {}
+[11.953004] (-) TimerEvent: {}
+[12.053477] (-) TimerEvent: {}
+[12.153964] (-) TimerEvent: {}
+[12.254499] (-) TimerEvent: {}
+[12.355010] (-) TimerEvent: {}
+[12.455494] (-) TimerEvent: {}
+[12.555964] (-) TimerEvent: {}
+[12.656490] (-) TimerEvent: {}
+[12.756954] (-) TimerEvent: {}
+[12.857486] (-) TimerEvent: {}
+[12.958127] (-) TimerEvent: {}
+[13.058856] (-) TimerEvent: {}
+[13.159902] (-) TimerEvent: {}
+[13.260594] (-) TimerEvent: {}
+[13.361109] (-) TimerEvent: {}
+[13.461618] (-) TimerEvent: {}
+[13.562115] (-) TimerEvent: {}
+[13.662738] (-) TimerEvent: {}
+[13.763396] (-) TimerEvent: {}
+[13.863998] (-) TimerEvent: {}
+[13.964650] (-) TimerEvent: {}
+[14.065150] (-) TimerEvent: {}
+[14.165745] (-) TimerEvent: {}
+[14.266258] (-) TimerEvent: {}
+[14.366960] (-) TimerEvent: {}
+[14.467515] (-) TimerEvent: {}
+[14.567989] (-) TimerEvent: {}
+[14.668529] (-) TimerEvent: {}
+[14.769119] (-) TimerEvent: {}
+[14.869668] (-) TimerEvent: {}
+[14.970210] (-) TimerEvent: {}
+[15.070729] (-) TimerEvent: {}
+[15.171311] (-) TimerEvent: {}
+[15.271995] (-) TimerEvent: {}
+[15.373133] (-) TimerEvent: {}
+[15.473722] (-) TimerEvent: {}
+[15.574292] (-) TimerEvent: {}
+[15.674834] (-) TimerEvent: {}
+[15.775421] (-) TimerEvent: {}
+[15.875898] (-) TimerEvent: {}
+[15.976511] (-) TimerEvent: {}
+[16.077045] (-) TimerEvent: {}
+[16.177533] (-) TimerEvent: {}
+[16.278081] (-) TimerEvent: {}
+[16.378599] (-) TimerEvent: {}
+[16.479124] (-) TimerEvent: {}
+[16.579585] (-) TimerEvent: {}
+[16.680129] (-) TimerEvent: {}
+[16.780671] (-) TimerEvent: {}
+[16.881200] (-) TimerEvent: {}
+[16.981763] (-) TimerEvent: {}
+[17.082229] (-) TimerEvent: {}
+[17.182779] (-) TimerEvent: {}
+[17.283244] (-) TimerEvent: {}
+[17.383921] (-) TimerEvent: {}
+[17.484438] (-) TimerEvent: {}
+[17.585908] (-) TimerEvent: {}
+[17.686508] (-) TimerEvent: {}
+[17.786972] (-) TimerEvent: {}
+[17.887481] (-) TimerEvent: {}
+[17.987933] (-) TimerEvent: {}
+[18.088451] (-) TimerEvent: {}
+[18.188906] (-) TimerEvent: {}
+[18.289452] (-) TimerEvent: {}
+[18.389934] (-) TimerEvent: {}
+[18.490461] (-) TimerEvent: {}
+[18.591164] (-) TimerEvent: {}
+[18.691854] (-) TimerEvent: {}
+[18.792387] (-) TimerEvent: {}
+[18.892876] (-) TimerEvent: {}
+[18.993388] (-) TimerEvent: {}
+[19.094022] (-) TimerEvent: {}
+[19.194538] (-) TimerEvent: {}
+[19.295108] (-) TimerEvent: {}
+[19.395705] (-) TimerEvent: {}
+[19.496298] (-) TimerEvent: {}
+[19.596821] (-) TimerEvent: {}
+[19.697274] (-) TimerEvent: {}
+[19.797800] (-) TimerEvent: {}
+[19.898416] (-) TimerEvent: {}
+[19.998915] (-) TimerEvent: {}
+[20.099520] (-) TimerEvent: {}
+[20.200110] (-) TimerEvent: {}
+[20.300738] (-) TimerEvent: {}
+[20.401233] (-) TimerEvent: {}
+[20.501851] (-) TimerEvent: {}
+[20.602324] (-) TimerEvent: {}
+[20.702917] (-) TimerEvent: {}
+[20.803394] (-) TimerEvent: {}
+[20.903960] (-) TimerEvent: {}
+[21.004466] (-) TimerEvent: {}
+[21.104979] (-) TimerEvent: {}
+[21.205514] (-) TimerEvent: {}
+[21.306014] (-) TimerEvent: {}
+[21.406507] (-) TimerEvent: {}
+[21.507027] (-) TimerEvent: {}
+[21.607540] (-) TimerEvent: {}
+[21.708077] (-) TimerEvent: {}
+[21.808663] (-) TimerEvent: {}
+[21.909243] (-) TimerEvent: {}
+[22.010009] (-) TimerEvent: {}
+[22.110494] (-) TimerEvent: {}
+[22.211056] (-) TimerEvent: {}
+[22.311588] (-) TimerEvent: {}
+[22.412052] (-) TimerEvent: {}
+[22.512564] (-) TimerEvent: {}
+[22.613120] (-) TimerEvent: {}
+[22.713516] (-) TimerEvent: {}
+[22.813967] (-) TimerEvent: {}
+[22.914498] (-) TimerEvent: {}
+[23.014992] (-) TimerEvent: {}
+[23.115472] (-) TimerEvent: {}
+[23.215915] (-) TimerEvent: {}
+[23.316456] (-) TimerEvent: {}
+[23.416953] (-) TimerEvent: {}
+[23.517430] (-) TimerEvent: {}
+[23.617870] (-) TimerEvent: {}
+[23.718697] (-) TimerEvent: {}
+[23.819438] (-) TimerEvent: {}
+[23.919945] (-) TimerEvent: {}
+[24.020522] (-) TimerEvent: {}
+[24.121001] (-) TimerEvent: {}
+[24.221472] (-) TimerEvent: {}
+[24.321954] (-) TimerEvent: {}
+[24.422483] (-) TimerEvent: {}
+[24.522985] (-) TimerEvent: {}
+[24.623460] (-) TimerEvent: {}
+[24.723952] (-) TimerEvent: {}
+[24.824400] (-) TimerEvent: {}
+[24.924926] (-) TimerEvent: {}
+[25.025429] (-) TimerEvent: {}
+[25.125895] (-) TimerEvent: {}
+[25.226485] (-) TimerEvent: {}
+[25.326969] (-) TimerEvent: {}
+[25.427506] (-) TimerEvent: {}
+[25.528022] (-) TimerEvent: {}
+[25.628514] (-) TimerEvent: {}
+[25.728984] (-) TimerEvent: {}
+[25.829470] (-) TimerEvent: {}
+[25.929938] (-) TimerEvent: {}
+[26.030523] (-) TimerEvent: {}
+[26.131082] (-) TimerEvent: {}
+[26.231806] (-) TimerEvent: {}
+[26.332474] (-) TimerEvent: {}
+[26.432901] (-) TimerEvent: {}
+[26.533402] (-) TimerEvent: {}
+[26.633864] (-) TimerEvent: {}
+[26.734435] (-) TimerEvent: {}
+[26.834931] (-) TimerEvent: {}
+[26.935441] (-) TimerEvent: {}
+[27.035932] (-) TimerEvent: {}
+[27.136439] (-) TimerEvent: {}
+[27.236927] (-) TimerEvent: {}
+[27.337496] (-) TimerEvent: {}
+[27.437973] (-) TimerEvent: {}
+[27.538537] (-) TimerEvent: {}
+[27.638990] (-) TimerEvent: {}
+[27.739609] (-) TimerEvent: {}
+[27.840085] (-) TimerEvent: {}
+[27.940829] (-) TimerEvent: {}
+[28.041485] (-) TimerEvent: {}
+[28.142282] (-) TimerEvent: {}
+[28.242856] (-) TimerEvent: {}
+[28.343275] (-) TimerEvent: {}
+[28.435736] (diffdrivec) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable cmd_vel_node\x1b[0m\n'}
+[28.443728] (-) TimerEvent: {}
+[28.544236] (-) TimerEvent: {}
+[28.644743] (-) TimerEvent: {}
+[28.745685] (-) TimerEvent: {}
+[28.846166] (-) TimerEvent: {}
+[28.946754] (-) TimerEvent: {}
+[29.047321] (-) TimerEvent: {}
+[29.148421] (-) TimerEvent: {}
+[29.214928] (diffdrivec) StdoutLine: {'line': b'[ 83%] Built target cmd_vel_node\n'}
+[29.248648] (-) TimerEvent: {}
+[29.349314] (-) TimerEvent: {}
+[29.449991] (-) TimerEvent: {}
+[29.550484] (-) TimerEvent: {}
+[29.650964] (-) TimerEvent: {}
+[29.751463] (-) TimerEvent: {}
+[29.851913] (-) TimerEvent: {}
+[29.952489] (-) TimerEvent: {}
+[30.053079] (-) TimerEvent: {}
+[30.153644] (-) TimerEvent: {}
+[30.254204] (-) TimerEvent: {}
+[30.354795] (-) TimerEvent: {}
+[30.455253] (-) TimerEvent: {}
+[30.555919] (-) TimerEvent: {}
+[30.638502] (diffdrivec) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable odom_node\x1b[0m\n'}
+[30.656387] (-) TimerEvent: {}
+[30.756882] (-) TimerEvent: {}
+[30.857329] (-) TimerEvent: {}
+[30.958070] (-) TimerEvent: {}
+[31.058694] (-) TimerEvent: {}
+[31.159203] (-) TimerEvent: {}
+[31.259843] (-) TimerEvent: {}
+[31.360435] (-) TimerEvent: {}
+[31.434565] (diffdrivec) StdoutLine: {'line': b'[100%] Built target odom_node\n'}
+[31.455041] (diffdrivec) CommandEnded: {'returncode': 0}
+[31.455962] (diffdrivec) JobProgress: {'identifier': 'diffdrivec', 'progress': 'install'}
+[31.458392] (diffdrivec) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/turtle/sebot/code/ros2_ws/build/diffdrivec'], 'cwd': '/home/turtle/sebot/code/ros2_ws/build/diffdrivec', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:'), ('USER', 'turtle'), ('LC_TIME', 'fi_FI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib:/home/turtle/ros2_ws/install/my_robot_interfaces/lib:/home/turtle/ros2_ws/install/motordriver_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/turtle'), ('CYCLONEDDS_URI', '/home/turtle/cyclone-husarnet.xml'), ('OLDPWD', '/home/turtle/sebot/code'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1712'), ('SYSTEMD_EXEC_PID', '2006'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '121490'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/turtle/ros2_ws/install:/home/turtle/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'turtle'), ('JOURNAL_STREAM', '8:22452'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'turtle'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/turtle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/virtubuntu:@/tmp/.ICE-unix/1939,unix/virtubuntu:/tmp/.ICE-unix/1939'), ('INVOCATION_ID', 'ba71e16a6f47455ebfba3109c1e93931'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.31IM62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/install/diffdrive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:64711104-7aba-47ac-9c7e-b33dab5a1906'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/turtle/sebot/code/ros2_ws/build/diffdrivec'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/build/diffdrive:/home/turtle/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/my2_py_pkg/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages:/home/turtle/ros2_ws/install/motordriver/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/diffdrive/lib/python3.10/site-packages:/home/turtle/ros2_ws/install/closed_controller_py/lib/python3.10/site-packages:/home/turtle/install/diffdrive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/my_cpp_pkg:/home/turtle/ros2_ws/install/my_robot_interfaces:/home/turtle/ros2_ws/install/motordriver_msgs:/home/turtle/ros2_ws/install/closed_controller_cpp:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble')]), 'shell': False}
+[31.460612] (-) TimerEvent: {}
+[31.472360] (diffdrivec) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[31.472540] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/lib/diffdrivec/cmd_vel_node\n'}
+[31.483328] (diffdrivec) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/diffdrivec/lib/diffdrivec/cmd_vel_node" to ""\n'}
+[31.483499] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/lib/diffdrivec/libencoder.a\n'}
+[31.483797] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/lib/diffdrivec/odom_node\n'}
+[31.506111] (diffdrivec) StdoutLine: {'line': b'-- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/diffdrivec/lib/diffdrivec/odom_node" to ""\n'}
+[31.506626] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/ament_index/resource_index/package_run_dependencies/diffdrivec\n'}
+[31.507045] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/ament_index/resource_index/parent_prefix_path/diffdrivec\n'}
+[31.507487] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/environment/ament_prefix_path.sh\n'}
+[31.507807] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/environment/ament_prefix_path.dsv\n'}
+[31.508031] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/environment/path.sh\n'}
+[31.508308] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/environment/path.dsv\n'}
+[31.508615] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/local_setup.bash\n'}
+[31.508870] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/local_setup.sh\n'}
+[31.509170] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/local_setup.zsh\n'}
+[31.509457] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/local_setup.dsv\n'}
+[31.509784] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/package.dsv\n'}
+[31.510149] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/ament_index/resource_index/packages/diffdrivec\n'}
+[31.510569] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/cmake/diffdrivecConfig.cmake\n'}
+[31.510807] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/cmake/diffdrivecConfig-version.cmake\n'}
+[31.511098] (diffdrivec) StdoutLine: {'line': b'-- Installing: /home/turtle/sebot/code/ros2_ws/install/diffdrivec/share/diffdrivec/package.xml\n'}
+[31.514662] (diffdrivec) CommandEnded: {'returncode': 0}
+[31.528463] (diffdrivec) JobEnded: {'identifier': 'diffdrivec', 'rc': 0}
+[31.529834] (-) EventReactorShutdown: {}

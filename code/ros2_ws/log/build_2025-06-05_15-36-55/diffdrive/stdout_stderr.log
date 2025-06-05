@@ -1,0 +1,52 @@
+running egg_info
+creating ../../build/diffdrive/diffdrive.egg-info
+writing ../../build/diffdrive/diffdrive.egg-info/PKG-INFO
+writing dependency_links to ../../build/diffdrive/diffdrive.egg-info/dependency_links.txt
+writing entry points to ../../build/diffdrive/diffdrive.egg-info/entry_points.txt
+writing requirements to ../../build/diffdrive/diffdrive.egg-info/requires.txt
+writing top-level names to ../../build/diffdrive/diffdrive.egg-info/top_level.txt
+writing manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'
+reading manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'
+writing manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/turtle/sebot/code/ros2_ws/build/diffdrive/build
+creating /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib
+creating /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive
+copying diffdrive/odom.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive
+copying diffdrive/cmd_vel.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive
+copying diffdrive/encoder.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive
+copying diffdrive/__init__.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive
+copying diffdrive/testi.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive
+copying diffdrive/pi_led.py -> /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive
+running install
+running install_lib
+creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive
+copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/odom.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive
+copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/cmd_vel.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive
+copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/encoder.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive
+copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/__init__.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive
+copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/testi.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive
+copying /home/turtle/sebot/code/ros2_ws/build/diffdrive/build/lib/diffdrive/pi_led.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive
+byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/odom.py to odom.cpython-310.pyc
+byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/cmd_vel.py to cmd_vel.cpython-310.pyc
+byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/encoder.py to encoder.cpython-310.pyc
+byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/testi.py to testi.cpython-310.pyc
+byte-compiling /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive/pi_led.py to pi_led.cpython-310.pyc
+running install_data
+creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index
+creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index
+creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index/packages
+copying resource/diffdrive -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index/packages
+copying package.xml -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive
+creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch
+copying launch/diffdrive_battery.launch.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch
+copying launch/diffdrive.launch.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch
+running install_egg_info
+Copying ../../build/diffdrive/diffdrive.egg-info to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive-0.0.0-py3.10.egg-info
+running install_scripts
+Installing cmd_vel script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+Installing odom script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+Installing pi_led script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+writing list of installed files to '/home/turtle/sebot/code/ros2_ws/build/diffdrive/install.log'

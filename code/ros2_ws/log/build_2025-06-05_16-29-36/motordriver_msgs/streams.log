@@ -1,0 +1,218 @@
+[0.022s] Invoking command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake /home/turtle/sebot/code/ros2_ws/src/motordriver_msgs -DCMAKE_INSTALL_PREFIX=/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs
+[0.141s] -- The C compiler identification is GNU 11.4.0
+[0.251s] -- The CXX compiler identification is GNU 11.4.0
+[0.265s] -- Detecting C compiler ABI info
+[0.442s] -- Detecting C compiler ABI info - done
+[0.447s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.447s] -- Detecting C compile features
+[0.448s] -- Detecting C compile features - done
+[0.452s] -- Detecting CXX compiler ABI info
+[0.619s] -- Detecting CXX compiler ABI info - done
+[0.625s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.625s] -- Detecting CXX compile features
+[0.626s] -- Detecting CXX compile features - done
+[0.636s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.899s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.123s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.286s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.298s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.327s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.444s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.829s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[2.145s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.524s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.565s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[2.574s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.617s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[2.617s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.617s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.617s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.654s] -- Found PythonExtra: .so  
+[2.722s] -- Added test 'lint_cmake' to check CMake code style
+[2.725s] -- Added test 'xmllint' to check XML markup files
+[2.733s] -- Configuring done
+[2.799s] -- Generating done
+[2.812s] -- Build files have been written to: /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs
+[2.826s] Invoked command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake /home/turtle/sebot/code/ros2_ws/src/motordriver_msgs -DCMAKE_INSTALL_PREFIX=/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs
+[2.826s] Invoking command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake --build /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs -- -j16 -l16
+[2.914s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_generator_c[0m
+[2.939s] [  2%] Built target motordriver_msgs__cpp
+[2.942s] [ 12%] Built target motordriver_msgs__rosidl_generator_c
+[2.962s] [ 12%] Built target ament_cmake_python_copy_motordriver_msgs
+[2.966s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[2.968s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_introspection_cpp[0m
+[2.971s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_cpp[0m
+[2.992s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_fastrtps_c[0m
+[2.992s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_introspection_c[0m
+[3.003s] [ 23%] Built target motordriver_msgs__rosidl_typesupport_introspection_cpp
+[3.008s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_c[0m
+[3.016s] [ 33%] Built target motordriver_msgs__rosidl_typesupport_cpp
+[3.020s] [ 43%] Built target motordriver_msgs__rosidl_typesupport_fastrtps_cpp
+[3.028s] [ 53%] Built target motordriver_msgs__rosidl_typesupport_introspection_c
+[3.035s] [ 64%] Built target motordriver_msgs__rosidl_typesupport_c
+[3.047s] [ 74%] Built target motordriver_msgs__rosidl_typesupport_fastrtps_c
+[3.098s] [ 74%] Built target motordriver_msgs
+[3.148s] [ 76%] Built target motordriver_msgs__py
+[3.176s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_generator_py[0m
+[3.211s] [ 84%] Built target motordriver_msgs__rosidl_generator_py
+[3.237s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[3.242s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_c__pyext[0m
+[3.249s] [35m[1mConsolidate compiler generated dependencies of target motordriver_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[3.274s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.275s] [ 89%] [32m[1mLinking C shared library rosidl_generator_py/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.284s] [ 92%] [32m[1mLinking C shared library rosidl_generator_py/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.355s] [ 97%] Built target motordriver_msgs__rosidl_typesupport_c__pyext
+[3.355s] [ 97%] Built target motordriver_msgs__rosidl_typesupport_introspection_c__pyext
+[3.371s] [100%] Built target motordriver_msgs__rosidl_typesupport_fastrtps_c__pyext
+[3.387s] running egg_info
+[3.387s] writing motordriver_msgs.egg-info/PKG-INFO
+[3.387s] writing dependency_links to motordriver_msgs.egg-info/dependency_links.txt
+[3.388s] writing top-level names to motordriver_msgs.egg-info/top_level.txt
+[3.390s] reading manifest file 'motordriver_msgs.egg-info/SOURCES.txt'
+[3.391s] writing manifest file 'motordriver_msgs.egg-info/SOURCES.txt'
+[3.422s] [100%] Built target ament_cmake_python_build_motordriver_msgs_egg
+[3.445s] Invoked command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake --build /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs -- -j16 -l16
+[3.467s] Invoking command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake --install /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs
+[3.483s] -- Install configuration: ""
+[3.483s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/rosidl_interfaces/motordriver_msgs
+[3.483s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs
+[3.483s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg
+[3.484s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message.h
+[3.484s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_generator_c__visibility_control.h
+[3.484s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail
+[3.484s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__struct.h
+[3.484s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__functions.h
+[3.484s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__struct.h
+[3.485s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.h
+[3.485s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.h
+[3.485s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__functions.c
+[3.485s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__functions.c
+[3.485s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__functions.h
+[3.485s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message_battery.h
+[3.486s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/library_path.sh
+[3.486s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/library_path.dsv
+[3.486s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_generator_c.so
+[3.486s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs
+[3.487s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg
+[3.487s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.487s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail
+[3.487s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_fastrtps_c.h
+[3.488s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_fastrtps_c.h
+[3.488s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_fastrtps_c.so
+[3.489s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs
+[3.489s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg
+[3.489s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail
+[3.490s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.c
+[3.490s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_introspection_c.h
+[3.490s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_introspection_c.h
+[3.490s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.c
+[3.490s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.491s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_introspection_c.so
+[3.492s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_c.so
+[3.493s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs
+[3.494s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg
+[3.494s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message_battery.hpp
+[3.494s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail
+[3.494s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__struct.hpp
+[3.495s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.hpp
+[3.495s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.hpp
+[3.495s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__struct.hpp
+[3.495s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__builder.hpp
+[3.495s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__traits.hpp
+[3.495s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__traits.hpp
+[3.495s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__builder.hpp
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/motordriver_message.hpp
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/dds_fastrtps
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_fastrtps_cpp.hpp
+[3.496s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_fastrtps_cpp.hpp
+[3.497s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.497s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_fastrtps_cpp.so
+[3.497s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs
+[3.497s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg
+[3.498s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail
+[3.498s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__type_support.cpp
+[3.498s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__type_support.cpp
+[3.498s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message_battery__rosidl_typesupport_introspection_cpp.hpp
+[3.498s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/include/motordriver_msgs/motordriver_msgs/msg/detail/motordriver_message__rosidl_typesupport_introspection_cpp.hpp
+[3.499s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_introspection_cpp.so
+[3.500s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_typesupport_cpp.so
+[3.501s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/pythonpath.sh
+[3.501s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/pythonpath.dsv
+[3.502s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info
+[3.502s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[3.502s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[3.503s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[3.503s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[3.503s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs
+[3.503s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.504s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.504s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.504s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg
+[3.505s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message.py
+[3.505s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message_battery.py
+[3.505s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message_battery_s.c
+[3.505s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/__init__.py
+[3.505s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg/_motordriver_message_s.c
+[3.505s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/libmotordriver_msgs__rosidl_generator_py.so
+[3.506s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[3.506s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/__init__.py
+[3.506s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.506s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/_motordriver_msgs_s.ep.rosidl_typesupport_c.c
+[3.564s] Listing '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs'...
+[3.564s] Compiling '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/__init__.py'...
+[3.564s] Listing '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/msg'...
+[3.569s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.571s] -- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.572s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.574s] -- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.575s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.577s] -- Set runtime path of "/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/local/lib/python3.10/dist-packages/motordriver_msgs/motordriver_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[3.578s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/libmotordriver_msgs__rosidl_generator_py.so
+[3.579s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessage.idl
+[3.579s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessageBattery.idl
+[3.579s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessage.msg
+[3.580s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/msg/MotordriverMessageBattery.msg
+[3.580s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/package_run_dependencies/motordriver_msgs
+[3.580s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/parent_prefix_path/motordriver_msgs
+[3.580s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/ament_prefix_path.sh
+[3.580s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/ament_prefix_path.dsv
+[3.581s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/path.sh
+[3.581s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/environment/path.dsv
+[3.581s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.bash
+[3.581s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.sh
+[3.582s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.zsh
+[3.582s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/local_setup.dsv
+[3.582s] -- Installing: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.dsv
+[3.582s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/ament_index/resource_index/packages/motordriver_msgs
+[3.582s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_cExport.cmake
+[3.582s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_cExport-noconfig.cmake
+[3.583s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[3.583s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.583s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cExport.cmake
+[3.583s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.583s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cExport.cmake
+[3.584s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[3.584s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_cppExport.cmake
+[3.584s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.584s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.585s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[3.585s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.585s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cppExport.cmake
+[3.585s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[3.585s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_pyExport.cmake
+[3.585s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/export_motordriver_msgs__rosidl_generator_pyExport-noconfig.cmake
+[3.586s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/rosidl_cmake-extras.cmake
+[3.586s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.586s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[3.587s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[3.587s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.587s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.587s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.587s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgsConfig.cmake
+[3.587s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/cmake/motordriver_msgsConfig-version.cmake
+[3.587s] -- Up-to-date: /home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.xml
+[3.590s] Invoked command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake --install /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs

@@ -1,0 +1,267 @@
+[0.141s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.141s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x71a2ede74d90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x71a2ede74820>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x71a2ede74820>>, mixin_verb=('build',))
+[0.372s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.372s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.373s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.373s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.373s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.373s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.373s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/turtle/sebot/code/ros2_ws'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ignore', 'ignore_ament_install']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore_ament_install'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_pkg']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_pkg'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_meta']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_meta'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ros']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ros'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['cmake', 'python']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'cmake'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['python_setup_py']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python_setup_py'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extensions ['ignore', 'ignore_ament_install']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extension 'ignore'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extension 'ignore_ament_install'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extensions ['colcon_pkg']
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extension 'colcon_pkg'
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extensions ['colcon_meta']
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extension 'colcon_meta'
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extensions ['ros']
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery) by extension 'ros'
+[0.391s] DEBUG:colcon.colcon_core.package_identification:Package 'src/battery' with type 'ros.ament_python' and name 'battery'
+[0.391s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extensions ['ignore', 'ignore_ament_install']
+[0.391s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extension 'ignore'
+[0.391s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extension 'ignore_ament_install'
+[0.392s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extensions ['colcon_pkg']
+[0.392s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extension 'colcon_pkg'
+[0.392s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extensions ['colcon_meta']
+[0.392s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extension 'colcon_meta'
+[0.392s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extensions ['ros']
+[0.392s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrive) by extension 'ros'
+[0.392s] DEBUG:colcon.colcon_core.package_identification:Package 'src/diffdrive' with type 'ros.ament_python' and name 'diffdrive'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extensions ['ignore', 'ignore_ament_install']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extension 'ignore'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extension 'ignore_ament_install'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extensions ['colcon_pkg']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extension 'colcon_pkg'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extensions ['colcon_meta']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extension 'colcon_meta'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extensions ['ros']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(src/diffdrivec) by extension 'ros'
+[0.394s] DEBUG:colcon.colcon_core.package_identification:Package 'src/diffdrivec' with type 'ros.ament_cmake' and name 'diffdrivec'
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extensions ['ignore', 'ignore_ament_install']
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extension 'ignore'
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extension 'ignore_ament_install'
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extensions ['colcon_pkg']
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extension 'colcon_pkg'
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extensions ['colcon_meta']
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extension 'colcon_meta'
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extensions ['ros']
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver) by extension 'ros'
+[0.395s] DEBUG:colcon.colcon_core.package_identification:Package 'src/motordriver' with type 'ros.ament_python' and name 'motordriver'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extension 'ignore'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extension 'ignore_ament_install'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extensions ['colcon_pkg']
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extension 'colcon_pkg'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extensions ['colcon_meta']
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extension 'colcon_meta'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extensions ['ros']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(src/motordriver_msgs) by extension 'ros'
+[0.396s] DEBUG:colcon.colcon_core.package_identification:Package 'src/motordriver_msgs' with type 'ros.ament_cmake' and name 'motordriver_msgs'
+[0.396s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.396s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.396s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.396s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.396s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.427s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.427s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.431s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/turtle/sebot/code/ros2_ws/install
+[0.432s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/turtle/ros2_ws/install
+[0.433s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/turtle/install
+[0.438s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 407 installed packages in /opt/ros/humble
+[0.440s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_args' from command line to 'None'
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_target' from command line to 'None'
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_clean_cache' from command line to 'False'
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_clean_first' from command line to 'False'
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_force_configure' from command line to 'False'
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'ament_cmake_args' from command line to 'None'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'catkin_cmake_args' from command line to 'None'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.507s] DEBUG:colcon.colcon_core.verb:Building package 'battery' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/turtle/sebot/code/ros2_ws/build/battery', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/turtle/sebot/code/ros2_ws/install/battery', 'merge_install': False, 'path': '/home/turtle/sebot/code/ros2_ws/src/battery', 'symlink_install': True, 'test_result_base': None}
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'cmake_args' from command line to 'None'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'cmake_target' from command line to 'None'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'cmake_clean_cache' from command line to 'False'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'cmake_clean_first' from command line to 'False'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'cmake_force_configure' from command line to 'False'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'ament_cmake_args' from command line to 'None'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'catkin_cmake_args' from command line to 'None'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'diffdrive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.507s] DEBUG:colcon.colcon_core.verb:Building package 'diffdrive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/turtle/sebot/code/ros2_ws/build/diffdrive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/turtle/sebot/code/ros2_ws/install/diffdrive', 'merge_install': False, 'path': '/home/turtle/sebot/code/ros2_ws/src/diffdrive', 'symlink_install': True, 'test_result_base': None}
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'cmake_args' from command line to 'None'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'cmake_target' from command line to 'None'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'cmake_clean_first' from command line to 'False'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'cmake_force_configure' from command line to 'False'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'ament_cmake_args' from command line to 'None'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.508s] DEBUG:colcon.colcon_core.verb:Building package 'motordriver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/turtle/sebot/code/ros2_ws/build/motordriver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/turtle/sebot/code/ros2_ws/install/motordriver', 'merge_install': False, 'path': '/home/turtle/sebot/code/ros2_ws/src/motordriver', 'symlink_install': True, 'test_result_base': None}
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'cmake_args' from command line to 'None'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'cmake_target' from command line to 'None'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.508s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'motordriver_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.509s] DEBUG:colcon.colcon_core.verb:Building package 'motordriver_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs', 'merge_install': False, 'path': '/home/turtle/sebot/code/ros2_ws/src/motordriver_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'cmake_args' from command line to 'None'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'cmake_target' from command line to 'None'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'cmake_clean_cache' from command line to 'False'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'cmake_clean_first' from command line to 'False'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'cmake_force_configure' from command line to 'False'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'ament_cmake_args' from command line to 'None'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'catkin_cmake_args' from command line to 'None'
+[0.509s] Level 5:colcon.colcon_core.verb:set package 'diffdrivec' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.509s] DEBUG:colcon.colcon_core.verb:Building package 'diffdrivec' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/turtle/sebot/code/ros2_ws/build/diffdrivec', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/turtle/sebot/code/ros2_ws/install/diffdrivec', 'merge_install': False, 'path': '/home/turtle/sebot/code/ros2_ws/src/diffdrivec', 'symlink_install': True, 'test_result_base': None}
+[0.510s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.511s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.512s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/turtle/sebot/code/ros2_ws/src/motordriver_msgs' with build type 'ament_cmake'
+[0.512s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/turtle/sebot/code/ros2_ws/src/motordriver_msgs'
+[0.515s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.516s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.516s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.527s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/turtle/sebot/code/ros2_ws/src/battery' with build type 'ament_python'
+[0.527s] Level 1:colcon.colcon_core.shell:create_environment_hook('battery', 'ament_prefix_path')
+[0.527s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/battery/share/battery/hook/ament_prefix_path.ps1'
+[0.528s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/turtle/sebot/code/ros2_ws/install/battery/share/battery/hook/ament_prefix_path.dsv'
+[0.529s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/battery/share/battery/hook/ament_prefix_path.sh'
+[0.530s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.530s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.542s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/turtle/sebot/code/ros2_ws/src/diffdrive' with build type 'ament_python'
+[0.542s] Level 1:colcon.colcon_core.shell:create_environment_hook('diffdrive', 'ament_prefix_path')
+[0.542s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/hook/ament_prefix_path.ps1'
+[0.543s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/hook/ament_prefix_path.dsv'
+[0.544s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/hook/ament_prefix_path.sh'
+[0.545s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.545s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.556s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/turtle/sebot/code/ros2_ws/src/motordriver' with build type 'ament_python'
+[0.556s] Level 1:colcon.colcon_core.shell:create_environment_hook('motordriver', 'ament_prefix_path')
+[0.556s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/motordriver/share/motordriver/hook/ament_prefix_path.ps1'
+[0.557s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/turtle/sebot/code/ros2_ws/install/motordriver/share/motordriver/hook/ament_prefix_path.dsv'
+[0.558s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/motordriver/share/motordriver/hook/ament_prefix_path.sh'
+[0.559s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.559s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.579s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake /home/turtle/sebot/code/ros2_ws/src/motordriver_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs
+[0.962s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/turtle/sebot/code/ros2_ws/src/battery'
+[0.962s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.962s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.347s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/turtle/sebot/code/ros2_ws/src/diffdrive'
+[1.347s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.347s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.751s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/turtle/sebot/code/ros2_ws/src/motordriver'
+[1.752s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.752s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.255s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake /home/turtle/sebot/code/ros2_ws/src/motordriver_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs
+[2.258s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake --build /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs -- -j16 -l16
+[2.304s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/battery/share/ament_index/resource_index/packages/battery
+[2.304s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/battery/share/battery/package.xml
+[2.304s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/battery/lib/battery/battery_alert
+[2.305s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/battery/lib/battery/battery_republish
+[2.311s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/turtle/sebot/code/ros2_ws/build/battery': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/battery/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/battery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/turtle/sebot/code/ros2_ws/build/battery/build --no-deps symlink_data --force
+[2.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index/packages/diffdrive
+[2.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/package.xml
+[2.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch/diffdrive_battery.launch.py
+[2.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch/diffdrive.launch.py
+[2.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive/cmd_vel
+[2.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive/odom
+[2.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive/pi_led
+[2.333s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/turtle/sebot/code/ros2_ws/build/diffdrive': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/diffdrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/turtle/sebot/code/ros2_ws/build/diffdrive/build --no-deps symlink_data --force
+[2.343s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/turtle/sebot/code/ros2_ws/build/motordriver': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/motordriver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/turtle/sebot/code/ros2_ws/build/motordriver/build --no-deps symlink_data
+[2.394s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/turtle/sebot/code/ros2_ws/build/motordriver_msgs' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/turtle/sebot/code/ros2_ws/install/motordriver:/home/turtle/sebot/code/ros2_ws/install/diffdrive:/home/turtle/sebot/code/ros2_ws/install/battery:/home/turtle/ros2_ws/install/my_py_pkg:/home/turtle/ros2_ws/install/my2_py_pkg:/home/turtle/ros2_ws/install/motordriver:/home/turtle/ros2_ws/install/diffdrive:/home/turtle/ros2_ws/install/closed_controller_py:/home/turtle/install/diffdrive:/opt/ros/humble /usr/bin/cmake --build /home/turtle/sebot/code/ros2_ws/build/motordriver_msgs -- -j16 -l16
+[2.395s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(motordriver_msgs)
+[2.399s] Level 1:colcon.colcon_core.environment:checking '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs' for CMake module files
+[2.400s] Level 1:colcon.colcon_core.environment:checking '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs' for CMake config files
+[2.401s] Level 1:colcon.colcon_core.shell:create_environment_hook('motordriver_msgs', 'cmake_prefix_path')
+[2.401s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/hook/cmake_prefix_path.ps1'
+[2.402s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/hook/cmake_prefix_path.dsv'
+[2.403s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/hook/cmake_prefix_path.sh'
+[2.404s] Level 1:colcon.colcon_core.environment:checking '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib'
+[2.404s] Level 1:colcon.colcon_core.shell:create_environment_hook('motordriver_msgs', 'ld_library_path_lib')
+[2.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/hook/ld_library_path_lib.ps1'
+[2.405s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/hook/ld_library_path_lib.dsv'
+[2.405s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/hook/ld_library_path_lib.sh'
+[2.406s] Level 1:colcon.colcon_core.environment:checking '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/bin'
+[2.406s] Level 1:colcon.colcon_core.environment:checking '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/pkgconfig/motordriver_msgs.pc'
+[2.406s] Level 1:colcon.colcon_core.environment:checking '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/lib/python3.10/site-packages'
+[2.406s] Level 1:colcon.colcon_core.environment:checking '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/bin'
+[2.407s] INFO:colcon.colcon_core.shell:Creating package script '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.ps1'
+[2.407s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.dsv'
+[2.408s] INFO:colcon.colcon_core.shell:Creating package script '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.sh'
+[2.409s] INFO:colcon.colcon_core.shell:Creating package script '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.bash'
+[2.410s] INFO:colcon.colcon_core.shell:Creating package script '/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/motordriver_msgs/package.zsh'
+[2.411s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/turtle/sebot/code/ros2_ws/install/motordriver_msgs/share/colcon-core/packages/motordriver_msgs)
+[3.049s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.049s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.049s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[3.049s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.059s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.059s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.059s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.079s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.080s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/turtle/sebot/code/ros2_ws/install/local_setup.ps1'
+[3.081s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/turtle/sebot/code/ros2_ws/install/_local_setup_util_ps1.py'
+[3.082s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/turtle/sebot/code/ros2_ws/install/setup.ps1'
+[3.085s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/turtle/sebot/code/ros2_ws/install/local_setup.sh'
+[3.086s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/turtle/sebot/code/ros2_ws/install/_local_setup_util_sh.py'
+[3.087s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/turtle/sebot/code/ros2_ws/install/setup.sh'
+[3.090s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/turtle/sebot/code/ros2_ws/install/local_setup.bash'
+[3.091s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/turtle/sebot/code/ros2_ws/install/setup.bash'
+[3.094s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/turtle/sebot/code/ros2_ws/install/local_setup.zsh'
+[3.095s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/turtle/sebot/code/ros2_ws/install/setup.zsh'

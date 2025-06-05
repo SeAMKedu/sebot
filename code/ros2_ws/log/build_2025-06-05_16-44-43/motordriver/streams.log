@@ -1,0 +1,22 @@
+[1.765s] Invoking command in '/home/turtle/sebot/code/ros2_ws/src/motordriver': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/motordriver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/motordriver build --build-base /home/turtle/sebot/code/ros2_ws/build/motordriver/build install --record /home/turtle/sebot/code/ros2_ws/build/motordriver/install.log --single-version-externally-managed install_data
+[2.148s] running egg_info
+[2.149s] writing ../../build/motordriver/motordriver.egg-info/PKG-INFO
+[2.149s] writing dependency_links to ../../build/motordriver/motordriver.egg-info/dependency_links.txt
+[2.150s] writing entry points to ../../build/motordriver/motordriver.egg-info/entry_points.txt
+[2.150s] writing requirements to ../../build/motordriver/motordriver.egg-info/requires.txt
+[2.151s] writing top-level names to ../../build/motordriver/motordriver.egg-info/top_level.txt
+[2.152s] reading manifest file '../../build/motordriver/motordriver.egg-info/SOURCES.txt'
+[2.153s] writing manifest file '../../build/motordriver/motordriver.egg-info/SOURCES.txt'
+[2.154s] running build
+[2.155s] running build_py
+[2.156s] running install
+[2.156s] running install_lib
+[2.157s] running install_data
+[2.158s] running install_egg_info
+[2.163s] removing '/home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver-0.0.0-py3.10.egg-info' (and everything under it)
+[2.163s] Copying ../../build/motordriver/motordriver.egg-info to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver-0.0.0-py3.10.egg-info
+[2.164s] running install_scripts
+[2.188s] Installing motordriver script to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/motordriver
+[2.188s] Installing motordriver_battery script to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/motordriver
+[2.189s] writing list of installed files to '/home/turtle/sebot/code/ros2_ws/build/motordriver/install.log'
+[2.210s] Invoked command in '/home/turtle/sebot/code/ros2_ws/src/motordriver' returned '0': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/motordriver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/motordriver build --build-base /home/turtle/sebot/code/ros2_ws/build/motordriver/build install --record /home/turtle/sebot/code/ros2_ws/build/motordriver/install.log --single-version-externally-managed install_data

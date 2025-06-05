@@ -1,0 +1,21 @@
+running develop
+running egg_info
+writing diffdrive.egg-info/PKG-INFO
+writing dependency_links to diffdrive.egg-info/dependency_links.txt
+writing entry points to diffdrive.egg-info/entry_points.txt
+writing requirements to diffdrive.egg-info/requires.txt
+writing top-level names to diffdrive.egg-info/top_level.txt
+reading manifest file 'diffdrive.egg-info/SOURCES.txt'
+writing manifest file 'diffdrive.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive.egg-link (link to .)
+Installing cmd_vel script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+Installing odom script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+Installing pi_led script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+
+Installed /home/turtle/sebot/code/ros2_ws/build/diffdrive
+running symlink_data
+symbolically linking /home/turtle/sebot/code/ros2_ws/build/diffdrive/resource/diffdrive -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/ament_index/resource_index/packages
+symbolically linking /home/turtle/sebot/code/ros2_ws/build/diffdrive/package.xml -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive
+symbolically linking /home/turtle/sebot/code/ros2_ws/build/diffdrive/launch/diffdrive_battery.launch.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch
+symbolically linking /home/turtle/sebot/code/ros2_ws/build/diffdrive/launch/diffdrive.launch.py -> /home/turtle/sebot/code/ros2_ws/install/diffdrive/share/diffdrive/launch

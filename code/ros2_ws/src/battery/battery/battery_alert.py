@@ -4,7 +4,7 @@ from std_msgs.msg import String
 import time
 from std_msgs.msg import Bool, Float32
 
-import lgpio
+#import lgpio
 
 class BatteryAlert(Node):
     def __init__(self):
@@ -21,9 +21,9 @@ class BatteryAlert(Node):
 
         # Julkaistaan yhden kerran oletuksena /battery_alertissa False, jotta siellä näkyy varmasti jotain.
         battery_alert_msg = Bool()
-        battery_alert_msg.data = previous_alert_state
+        battery_alert_msg.data = self.previous_alert_state
         self.pub.publish(battery_alert_msg)
-                
+        """
         # Määritellään GPIO nasta hälytys-LEDille
         self.LED_PIN = 18
         # Valitaan GPIO-siru (vakio Raspberry Pille)
@@ -32,13 +32,15 @@ class BatteryAlert(Node):
         lgpio.gpio_claim_output(self.chip, self.LED_PIN)
         # Alustetaan LED_PIN alas (nollaksi)
         lgpio.gpio_write(self.chip, self.LED_PIN, 0)
-
+        """
     # Tämä callback kutsutaan kun /battery_alert topiciin tulee viestejä.
     def alert_callback(self, msg):
         if msg.data == True:
-            lgpio.gpio_write(self.chip, self.LED_PIN, 1)  
+            pass
+            #lgpio.gpio_write(self.chip, self.LED_PIN, 1)  
         else:
-            lgpio.gpio_write(self.chip, self.LED_PIN, 0)  
+            pass
+            #lgpio.gpio_write(self.chip, self.LED_PIN, 0)  
 
     def voltage_callback(self, msg):
         if msg.data < self.threshold:
@@ -46,11 +48,11 @@ class BatteryAlert(Node):
         else:
             alert_state = False
         
-        if previous_alert_state != alert_state: # Julkaistaan /battery_alert tieto vain jos se on muuttunut edellisestä.
+        if self.previous_alert_state != alert_state: # Julkaistaan /battery_alert tieto vain jos se on muuttunut edellisestä.
             battery_alert_msg = Bool()
             battery_alert_msg.data = alert_state
             self.pub.publish(battery_alert_msg)
-            previous_alert_state = alert_state
+            self.previous_alert_state = alert_state
 
 def main(args=None):
   rclpy.init(args=args)
@@ -63,8 +65,8 @@ def main(args=None):
 
   finally:
       batteryalert_node.destroy_node()
-      lgpio.gpio_write(batteryalert_node.chip, batteryalert_node.LED_PIN, 0)
-      lgpio.gpiochip_close(batteryalert_node.chip)
+      #lgpio.gpio_write(batteryalert_node.chip, batteryalert_node.LED_PIN, 0)
+      #lgpio.gpiochip_close(batteryalert_node.chip)
       if rclpy.ok():
           rclpy.shutdown()
 

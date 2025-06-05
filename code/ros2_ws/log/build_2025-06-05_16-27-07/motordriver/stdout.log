@@ -1,0 +1,16 @@
+running develop
+running egg_info
+writing motordriver.egg-info/PKG-INFO
+writing dependency_links to motordriver.egg-info/dependency_links.txt
+writing entry points to motordriver.egg-info/entry_points.txt
+writing requirements to motordriver.egg-info/requires.txt
+writing top-level names to motordriver.egg-info/top_level.txt
+reading manifest file 'motordriver.egg-info/SOURCES.txt'
+writing manifest file 'motordriver.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/python3.10/site-packages/motordriver.egg-link (link to .)
+Installing motordriver script to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/motordriver
+Installing motordriver_battery script to /home/turtle/sebot/code/ros2_ws/install/motordriver/lib/motordriver
+
+Installed /home/turtle/sebot/code/ros2_ws/build/motordriver
+running symlink_data

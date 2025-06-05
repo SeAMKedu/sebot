@@ -1,0 +1,26 @@
+[1.823s] Invoking command in '/home/turtle/sebot/code/ros2_ws/src/battery': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/battery/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/battery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/battery build --build-base /home/turtle/sebot/code/ros2_ws/build/battery/build install --record /home/turtle/sebot/code/ros2_ws/build/battery/install.log --single-version-externally-managed install_data
+[2.231s] running egg_info
+[2.232s] writing ../../build/battery/battery.egg-info/PKG-INFO
+[2.233s] writing dependency_links to ../../build/battery/battery.egg-info/dependency_links.txt
+[2.233s] writing entry points to ../../build/battery/battery.egg-info/entry_points.txt
+[2.233s] writing requirements to ../../build/battery/battery.egg-info/requires.txt
+[2.234s] writing top-level names to ../../build/battery/battery.egg-info/top_level.txt
+[2.235s] reading manifest file '../../build/battery/battery.egg-info/SOURCES.txt'
+[2.238s] adding license file 'LICENSE'
+[2.239s] writing manifest file '../../build/battery/battery.egg-info/SOURCES.txt'
+[2.239s] running build
+[2.239s] running build_py
+[2.240s] copying battery/battery_republish.py -> /home/turtle/sebot/code/ros2_ws/build/battery/build/lib/battery
+[2.240s] running install
+[2.241s] running install_lib
+[2.241s] copying /home/turtle/sebot/code/ros2_ws/build/battery/build/lib/battery/battery_republish.py -> /home/turtle/sebot/code/ros2_ws/install/battery/lib/python3.10/site-packages/battery
+[2.241s] byte-compiling /home/turtle/sebot/code/ros2_ws/install/battery/lib/python3.10/site-packages/battery/battery_republish.py to battery_republish.cpython-310.pyc
+[2.242s] running install_data
+[2.242s] running install_egg_info
+[2.244s] removing '/home/turtle/sebot/code/ros2_ws/install/battery/lib/python3.10/site-packages/battery-0.0.0-py3.10.egg-info' (and everything under it)
+[2.244s] Copying ../../build/battery/battery.egg-info to /home/turtle/sebot/code/ros2_ws/install/battery/lib/python3.10/site-packages/battery-0.0.0-py3.10.egg-info
+[2.246s] running install_scripts
+[2.274s] Installing battery_alert script to /home/turtle/sebot/code/ros2_ws/install/battery/lib/battery
+[2.274s] Installing battery_republish script to /home/turtle/sebot/code/ros2_ws/install/battery/lib/battery
+[2.275s] writing list of installed files to '/home/turtle/sebot/code/ros2_ws/build/battery/install.log'
+[2.305s] Invoked command in '/home/turtle/sebot/code/ros2_ws/src/battery' returned '0': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/battery/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/battery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/battery build --build-base /home/turtle/sebot/code/ros2_ws/build/battery/build install --record /home/turtle/sebot/code/ros2_ws/build/battery/install.log --single-version-externally-managed install_data

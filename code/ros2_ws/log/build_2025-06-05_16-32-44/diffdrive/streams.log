@@ -1,0 +1,23 @@
+[1.798s] Invoking command in '/home/turtle/sebot/code/ros2_ws/src/diffdrive': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/diffdrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/diffdrive build --build-base /home/turtle/sebot/code/ros2_ws/build/diffdrive/build install --record /home/turtle/sebot/code/ros2_ws/build/diffdrive/install.log --single-version-externally-managed install_data
+[2.176s] running egg_info
+[2.176s] writing ../../build/diffdrive/diffdrive.egg-info/PKG-INFO
+[2.177s] writing dependency_links to ../../build/diffdrive/diffdrive.egg-info/dependency_links.txt
+[2.177s] writing entry points to ../../build/diffdrive/diffdrive.egg-info/entry_points.txt
+[2.178s] writing requirements to ../../build/diffdrive/diffdrive.egg-info/requires.txt
+[2.178s] writing top-level names to ../../build/diffdrive/diffdrive.egg-info/top_level.txt
+[2.180s] reading manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'
+[2.181s] writing manifest file '../../build/diffdrive/diffdrive.egg-info/SOURCES.txt'
+[2.181s] running build
+[2.182s] running build_py
+[2.182s] running install
+[2.182s] running install_lib
+[2.185s] running install_data
+[2.185s] running install_egg_info
+[2.188s] removing '/home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive-0.0.0-py3.10.egg-info' (and everything under it)
+[2.188s] Copying ../../build/diffdrive/diffdrive.egg-info to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages/diffdrive-0.0.0-py3.10.egg-info
+[2.190s] running install_scripts
+[2.218s] Installing cmd_vel script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+[2.218s] Installing odom_battery script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+[2.218s] Installing pi_led script to /home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/diffdrive
+[2.220s] writing list of installed files to '/home/turtle/sebot/code/ros2_ws/build/diffdrive/install.log'
+[2.239s] Invoked command in '/home/turtle/sebot/code/ros2_ws/src/diffdrive' returned '0': PYTHONPATH=/home/turtle/sebot/code/ros2_ws/build/diffdrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/sebot/code/ros2_ws/install/diffdrive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/diffdrive build --build-base /home/turtle/sebot/code/ros2_ws/build/diffdrive/build install --record /home/turtle/sebot/code/ros2_ws/build/diffdrive/install.log --single-version-externally-managed install_data

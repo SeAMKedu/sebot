@@ -1,0 +1,4 @@
+msg/MotordriverMessage.idl
+msg/MotordriverMessage.msg
+msg/MotordriverMessageBattery.idl
+msg/MotordriverMessageBattery.msg
