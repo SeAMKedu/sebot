@@ -85,8 +85,9 @@ float32 battery
 Tämän jälkeen muokataan ``motordriver`` nodea siten, että se huomioi myös tämän lisätyn kentän
 **~/ros2_ws/src/motordriver/motordriver/motordriver.py**
 ```python
-... # luokan MotordriverNode konstruktoriin päivitetään mukaan jännitesimulointi, jos ajetaan simulaatiossa.
-    # jos simulation parametria ei löydy niin oletuksena se on True
+... 
+    # luokan MotordriverNode konstruktoriin päivitetään mukaan jännitesimulointi, jos ajetaan simulaatiossa.
+    # jos simulation parametria ei löydy niin oletuksena se on False
     self.declare_parameter('simulation', False)
     self.simulation = self.get_parameter('simulation').value
     self.get_logger().info(f'Käynnistetään motor_controller simulaatiossa: {self.simulation}')
