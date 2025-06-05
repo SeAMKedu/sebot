@@ -36,7 +36,7 @@ Pyörien välinen ero määrittää robotin kääntymisen ja suuntamuutoksen.
 
 Renkaan säteellä ja renkaiden välisellä etäisyydellä on merkittävä vaikutus differential drive -robotin liikkeeseen ja ohjaukseen. Ne vaikuttavat suoraan robotin liikeradan, nopeuden ja kulmanopeuden laskentaan.
 
-Oheisessa kuvassa havainnollistetaan, miten renkaiden koko ja niiden välinen etäisyys vaikuttavat robotin liikkeeseen, kun toinen rengas liikkuu tietyllä nopeudella ja toinen pysyy paikallaan. Eli esim. ajetaan moottoria 3 s nopeudella 0.1 m/s.
+Oheisessa kuvassa havainnollistetaan, miten renkaiden koko ja niiden välinen etäisyys vaikuttavat robotin liikkeeseen, kun toinen rengas liikkuu tietyllä nopeudella ja toinen pysyy paikallaan. Eli esim. ajetaan moottoria 3 s nopeudella 0,1 m/s.
 
 ![kääntösäde](kuvat/turnradius.png)
 
@@ -160,38 +160,36 @@ Transformaatioiden laskennan ja julkaisun sijainti riippuu robotin järjestelmä
 
 Transformaatiot voidaan toteuttaa suoraan ``odom``-nodessa, jos odometria toimii järjestelmän ainoana sijaintilähteenä. Tämä lähestymistapa on erityisen sopiva yksinkertaisille järjestelmille, joissa ei ole käytössä muita antureita.
 
-Jos kuitenkin käytössä on useita sensoreita, on suositeltavaa käyttää EKF (Extended Kalman Filter) -nodea. EKF yhdistää kaikki saatavilla olevat tiedot, kuten enkooderit, IMU:n, LiDAR:n ja GPS:n, ja tuottaa tarkemman arvion robotin sijainnista ja orientaatiosta. Tämä parantaa paikannustarkkuutta ja kompensoi yksittäisten sensorien mahdollisia virheitä.
+Jos kuitenkin käytössä on useita sensoreita, on suositeltavaa käyttää ROS2:n yleisesti käytettyihin paketteihin kuuluvan ´´robot_localizationin´´ EKF (Extended Kalman Filter) -nodea. EKF yhdistää kaikki saatavilla olevat tiedot, kuten enkooderit, IMU:n, LiDAR:n ja GPS:n, ja tuottaa tarkemman arvion robotin sijainnista ja orientaatiosta. Tämä parantaa paikannustarkkuutta ja kompensoi yksittäisten sensorien mahdollisia virheitä.
 
->**Tilanne IMU:n (Inertial Measurement Unit) kanssa:**
+**Tilanne IMU:n (Inertial Measurement Unit) kanssa:**
 
->IMU tuo tarkempaa dataa robotin todellisesta liikkeestä, mikä auttaa kompensoimaan pyöräluiston aiheuttamaa virhettä.
->
->Kulmanopeus (Yaw-Rate): 
+IMU tuo tarkempaa dataa robotin todellisesta liikkeestä, mikä auttaa kompensoimaan pyöräluiston aiheuttamaa virhettä.
+
+Kulmanopeus (Yaw-Rate): 
 IMU:n gyroskooppi mittaa kulmanopeuksia (esim. kääntymistä z-akselin ympäri).
 Jos toinen pyörä luistaa ja pyöräenkooderit antavat väärää kulmanopeustietoa, IMU voi tunnistaa todellisen kulmanopeuden ja korjata suunta- ja sijaintitiedot.
 Tämä estää vääristymän kertyessä robotin orientaatioon (yaw).
 
->Kiihtyvyys (Linear Acceleration)
+Kiihtyvyys (Linear Acceleration)
 IMU:n kiihtyvyysanturit mittaavat robotin liikkeen kiihtyvyyttä x- ja y-suunnassa.
 Pyöräluiston aikana enkooderien arvioima lineaarinen liike voi olla väärä, mutta IMU voi tunnistaa todellisen kiihtyvyyden ja auttaa arvioimaan todellista nopeutta.
 Tämä vähentää virhettä robotin paikannuksessa.
 
---
 
->**Tilanne LiDAR:n (Light Detection and Ranging) kanssa:**
+**Tilanne LiDAR:n (Light Detection and Ranging) kanssa:**
 
->LiDAR täydentää pyöräenkoodereiden rajoituksia tuottamalla tarkkaa tietoa robotin ympäristöstä.
+LiDAR täydentää pyöräenkoodereiden rajoituksia tuottamalla tarkkaa tietoa robotin ympäristöstä.
 
->Etäisyyksien mittaus: LiDAR kartoittaa ympäristöä mittaamalla etäisyyksiä robotin ympärillä oleviin esteisiin ja rakenteisiin.
+Etäisyyksien mittaus: LiDAR kartoittaa ympäristöä mittaamalla etäisyyksiä robotin ympärillä oleviin esteisiin ja rakenteisiin.
 
->Staattiset viitteet: LiDAR voi tunnistaa pysyviä ympäristön piirteitä, kuten seinät ja huonekalut, joita käytetään robotin sijainnin määrittämiseen suhteessa ympäristöön.
+Staattiset viitteet: LiDAR voi tunnistaa pysyviä ympäristön piirteitä, kuten seinät ja huonekalut, joita käytetään robotin sijainnin määrittämiseen suhteessa ympäristöön.
 
->Driftin korjaaminen
+**Driftin korjaaminen**
 
->LiDAR voi havaita robotin todellisen liikkeen suhteessa ympäristöön ja korjata pyöräenkooderien kertyneen virheen.
+Absoluuttista paikkaa tarjoavia paikannusmenetelmiä (kuten kamera- tai LiDAR-pohjainen SLAM, GNSS-paikannus, UWB-paikannus) hyödyntämällä voidaan havaita robotin todellisen liikkeen suhteessa ympäristöön ja korjata pyöräenkooderien kertyneen virheen. 
 
->Esimerkiksi, jos pyöräenkooderit osoittavat, että robotti on siirtynyt tiettyyn kohtaan, mutta LiDAR:n havainto ympäristöstä kertoo muuta, paikannus voidaan korjata yhdistämällä tiedot.
-
+Esimerkiksi, jos pyöräenkooderit osoittavat, että robotti on siirtynyt tiettyyn kohtaan, mutta LiDAR:n havainto ympäristöstä kertoo muuta, paikannus voidaan korjata yhdistämällä tiedot. ROS2:n tapauksessa yleinen tapa tehdä tällaista korjausta on syöttää eri paikannusmenetelmien tietovirrat ``robot_localization``-paketin EKF-suodattimelle.
 
 Nyt kun enkooderit ovat ainoa sijaintilähteemme, toteutamme transformaatioiden julkaisemisen suoraan ``odom``-nodessa joka on yksinkertainen ja tehokas ratkaisu.
 
@@ -234,19 +232,20 @@ class OdomNode(Node):
     self.get_logger().info(f'Pyörän säde: {self.wheel_radius}')
     self.get_logger().info(f'Pyörien etäisyys: {self.wheel_base}')
     self.get_logger().info(f'Anturin kierros: {self.ticks_per_revolution}')
-    
-    # Otetaan framelle etuliite parametrinä tai jos parametriä ei syötetä, otetaan se namespace-tiedosta.
-    self.declare_parameter('frame_prefix', '')
-    frame_prefix_param = self.get_parameter('frame_prefix').get_parameter_value().string_value
-    if frame_prefix_param:
-        self.frame_prefix = frame_prefix_param
-    else:
-        ns = self.get_namespace().strip('/')
-        self.frame_prefix = f'{ns}_' if ns and ns != '' else ''
 
-    if self.frame_prefix:
-            self.get_logger().info(f'Käytetään frame-etuliitettä: "{self.frame_prefix}"') 
+    ## Otetaan framelle etuliite parametrinä tai jos parametriä ei syötetä, otetaan se namespace-tiedosta.
+    #self.declare_parameter('frame_prefix', '')
+    #frame_prefix_param = self.get_parameter('frame_prefix').get_parameter_value().string_value
+    #if frame_prefix_param:
+    #    self.frame_prefix = frame_prefix_param + '_'
+    #else:
+    #    ns = self.get_namespace().strip('/')
+    #    self.frame_prefix = f'{ns}_' if ns and ns != '' else ''
+
+    #if self.frame_prefix:
+    #        self.get_logger().info(f'Käytetään frame-etuliitettä: "{self.frame_prefix}"') 
     
+
     self.left_encoder = Encoder(self.wheel_radius, self.ticks_per_revolution)
     self.right_encoder = Encoder(self.wheel_radius, self.ticks_per_revolution)
 
@@ -273,12 +272,12 @@ class OdomNode(Node):
 
     self.prev_time = self.get_clock().now().nanoseconds
 
-    timer_period = 0.1 # seconds
+    timer_period = 0.1 # Sekuntia
     self.timer = self.create_timer(timer_period, self.timer_callback)
     self.update = True
 
   def update_encoders_callback(self, message):
-    # tallennetaan messagessa olevat tiedot, jotta niitä voidaan käsitellä timer_callback:ssa
+    # Tallennetaan messagessa olevat tiedot, jotta niitä voidaan käsitellä timer_callback:ssa
     self.left_encoder.update(message.encoder1)
     self.right_encoder.update(-message.encoder2)
     self.update = True
@@ -319,8 +318,10 @@ class OdomNode(Node):
 
     odom_msg = Odometry()
     odom_msg.header.stamp = self.get_clock().now().to_msg()
-    odom_msg.header.frame_id = self.frame_prefix + 'odom' # Lisätään framen nimen eteen namespacen (tai parametrin) mukainen etuliite.
-    odom_msg.child_frame_id = self.frame_prefix + 'base_footprint'
+    #odom_msg.header.frame_id = self.frame_prefix + 'odom' # Lisätään framen nimen eteen namespacen (tai parametrin) mukainen etuliite.
+    #odom_msg.child_frame_id = self.frame_prefix + 'base_footprint'
+    odom_msg.header.frame_id = 'odom'
+    odom_msg.child_frame_id = 'base_footprint'
 
     # pose sisältää kaksi osaa:
     # position (geometry_msgs/Point)
@@ -347,8 +348,10 @@ class OdomNode(Node):
 
     t = TransformStamped()
     t.header.stamp = self.get_clock().now().to_msg()
-    t.header.frame_id = self.frame_prefix + 'odom'
-    t.child_frame_id = self.frame_prefix + 'base_footprint'
+    #t.header.frame_id = self.frame_prefix + 'odom'
+    #t.child_frame_id = self.frame_prefix + 'base_footprint'
+    t.header.frame_id = 'odom'
+    t.child_frame_id = 'base_footprint'
 
     t.transform.translation.x = self.odom_x ##
     t.transform.translation.y = self.odom_y ##
@@ -358,7 +361,7 @@ class OdomNode(Node):
     # vaan osa rotaation akselin ja kulman yhteistä esitystä.
     # w: Quaternionin skaalarikomponentti, joka määrittää, kuinka suuri osa rotaatiosta tulee akselin
     # ympäriltä. Suhteessa muihin quaternion-komponentteihin, tämä määrittää kulman.
-    # TODO: quaternion_from_euler
+
     t.transform.rotation.z = math.sin(self.odom_theta / 2.0) ##
     t.transform.rotation.w = math.cos(self.odom_theta / 2.0) ##
 
@@ -384,29 +387,33 @@ if __name__ == '__main__':
   main()
 ```
 
-Nyt voimme testata ohjelman toimintaa. Suorita seuraavat komennot eri terminaaleissa ja varmista, että kaikki tarvittavat nodet ovat käynnissä. Jos seuraat robottiasi RViz:ssa ja asetat Fixed Frame -asetukseksi ``[SeBot_namespace]/odom``, robotin pitäisi liikkua visualisointinäkymässä odotetusti.
+Nyt voimme testata ohjelman toimintaa. Suorita seuraavat komennot eri terminaaleissa ja varmista, että kaikki tarvittavat nodet ovat käynnissä. Jos seuraat robottiasi RViz:ssa ja asetat Fixed Frame -asetukseksi ``[SeBot_namespace]`` ``/odom``, robotin pitäisi liikkua visualisointinäkymässä odotetusti.
 
 ```bash
 # Käynnistä motordriver node (muista source)
-ros2 run motordriver motordriver [--ros-args -r __ns:/[SeBot_namespace]]
+ros2 run motordriver motordriver 
+#ros2 run motordriver motordriver [--ros-args -r __ns:=/[SeBot_namespace]]
 
 # Testataan odom -nodea
-python3 odom.py [--ros-args -r __ns:/[SeBot_namespace]]
+python3 odom.py
+#python3 odom.py --ros-args -r __ns:=/[SeBot_namespace]
 
 # Tulostetaan mitä /odom -topic näyttää
-ros2 topic echo [/SeBot_namespace]/odom
+ros2 topic echo /odom
+#ros2 topic echo /[SeBot_namespace]/odom
 
 # Aja eteenpäin
-ros2 topic pub [/SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;-100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;-100;'}"
+#ros2 topic pub /[SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;-100;'}"
 
 # Aja taaksepäin
-ros2 topic pub [/SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;-100;100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;-100;100;'}"
 
 # Pyöri paikallaan
-ros2 topic pub [/SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
 
 # Aja ympyrää
-ros2 topic pub [/SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;150;-100;'}"
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;150;-100;'}"
 ```
 
 Kun sekä ``odom`` että ``transformaatio`` toimivat oikein, voit visualisoida nämä RVizissä, jolloin punainen Odometry-nuoli ja robotin malli osoittavat samaan suuntaan ja sijaitsevat kohdakkain.
@@ -433,7 +440,7 @@ Kun julkaiset transformaatioiden ketjun ``odom`` -> ``base_footprint``, se ilmes
 
 ![kääntösäde](kuvat/frames2.png)
 
-Kun siirrytään kohti autonomista ajoa, TF-treehen lisätään myös ``map``-kehys. Tämä muodostaa transformaatioiden ketjun ``map`` -> ``odom`` -> ``base_footprint``, jolloin robotin sijaintia voidaan seurata tarkasti sekä kartalla että paikallisessa koordinaatistossa. Tämä mahdollistaa robotin etenemisen tarkastelun sekä paikallisesti että globaalisti.
+Kun siirrytään kohti autonomista ajoa, TF-treehen lisätään myös ``map``-kehys. Tämä muodostaa transformaatioiden ketjun ``map`` -> ``odom`` -> ``base_footprint``, jolloin robotin sijaintia voidaan seurata tarkasti sekä kartalla että paikallisessa koordinaatistossa. Tämä mahdollistaa robotin etenemisen tarkastelun sekä paikallisesti että globaalisti. Jos tätä harjoitusta tehdään monen SeBotin kanssa samassa ``ROS_DOMAIN_ID``:ssä, on tarpeen luoda hieman keinotekoinen ``map``-kehys. Tästä esitetään mallin tuonnempana ``launch``-tiedoston yhteydessä.
 
 ### Twist
 
@@ -535,41 +542,35 @@ Nyt on aika kokeilla ohjelmaa. Pidä ``motordriver``- ja ``odom``-nodet sekä RV
 python3 cmd_vel.py
 
 # Robotti liikkuu eteenpäin 0.5 m/s:
-ros2 topic pub [/SeBot_namespace]/cmd_vel geometry_msgs/Twist \
-	"{ \
-		linear: {x: 0.5, y: 0.0, z: 0.0}, \
-		angular: {x: 0.0, y: 0.0, z: 0.0} \
-	}"
+ros2 topic pub /cmd_vel geometry_msgs/Twist "{linear: {x: 0.5, y: 0.0, z: 0.0},	angular: {x: 0.0, y: 0.0, z: 0.0}}"
+# Sama huomioiden namespace:
+ros2 topic pub /[SeBot_namespace]/cmd_vel geometry_msgs/Twist "{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+
 
 # Robotti kääntyy vastapäivään paikallaan (kulmanopeus 1 rad/s):
-ros2 topic pub [/SeBot_namespace]/cmd_vel geometry_msgs/Twist \
-	"{ \
-		linear: {x: 0.0, y: 0.0, z: 0.0}, \
-		angular: {x: 0.0, y: 0.0, z: 1.0} \
-	}"
+ros2 topic pub /cmd_vel geometry_msgs/Twist "{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.0}}"
 
 # Robotti liikkuu kaarella myötäpäivään (eteenpäin + käännös):
-ros2 topic pub [/SeBot_namespace]/cmd_vel geometry_msgs/Twist \
-	"{ \
-		linear: {x: 0.3, y: 0.0, z: 0.0}, \
-		angular: {x: 0.0, y: 0.0, z: -0.5} \
-	}"
+ros2 topic pub /cmd_vel geometry_msgs/Twist "{linear: {x: 0.3, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: -0.5}}"
 ```
 ### Lisätehtävä: Teleop_twist_keyboard
-Robotin ajaminen yksittäisillä komentorivikehotteilla on työlästä. Varsinaisesti ideana on toki se, että robotin ohjauskokonaisuus antaa näitä komentoja enemmän tai vähemmän itsenäisesti ("autonominen ajaminen"), mutta tämän harjoituksen puitteissa hyvä väliaskel on ottaa käyttöön jokin manuaalisen etäohjaamisen mahdollistava ROS2 paketti. Helpointa on kokeilla ohjausta näppäimistöllä, minkä mahdollistaa [``teleop_twist_keyboard``](https://index.ros.org/r/teleop_twist_keyboard/).
+Robotin ajaminen yksittäisillä komentorivikehotteilla on työlästä. Varsinaisesti ideana on toki se, että robotin ohjauskokonaisuus antaa näitä komentoja enemmän tai vähemmän itsenäisesti ("autonominen ajaminen"), mutta tämän harjoituksen puitteissa hyvä väliaskel on ottaa käyttöön jokin manuaalisen etäohjaamisen mahdollistava ROS2 paketti. Helpointa on kokeilla ohjausta näppäimistöllä, minkä mahdollistaa [teleop_twist_keyboard](https://index.ros.org/r/teleop_twist_keyboard/).
 ```bash
 sudo apt install ros-jazzy-teleop-twist-keyboard
-ros2 run teleop_twist_keyboard teleop_twist_keyboard.py [--ros-args -r /cmd_vel /[SeBot_namespace]/cmd_vel]
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+#ros2 run teleop_twist_keyboard teleop_twist_keyboard.py --ros-args -r /cmd_vel:=/[SeBot_namespace]/cmd_vel # Jos käytössä on namespace
+
 ```
 
-``teleop_twist_keyboard`` voidaan ohjata julkaisemaan twist-viestejä myös johonkin muuhun topiciin parametrillä ``--ros-args --remap cmd_vel:=[joku_muu_topic]``. Jos harjoituksessa on mukana vain yksi SeBot, käytämme oletuksena ``/cmd_vel``-topicia, eikä topicia pitäisi olla tarpeen säätää, sillä ``/cmd_vel`` on yleisesti käytetty standardi ROS 2:ssa.
+``teleop_twist_keyboard`` voidaan ohjata julkaisemaan twist-viestejä myös johonkin muuhun topiciin parametrillä ``--ros-args --remap cmd_vel:=[joku_muu_topic]``. Jos harjoituksessa on mukana vain yksi SeBot tai kukin toimii omassa ``ROS_DOMAIN_ID``:ssä, käytämme oletuksena ``/cmd_vel``-topicia, eikä topicia pitäisi olla tarpeen säätää, sillä ``/cmd_vel`` on yleisesti käytetty standardi ROS 2:ssa.
 
 Mikäli haluat ohjata robottia peliohjaimella, kannattaa tutustua ``[teleop_twist_joy](https://index.ros.org/r/teleop_twist_joy/#jazzy)``-pakettiin. Tämä asennetaan ja ajetaan komennoilla
 ```bash
 apt install ros-jazzy-teleop-twist-joy
 ros2 launch teleop_twist_joy teleop-launch.py joy_config:='[valitse ohjaimen konfiguraatio, esimerkiksi 'xbox']'
 ```
-> Huomaa, että teleop_twist_joy käynnistetään launch, ei run komennolla. Lisäksi sinun tulee varmistua siitä, että konfiguraatio vastaa yhdistettyä ohjainta. Vaihtoehtoja löytyy osoitteesta [https://github.com/ros2/teleop_twist_joy/tree/rolling/config](https://github.com/ros2/teleop_twist_joy/tree/rolling/config).
+> Huomaa, että teleop_twist_joy käynnistetään ``launch``, ei ``run`` komennolla. Lisäksi sinun tulee varmistua siitä, että konfiguraatio vastaa yhdistettyä ohjainta. Vaihtoehtoja löytyy osoitteesta [https://github.com/ros2/teleop_twist_joy/tree/rolling/config](https://github.com/ros2/teleop_twist_joy/tree/rolling/config).
 
 ### PWM- ja PID-säädön vertailu
 Jos haluamme vertailla robotin toimintaa PWM-säädön ja PID-säädetyn nopeuden välillä, voimme yksinkertaisesti vaihtaa yhden koodirivin, joka määrittää säätötyypin.
@@ -631,11 +632,14 @@ cd ~/ros2_ws
 colcon build --packages-select diffdrive
 
 # Testataan toiminta
-ros2 run diffdrive odom [--ros-args -r __ns:=/[SeBot_namespace]]
-ros2 run diffdrive cmd_vel [--ros-args -r __ns:=/[SeBot_namespace]]
+ros2 run diffdrive odom
+ros2 run diffdrive cmd_vel
+#ros2 run diffdrive odom --ros-args -r __ns:=/[SeBot_namespace]
+#ros2 run diffdrive cmd_vel --ros-args -r __ns:=/[SeBot_namespace]
 
-# odom.py ja cmd_vel.py tiedostot sisältävät kohdat joissa parametrejä haetaan ulkoisesta tiedostosta.
-# Tässä esimerkki siitä
+# odom.py ja cmd_vel.py tiedostot sisältävät kohdat joissa skriptin muuttujille haetaan arvot käynnistysparametreinä. Nämä parametrit voi syöttää käynnistysvaiheessa myös ulkoisesta tiedostosta.
+
+# Tässä esimerkki, jossa haetaan parametrit ~/ros2_ws/config/params.yaml tiedostosta. Alempana luodaan tähän tiedostoon tarvittava sisältö.
 ros2 run diffdrive odom --ros-args --params-file ~/ros2_ws/config/params.yaml
 ```
 
@@ -654,8 +658,8 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    NAMESPACE = 'SeBotxx' # korvaa xx oman Sebotin tunnisteella, esimerkiksi IP-osoitteen viimeisellä tavulla.
-    FRAME_PREFIX = NAMESPACE+"_" # luodaan robot_state_publisherin tukeman frame_prefix-parametrin arvo
+    # NAMESPACE = 'SeBotxx' # korvaa xx oman Sebotin tunnisteella, esimerkiksi IP-osoitteen viimeisellä tavulla.
+    # FRAME_PREFIX = NAMESPACE+"_" # luodaan robot_state_publisherin tukeman frame_prefix-parametrin arvo
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
@@ -681,8 +685,9 @@ def generate_launch_description():
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
-            namespace = NAMESPACE,
-            parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc, 'frame_prefix': FRAME_PREFIX}],
+            #namespace = NAMESPACE,
+            #parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc, 'frame_prefix': FRAME_PREFIX}],
+            parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
             #arguments=[urdf] # 26.5.2025 tämä on tarpeeton rivi, sillä robot_state_publisher ei parsi komentokehotteen argumentteja.
             ),
 
@@ -690,22 +695,26 @@ def generate_launch_description():
             package='tf2_web_republisher_py',
             executable='tf2_web_republisher',
             name='tf2_web_republisher',
-            namespace = NAMESPACE,
+            #namespace = NAMESPACE,
             output='screen',
           ),
 
         Node(
             package='motordriver',
             executable='motordriver',
-            name='motordriver',
-            namespace = NAMESPACE,
+            name='motordriver_node',
+            #namespace = NAMESPACE,
             output='screen',
+            parameters=[os.path.join(
+              colcon_prefix_path,
+              'config',
+              'params.yaml')]
           ),
         Node(
             package='diffdrive',
             executable='odom',
             name='odom_node',
-            namespace = NAMESPACE,
+            #namespace = NAMESPACE,
             output='screen',
             parameters=[os.path.join(
               colcon_prefix_path,
@@ -716,7 +725,7 @@ def generate_launch_description():
             package='diffdrive',
             executable='cmd_vel',
             name='cmd_vel_node',
-            namespace = NAMESPACE,
+            #namespace = NAMESPACE,
             output='screen',
             parameters=[os.path.join(
               colcon_prefix_path,
@@ -725,16 +734,16 @@ def generate_launch_description():
 
           ),
         
-        # Lisätään muunnos map->[namespace]_base_link jotta kaikki robotit saadaan mukaan samaan TF-puuhun. 
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='map_to_robot_base_link_tf',
-            namespace=NAMESPACE,
-            arguments=['0', '0', '0', '0', '0', '0',  # x y z yaw pitch roll
-                       'map', f'{FRAME_PREFIX}odom'],
-            output='screen'
-        ),
+        ## Lisätään muunnos map->[namespace]_odom jotta kaikki robotit saadaan mukaan samaan TF-puuhun. 
+        #Node(
+        #    package='tf2_ros',
+        #    executable='static_transform_publisher',
+        #    name='map_to_robot_odom',
+        #    namespace=NAMESPACE,
+        #    arguments=['0', '0', '0', '0', '0', '0',  # x y z yaw pitch roll
+        #               'map', f'{FRAME_PREFIX}odom'],
+        #    output='screen'
+        #),
     ])
 ```
 
@@ -748,7 +757,10 @@ launch tiedostossa määrittelimme nyt ``parameters=["~ros2_ws/config/params.yam
 
 **~/ros2\_ws/config/params.yaml**
 
-```
+```yaml
+motordriver_node:
+  ros__parameters:
+    simulation: False
 odom_node:
   ros__parameters:
     wheel_radius: 0.2
@@ -761,19 +773,24 @@ cmd_vel_node:
 ```
 
 ##### Käännetään (rakennetaan ympäristö)
-```
+```bash
 cd ~/ros2_ws
 colcon build --packages-select diffdrive
 ```
 
-##### Käynnistetään
+##### Source
+```bash
+source ~/ros2_ws/install/setup.bash
 ```
+
+##### Käynnistetään
+```bash
 ros2 launch diffdrive diffdrive.launch.py
 ```
 
-##### Testataan
-```
-ros2 topic pub [/SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+##### Testataan (toisessa päätteessä)
+```bash
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
 ```
 
 ### Automaattinen käynnistyminen robotin käynnistyessä

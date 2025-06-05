@@ -18,11 +18,34 @@ ROS2-nodea varten meillä on nyt valmiina osio, joka lähettää nopeusohjeen mo
 	- Odometriassa: Encoder-arvojen avulla voidaan laskea robotin sijainti ja asento (x, y, θ) suhteessa aloituspisteeseen.
 	
 	- Tilavalvonnassa: Nopeus- ja PWM-arvot mahdollistavat moottorien tilan seurannan ja varmistavat, että ne toimivat odotetusti ja ilman häiriöitä.
-3. **DOMAIN_ID ja namespace**: ROS2:n hyödyntämä DDS (Data Distribution Service) väliohjelmisto huolehtii kaikesta tietoliikenteen reitittämisestä ROS2 sovellusten (_node_) välillä. Koska tässä harjoituksessa voi olla useampi tietokone ja robotti samassa WLAN-verkossa, kaikki viestit "kuuluvat" kaikille nodeille kaikkien koneiden välillä. Tämän harjoituksen tapauksessa tämä on epätoivottavaa, sillä kukin opiskelija haluaa epäilemättä kontrolloida vain omaa SeBottiaan. Asiaan on kaksi ratkaisua:
-  - vaihtaa DOMAIN_ID ympäristömuuttujan arvoksi yksilöllinen numero (vakioarvo 0:n sijaan). Kukin ROS2 node viestii vain oman DOMAIN_ID:nsä "sisällä".
-  - hyödyntää _namespace_-toimintoa, jolla käynnistettävien nodejen kaikkien _topicien_, _servicejen_ ja _actionien_ (eli _interfacejen_) eteen lisätään automaattisesti annettu namespace-nimi. Tällöin esimerkiksi noden koodissa luotava /odom topic muunnetaan /[namespace]/odom muotoon.
 
-Tässä harjoituksessa kokeillaan jälkimmäistä vaihtoehtoa, jotta voimme tarvittaessa kommunikoida myös muiden SeBottien kanssa. Asiaan palataan sopivissa kohdin tätä materiaalia.
+3. **ROS_DOMAIN_ID ja namespace**: ROS2:n hyödyntämä DDS (Data Distribution Service) väliohjelmisto huolehtii kaikesta tietoliikenteen reitittämisestä ROS2 sovellusten (_node_) välillä. Koska tässä harjoituksessa voi olla useampi tietokone ja robotti samassa WLAN-verkossa, kaikki viestit "kuuluvat" kaikille nodeille kaikkien koneiden välillä. Tämän harjoituksen tapauksessa tämä on epätoivottavaa, sillä kukin opiskelija haluaa epäilemättä kontrolloida vain omaa SeBottiaan. Asiaan on kaksi ratkaisua:
+  - vaihtaa ``ROS_DOMAIN_ID`` ympäristömuuttujan arvoksi yksilöllinen numero (vakioarvo 0:n sijaan). Kukin ROS2 node viestii vain oman ``ROS_DOMAIN_ID``:nsä "sisällä".
+  - hyödyntää ``_namespace_``-toimintoa, jolla käynnistettävien nodejen kaikkien _topicien_, _servicejen_ ja _actionien_ (eli _interfacejen_) eteen lisätään automaattisesti annettu namespace-nimi. Tällöin esimerkiksi noden koodissa luotava /odom topic muunnetaan /[namespace]/odom muotoon.
+
+>Tässä harjoituksessa kokeillaan ensimmäistä vaihtoehtoa, jotta emme sotkeennu liian monimutkaiseen kokonaisuuteen. Näin ollen kannattaa ohittaa kaikki namespacen käyttöön viittaavat kohdat, jotka on merkitty materiaaliin hakasulkeilla, esimerkiksi ``/[SeBot_namespace]``.
+
+Kun haluat muuttaa ``ROS_DOMAIN_ID``-arvoa, kirjoita komentokehotteeseen
+
+```bash
+#export ROS_DOMAIN_ID=[arvo], esimerkiksi
+export ROS_DOMAIN_ID=1
+```
+
+Tämä on voimassa vain kyseisessä komentokehotteessa. Jos haluat saada uuden ``ROS_DOMAIN_ID`` arvon voimaan aina komentokehotteen käynnistyessä, lisää ylläoleva rivi kotihakemistosta löytyvään ```.bashrc```-tiedoston loppuun:
+```bash
+nano ~/.bashrc # Tai muu editori
+```
+**~/.bashrc**
+```
+...
+export ROS_DOMAIN_ID=1
+
+>>ctrl+o, ctrl+x # Tallenna ja poistu nano-ohjelmasta
+```
+```bash
+source ~/.bashrc # Lataa .bashrc-tiedosto uudestaan tässä komentokehotteessa
+```
 
 ### Lopullinen toiminta
 
@@ -95,17 +118,17 @@ if __name__ == '__main__':
 
 ```python
     self.subscriber = self.create_subscription(
-        String,								# msg_type
-        'motor_command',					# topic_name
-        self.motor_command_callback,		# callback
-        10									# quos
+        String,				# msg_type
+        'motor_command',		# topic_name
+        self.motor_command_callback,	# callback
+        10				# quos
     )
 ```
 
 ##### create_subscription -funktion parametrit:
 1. msg_type
 	
-	Määrittelee viestityypin, jota topicilla käytetään. 
+ 	Määrittelee viestityypin, jota topicilla käytetään. 
 2. topic_name
 	
 	Topicin nimi, jota node tilaa. Tämä tulee kirjoittaa ilman edeltävää kenoviivaa /, jotta topicin nimestä tulee suhteellinen (eikä absoluuttinen) ja siten namespace-asetus voi toimia.
@@ -130,46 +153,52 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
 
 1. ##### Käynnistä moottoriohjainkoodi suoraan Pythonilla
   
-  ```bash
+  ```
   python3 motordriver.py
   ```
   
-  Mikäli virheitä ei ilmene ``motordriver.py`` pitäisi toimia oikein sarjaliikenteen ja komentojen käsittelyn osalta. **Huomaa, että vielä tässä vaiheessa kaikki samassa verkossa olevat SeBotit ottavat vastaan kaikki viestit samoista topiceista, jos ne on yllä olevan mukaan samoiksi määritetty koodeissa. Jos harjoitusta tekee useampi opiskelija samaan aikaan, riittää yhden tehdä alla olevan komennot. Toinen vaihtoehto on syöttää skriptille käynnistysparametrina namespace-asetus.**
+  Mikäli virheitä ei ilmene ``motordriver.py`` pitäisi toimia oikein sarjaliikenteen ja komentojen käsittelyn osalta. 
+  
+  **Huomaa, että kaikki samassa WLAN-verkossa ja ``ROS_DOMAIN_ID``:ssä olevat SeBotit ottavat vastaan kaikki viestit samoista topiceista, jos ne on yllä olevan mukaan samoiksi määritetty koodeissa.** Jos harjoitusta tekee useampi opiskelija samaan aikaan, kannattaa hyödyntää eri ``ROS_DOMAIN_ID``-ympäristömuuttujan arvoja (tai syöttää skriptille käynnistyksen yhteydessä namespace-asetus).
   
   ```bash
-  python3 motordriver.py --ros-args -r __ns:=/[SeBot_namespace]
+  python3 motordriver.py
+  #python3 motordriver.py --ros-args -r __ns:=/[SeBot_namespace]
   ```
-  Huomaa, että namespacea ennen tulee olla kenoviiva /.
+  >```namespace```a ennen tulee olla kenoviiva /. Namespacena tässä harjoituksessa voisi käyttää oman SeBotin ip-osoitteen jälkimmäistä tavua, esimerkiksi
+  >```bash
+  >python3 motordriver.py --ros-args -r __ns:=/SeBot11
+  >```
 
 2. ##### Katsotaan näkyykö topic listassa  
 
-  ```bash
+  ```
   ros2 topic list
   
   /motor_command
   ```
 
-  Jos samassa WLANissa on useita saman DOMAIN_ID:n ROS2-sovelluksia kukin omalla namespace-asetuksellaan, listalla näkyy useita topiceja, esimerkiksi
-
-  ```bash
-  ros2 topic list
-
-  /SeBot_11/motor_command
-  /SeBot_12/motor_command
-  /SeBot_13/motor_command
-  ```
+>  Jos samassa WLANissa on useita saman ``ROS_DOMAIN_ID``:n ROS2-sovelluksia kukin omalla namespace-asetuksellaan, listalla näkyy useita topiceja, esimerkiksi
+>
+>  ```bash
+>  ros2 topic list
+>
+>  /SeBot11/motor_command
+>  /SeBot12/motor_command
+>  /SeBot13/motor_command
+>  ```
 
 3. ##### Lähetä nopeuskomento ROS2-topicia käyttäen
 
   ```bash
   # julkaisee toistuvasti
-  ros2 topic pub /[SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+  ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
   
   # julkaisee toistuvasti 2 kertaa sekunnissa
-  ros2 topic pub -r 2 /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+  ros2 topic pub -r 2 [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
   
   # julkaise vain kerran
-  ros2 topic pub -t 1 /[SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+  ros2 topic pub -t 1 [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
   ```
   Huomaa namespacen käyttö. Jos sitä ei ole asetettu, ei sitä tarvitse myöskään tähän kutsuun kirjoittaa.
 
@@ -214,35 +243,42 @@ setup(
 
 ##### Käännetään (pythonin tapauksessa vain asennetaan)
 
-```
+```bash
 cd ~/ros2_ws
 colcon build --packages-select motordriver
 ```
 
 Otetaan työtilan ``~/ros2_ws`` ympäristömuuttujat käyttöön.
 
-```
+```bash
 source ~/ros2_ws/install/setup.bash
 ```
 
-Ja lisätään samalla komento ``~/.bashrc`` -tiedostoon, jotta se on aina automaattisesti käytössä. Lisää teksti editorilla tiedoston loppuun:
+Ja lisätään sama komento ``~/.bashrc`` -tiedostoon, jotta se on aina automaattisesti käytössä.
 
-```
+```bash
+nano ~/.bashrc # Tai muu haluamasi editori
 source ~/ros2_ws/install/setup.bash
 ```
 
 
 Kun ohjelma on käännetty osaksi järjestelmää se voidaan käynnistää komennolla
 
+```bash
+ros2 run motordriver motordriver
+#ros2 run motordriver motordriver --ros-arg -r __ns:=/[SeBot_namespace]
 ```
-ros2 run motordriver motordriver --ros-arg -r __ns:=/[SeBot_namespace]
-```
-Huomaa, että --ros-arg -r __ns:=/[SeBot_namespace] on eräs ilmentymä ROS2 ajonaikaisista _parametreistä_. Valitsin -r viittaa sanaan _remap_, eli (interfacejen) uudelleenohjaus. Tässä kohdin jokainen opiskelija voi valita namespacekseen esimerkiksi SeBotinsa IP-numeron jälkimmäisen tavun. Tai jonkin muun yksilöivän tunnisteen.
+Huomaa, että --ros-arg -r __ns:=/[SeBot_namespace] on eräs ilmentymä ROS2 ajonaikaisista _uudelleenohjauksista_. Valitsin -r viittaa sanaan _remap_, eli (interfacejen) uudelleenohjaus. Tässä kohdin jokainen opiskelija voi valita namespacekseen esimerkiksi SeBotinsa IP-numeron jälkimmäisen tavun. Tai jonkin muun yksilöivän tunnisteen. Myöhemmin tutustumme myös erilliseen _parametrien_ syöttövalitsimeen -p.
 
 Ja testataan taas
 
-```
-ros2 topic pub /[SeBot_namespace]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+```bash
+ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+
+#ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+
+# Esimerkiksi
+ros2 topic pub /SeBot11/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
 ```
 
 
@@ -257,7 +293,7 @@ Eli tetoja jotka moottoriohjain palautti:
 
 Toisin kuin subscriber nodessa käyttämämme standardi viesti tyyppi ``std_msgs/String``, teemme nyt oman viesti tyypin, jotta julkaistava tieto moottoriohjaimelta on selkeämpää ja rakenteellisempaa. Tämä mahdollistaa eri tietokenttien helpon käsittelyn ja parantaa järjestelmän luettavuutta sekä laajennettavuutta.
 
-```
+```bash
 cd ~/ros2_ws/src/
 ros2 pkg create motordriver_msgs
 cd ~/ros2_ws/src/motordriver_msgs/
@@ -270,7 +306,7 @@ Luodaan tiedosto `~/ros2_ws/src/motordriver_msgs/msg/MotordriverMessage.msg` jos
 
 **~/ros2\_ws/src/motordriver\_msgs/msg/MotordriverMessage.msg**
 
-```
+```yaml
 int32 encoder1
 int32 encoder2
 int32 speed1
@@ -382,7 +418,10 @@ class MotordriverNode(Node):
     self.arduino = serial.Serial("/dev/ttyACM0", 115200, timeout=1)
     if not self.arduino.isOpen():
       raise Exception("Ei yhteyttä moottoriohjaimeen")
-
+    # moottori pysähtyy jos ei saa uutta komentoa 1s kuluessa
+    
+    self.arduino.write(("ALIVE;1;\n").encode())
+    
     self.subscriber = self.create_subscription(
         String,
         'motor_command', # suhteellinen viittaus. Jos eteen kirjoittaa kenoviivan, esimerkiksi '/motor_command', siitä tulee absoluuttinen, eikä namespace-asetus enää vaikuta siihen.
@@ -396,11 +435,11 @@ class MotordriverNode(Node):
         10
     )
 
-    timer_period = 0.01  # seconds
+    timer_period = 0.01  # Sekuntia
     self.timer = self.create_timer(timer_period, self.timer_callback)
 
   def timer_callback(self):
-    # Create a message
+    # Luodaan viesti Arduinolle
     if self.msg != "x\n":
         self.arduino.write(self.msg.encode())
 
@@ -421,7 +460,7 @@ class MotordriverNode(Node):
             msg.speed1 = int(answer[2])
             msg.speed2 = int(answer[3])
 
-            # Publish the message
+            # Julkaistaan viesti topicissa
             self.publisher.publish(msg)
           except Exception as err:
             pass
@@ -487,11 +526,11 @@ Topicin nimi, johon viesti julkaistaan.
 Luomme ajastimen, joka pyörii 100Hz taajuudella. Ohjaimelle tulevaa ohjauskäskyä ei lähetetä suoraan vaan se lähetetään ajastimessa. Ajastimessa luetaan 10Hz taajuudella uusia arvoja moottoriohjaimelta. Näin pyritään estämään liiallinen epäsäännöllinen liikenne, joka haittaisi PID säätimen toimintaa.
 
 ```python
-    timer_period = 0.01  # seconds
+    timer_period = 0.01  # Sekuntia
     self.timer = self.create_timer(timer_period, self.timer_callback)
 
   def timer_callback(self):
-    # Create a message
+    # Luodaan viesti
     if self.msg != "x\n":
         self.arduino.write(self.msg.encode())
 
@@ -514,7 +553,7 @@ Luomme ajastimen, joka pyörii 100Hz taajuudella. Ohjaimelle tulevaa ohjauskäsk
             msg.speed1 = int(answer[2])
             msg.speed2 = int(answer[3])
 
-            # Publish the message
+            # Julkaistaan viesti
             self.publisher.publish(msg)
           except Exception as err:
             pass
@@ -526,23 +565,30 @@ Luomme ajastimen, joka pyörii 100Hz taajuudella. Ohjaimelle tulevaa ohjauskäsk
 ```
 
 Voimme taas käynnistä noden yksinkertaisesti (huom: source... pitää olla ajettuna):
+```bash
+python3 motordriver.py
+#python3 motordriver.py --ros-args -r __ns:=/[SeBot_namespace]
+```
+Ja tarkistaa, että kumpikin node on käynnissä (huomioiden jälleen, että tässä vaiheessa kaikkien samassa ``ROS_DOMAIN_ID``:ssä olevien SeBotin topicit ovat samoja, jos ne on niin koodeihin kirjoitettu).
 
-	python3 motordriver.py [--ros-args -r __ns:=/[SeBot_namespace]]
+```bash
+ros2 topic list
 
-Ja tarkistaa, että kumpikin node on käynnissä (huomioiden jälleen, että tässä vaiheessa kaikkien samassa DOMAIN_ID:ssä olevien SeBotin topicit ovat samoja, jos ne on niin koodeihin kirjoitettu).
-
-	ros2 topic list
-
-	[/SeBot_namespace]/motor_command
-	[/SeBot_namespace]/motor_data
+[/SeBot_namespace]/motor_command
+[/SeBot_namespace]/motor_data
+```
 
 Moottorin pyörittämisen pitäisi toimia samalla tavalla kuin aiemmin
-
-	ros2 topic pub /motor_command std_msgs/msg/String "{data: 'SPD;100;-100;'}"
-
+```bash
+ros2 topic pub /motor_command std_msgs/msg/String "{data: 'SPD;100;-100;'}"
+#ros2 topic pub /[SeBot_namespace]/motor_command std_msgs/msg/String "{data: 'SPD;100;-100;'}"
+```
 Ja lisäksi meidän pitäisi saada arvoja (muista source käsky jos ajat vanhassa ikkunassa)
 
-	ros2 topic echo /motor_data
+```bash
+ros2 topic echo /motor_data
+#ros2 topic echo /[SeBot_namespace]/motor_data
+
 
 	encoder1: 22663
 	encoder2: 23018
@@ -563,28 +609,26 @@ Ja lisäksi meidän pitäisi saada arvoja (muista source käsky jos ajat vanhass
 	encoder2: 22735
 	speed1: 101
 	speed2: 100
-
-
-
+```
 
 Kaikki kunnossa? Käännetään paketti
 
-```
+```bash
 cd ~/ros2_ws
 colcon build --packages-select motordriver
 ```
 
 Ja nyt voimme käynnistää node:n
 
-```
+```bash
 ros2 run motordriver motordriver
 ```
 
-Näin olemme luoneet noden, joka välittää ``motor_command``-topiciin julkaistut komennot moottoriohjaimelle ja julkaisee ``motor_data``-topicista moottorin nopeustiedot sekä enkooderin arvot. Jos haluamme, voimme lisätä PWM ohjaus arvot myös luomaamme ``MotordriverMessage``-viesti tyyppiin ja näin pääsemme halutessamme lukemaan mitä PWM arvoja SPD komento moottorille antaa.
+Näin olemme luoneet noden, joka välittää ``motor_command``-topiciin julkaistut komennot moottoriohjaimelle ja julkaisee ``/[SeBot_namespace]`` ``/motor_data``-topicista moottorin nopeustiedot sekä enkooderin arvot. Jos haluamme, voimme lisätä PWM ohjaus arvot myös luomaamme ``MotordriverMessage``-viesti tyyppiin ja näin pääsemme halutessamme lukemaan mitä PWM arvoja SPD komento moottorille antaa.
 
 Lisätään **~/ros2\_ws/src/motordriver\_msgs/msg/MotordriverMessage.msg** tiedostoon:
 
-```
+```yaml
 int32 pwm1
 int32 pwm2
 ```
@@ -598,7 +642,7 @@ msg.pwm2 = int(answer[5])
 
 Voimme kääntää kummatkin paketit kerralla:
 
-```
+```bash
 cd ~/ros2_ws
 colcon build --packages-select motordriver motordriver_msgs
 ```
@@ -725,16 +769,16 @@ class MotordriverNode(Node):
 .        
 ```
 
-Nyt voit lisätä parametrin komentorivillä. Vertaa aiemmassa kohdassa tehtyyn namespace-asetukseen, joka tehtiin -r (joka on sama kuin --remap) valitsimella.
+Nyt voit lisätä parametrin komentorivillä. Vertaa aiemmassa kohdassa tehtyyn ``namespace``-asetukseen, joka tehtiin -r (joka on sama kuin --remap) valitsimella.
 
-```
-python3 motordriver.py --ros-args -p simulation:=False [-r __ns:=/[SeBot_namespace]]
+```bash
+python3 motordriver.py --ros-args -p simulation:=False #-r __ns:=/[SeBot_namespace]
 ```
 
 Tai kääntämisen jälkeen:
 
-```
-ros2 run motordriver motordriver --ros-args -p simulation:=False [-r __ns:=/[SeBot_namespace]]
+```bash
+ros2 run motordriver motordriver --ros-args -p simulation:=False #-r __ns:=/[SeBot_namespace]
 ```
 
 Lisätään parametri asetustiedostoon (False = käytetään oikeaa sarjaporttia). Launch tiedostoa varten.

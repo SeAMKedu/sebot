@@ -12,7 +12,7 @@ Ennen seuraava vaihetta moottorinohjauksessa, luodaan malli robotista. Tämä ma
 
 Luodaan ``diffdrive`` -paketti
 
-```
+```bash
 cd ~/ros2_ws/src
 ros2 pkg create --build-type ament_python diffdrive
 ```
@@ -108,8 +108,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    NAMESPACE = 'SeBot_xx' # korvaa xx oman Sebotin tunnisteella, esimerkiksi IP-osoitteen viimeisellä tavulla.
-    FRAME_PREFIX = NAMESPACE+"_"
+    #NAMESPACE = 'SeBotxx' # korvaa xx oman Sebotin tunnisteella, esimerkiksi IP-osoitteen viimeisellä tavulla.
+    #FRAME_PREFIX = NAMESPACE+"_"
     # Työhakemisto
     colcon_prefix_path = os.getenv('COLCON_PREFIX_PATH').split("/install")[0]
 
@@ -134,26 +134,28 @@ def generate_launch_description():
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
-            parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc, 'frame_prefix': FRAME_PREFIX}],
+            #parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc, 'frame_prefix': FRAME_PREFIX}],# poista tämän rivin kommentti, jos haluat käyttää usean robotin namespace-järjestelyä. Kommentoi vastaavasti seuraava rivi pois.
+            parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
             #arguments=[urdf], # 26.5.2025 Tämä rivi on ylimääräinen, robot_state_publisher ei parsi komentoriviargumentteja erikseen. URDF-tiedosto välitetään sille parametreina.
-            namespace=NAMESPACE,
+            #namespace=NAMESPACE, # poista tämän rivin kommentti, jos haluat käyttää usean robotin namespace-järjestelyä.
             ),
         
-        # Lisätään muunnos map->[namespace]_base_link jotta kaikki robotit saadaan mukaan samaan TF-puuhun. 
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='map_to_robot_base_link_tf',
-            namespace=NAMESPACE,
-            arguments=['0', '0', '0', '0', '0', '0',  # x y z yaw pitch roll
-                       'map', f'{FRAME_PREFIX}odom'],
-            output='screen'
-        ),
+        ## Lisätään muunnos map->[namespace]_odom jotta kaikki robotit saadaan mukaan samaan TF-puuhun. 
+        #Node(
+        #    package='tf2_ros',
+        #    executable='static_transform_publisher',
+        #    name='map_to_robot_odom',
+        #    namespace=NAMESPACE,
+        #    arguments=['0', '0', '0', '0', '0', '0',  # x y z yaw pitch roll
+        #               'map', f'{FRAME_PREFIX}odom'],
+        #    output='screen'
+        #),
     ])
 ```
 
-Huomaa, että namespace-asetus voidaan kirjoittaa kätevästi osaksi launch-tiedoston node-luokan parametrilistaa, jolloin se tulee aina huomioiduksi automaattisesti. Voimme ajaa launch-tiedoston omassa hakemistossa ilman kääntämistä ja tarkistaa sen toiminta
+>Huomaa, että namespace-asetus voidaan kirjoittaa kätevästi osaksi launch-tiedoston node-luokan parametrilistaa, jolloin se tulee aina huomioiduksi automaattisesti. Voimme ajaa launch-tiedoston omassa hakemistossa ilman kääntämistä ja tarkistaa sen toiminta
 
+Kokeillaan käynnistää ``diffdrive.launch.py`` ennen sen kääntämistä mukaan pakettiin:
 ```
 cd ~/ros2_ws/src/diffdrive/launch
 ros2 launch diffdrive.launch.py
@@ -206,7 +208,7 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch diffdrive diffdrive.launch.py
 ```
 
-Käyttämällä ``view_frames``-komentoa ROS 2:ssa voit saada käsityksen järjestelmässäsi olevien TF-kehysten hierarkiasta ja suhteista. Koska olet julkaissut robottisi URDF-mallin, voit tarkastella näitä kehyksiä, jotka URDF määrittelee, robotin runkoon ja pyöriin liittyen.
+Käyttämällä ROS2 vakiopakettien mukana tulevan ``tf2_tools``:in ``view_frames`` sovellusta voit saada käsityksen järjestelmässäsi olevien TF-kehysten hierarkiasta ja suhteista. Koska olet julkaissut robottisi URDF-mallin, voit tarkastella näitä kehyksiä, jotka URDF määrittelee, robotin runkoon ja pyöriin liittyen.
 
 ```bash
 ros2 run tf2_tools view_frames -o robotframes
