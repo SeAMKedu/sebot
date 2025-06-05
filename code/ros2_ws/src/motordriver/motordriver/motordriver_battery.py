@@ -67,6 +67,10 @@ class MotordriverNode(Node):
             if(self.simulation):
               self.voltageDifference -= 0.001 
               answer.append(float(self.startingVoltage+self.voltageDifference))
+<<<<<<< HEAD
+=======
+              print(answer)
+>>>>>>> f1f92e2607d3acdb31c5f98532d0b356948edd7b
           msg = MotordriverMessageBattery()
           
           try:

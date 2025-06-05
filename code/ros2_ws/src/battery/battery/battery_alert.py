@@ -4,7 +4,11 @@ from std_msgs.msg import String
 import time
 from std_msgs.msg import Bool, Float32
 
+<<<<<<< HEAD
 import lgpio
+=======
+#import lgpio
+>>>>>>> f1f92e2607d3acdb31c5f98532d0b356948edd7b
 
 class BatteryAlert(Node):
     def __init__(self):
@@ -23,7 +27,11 @@ class BatteryAlert(Node):
         battery_alert_msg = Bool()
         battery_alert_msg.data = self.previous_alert_state
         self.pub.publish(battery_alert_msg)
+<<<<<<< HEAD
     
+=======
+        """
+>>>>>>> f1f92e2607d3acdb31c5f98532d0b356948edd7b
         # Määritellään GPIO nasta hälytys-LEDille
         self.LED_PIN = 18
         # Valitaan GPIO-siru (vakio Raspberry Pille)
@@ -32,15 +40,26 @@ class BatteryAlert(Node):
         lgpio.gpio_claim_output(self.chip, self.LED_PIN)
         # Alustetaan LED_PIN alas (nollaksi)
         lgpio.gpio_write(self.chip, self.LED_PIN, 0)
+<<<<<<< HEAD
 
+=======
+        """
+>>>>>>> f1f92e2607d3acdb31c5f98532d0b356948edd7b
     # Tämä callback kutsutaan kun /battery_alert topiciin tulee viestejä.
     def alert_callback(self, msg):
         if msg.data == True:
             pass
+<<<<<<< HEAD
             lgpio.gpio_write(self.chip, self.LED_PIN, 1)  
         else:
             pass
             lgpio.gpio_write(self.chip, self.LED_PIN, 0)  
+=======
+            #lgpio.gpio_write(self.chip, self.LED_PIN, 1)  
+        else:
+            pass
+            #lgpio.gpio_write(self.chip, self.LED_PIN, 0)  
+>>>>>>> f1f92e2607d3acdb31c5f98532d0b356948edd7b
 
     def voltage_callback(self, msg):
         if msg.data < self.threshold:
@@ -65,8 +84,13 @@ def main(args=None):
 
   finally:
       batteryalert_node.destroy_node()
+<<<<<<< HEAD
       lgpio.gpio_write(batteryalert_node.chip, batteryalert_node.LED_PIN, 0)
       lgpio.gpiochip_close(batteryalert_node.chip)
+=======
+      #lgpio.gpio_write(batteryalert_node.chip, batteryalert_node.LED_PIN, 0)
+      #lgpio.gpiochip_close(batteryalert_node.chip)
+>>>>>>> f1f92e2607d3acdb31c5f98532d0b356948edd7b
       if rclpy.ok():
           rclpy.shutdown()
 
