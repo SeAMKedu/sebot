@@ -25,6 +25,8 @@ Lisäksi sopivia johtimia, LEDeja ym.
 
 ![https://i.pinimg.com/originals/6b/b7/9e/6bb79e8a76dcf47cfbf6a1a6f38ac640.png](kuvat/simple.png) 
 
+Voit myös tilata valmiiksi ladotun piirilevyn /hardware kansion tiedostoja hyödyntäen. Piirilevyn valmistusta varten projektista löytyvät valmiit Gerber-tiedostot, joiden avulla levyn voi tilata suoraan esimerkiksi JLCPCB:ltä tai vastaavalta valmistajalta. Projektin osaluettelo (BOM) on myös tulostettavissa, mutta on hyvä huomioida, ettei aivan kaikille yleisimmille komponenteille ole määritetty kiinteää valmistajan osanumeroa. Osaluettelossa käytettyjä komponentteja tuleekin pitää suosituksina ja esimerkkeinä; ne voi vapaasti korvata muista lähteistä hankituilla, teknisesti vastaavilla osilla.
+
 Kahdella pyörällä liikkuvan robotin liike perustuu renkaiden moottoreiden toimintaan, jotka saavat ohjeensa ylemmältä tasolta. ROS-ympäristössä nämä ohjeet annetaan yleensä cmd_vel-viesteissä, joissa määritellään robotin lineaarinen nopeus ja pyörimisnopeus. Näitä tietoja hyödyntäen robottiin kytketty ROS-node laskee kullekin renkaalle tarvittavat pyörimissuunnat ja nopeudet, jotka välitetään moottoriohjaimelle.
 
 Tämä laskenta edellyttää seuraavia tietoja:
@@ -57,7 +59,7 @@ Arduino Micro, L293D, [DC6-24v Gear Motor with Encoder](https://www.elecrow.com/
 
 ### Kytkentä
 
-Allaolevassa taulukossa on selvitetty kytkennät Arduino Micron, L293D piirin ja moottoreiden välillä.
+Allaolevassa taulukossa on annettu kytkennät Arduino Micron, L293D piirin ja moottoreiden välillä. Hyödynnä tätä, mikäli rakennat piirilevyn itse esimerkiksi reikälevylle tai koekytkentälevylle. Huomaa, että voit myös hyödyntää valmiiksi suunniteltua, edistyneempää piirilevyä. Tarvittavat tiedostot piirilevyn tilaamiseksi löydät projektin /hardware kansiosta. Kyseinen piirilevy sisältää erillisen rajapinnan ulkoiselle hätäseis-painikkeelle, joka on toteutettu piikkirimalla. Rajapinta on suunniteltu käytettäväksi NC-tyyppisen 3PDT-kytkimen kanssa, jolloin painikkeen aktivointi katkaisee fyysisesti Arduinon ja L293D-moottoriohjainpiirin enable-signaalit. Samalla Arduinon digitaalitulo tunnistaa hätätilan ulkoisen ylösvetovastuksen ansiosta, mikä mahdollistaa tilanteen huomioimisen myös ohjelmistotasolla. Mikäli hätäseis-painiketta ei kytketä järjestelmään, piikkiriman pinnit on yhdistettävä kolmella jumpperilla normaalin toiminnan varmistamiseksi.
 
  <table>
 <tr>
