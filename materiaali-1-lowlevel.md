@@ -57,9 +57,9 @@ Tämä järjestelmä yhdistää ROS-ympäristön komennot ja Arduino-pohjaisen o
 
 Arduino Micro, L293D, [DC6-24v Gear Motor with Encoder](https://www.elecrow.com/dc624v-gear-motor-with-encoder-p-1616.html)
 
-### Kytkentä
+### Kytkentä reikälevylle
 
-Allaolevassa taulukossa on annettu kytkennät Arduino Micron, L293D piirin ja moottoreiden välillä. Hyödynnä tätä, mikäli rakennat piirilevyn itse esimerkiksi reikälevylle tai koekytkentälevylle. Huomaa, että voit myös hyödyntää valmiiksi suunniteltua, edistyneempää piirilevyä. Tarvittavat tiedostot piirilevyn tilaamiseksi löydät projektin /hardware kansiosta. Kyseinen piirilevy sisältää erillisen rajapinnan ulkoiselle hätäseis-painikkeelle, joka on toteutettu piikkirimalla. Rajapinta on suunniteltu käytettäväksi NC-tyyppisen 3PDT-kytkimen kanssa, jolloin painikkeen aktivointi katkaisee fyysisesti Arduinon ja L293D-moottoriohjainpiirin enable-signaalit. Samalla Arduinon digitaalitulo tunnistaa hätätilan ulkoisen ylösvetovastuksen ansiosta, mikä mahdollistaa tilanteen huomioimisen myös ohjelmistotasolla. Mikäli hätäseis-painiketta ei kytketä järjestelmään, piikkiriman pinnit on yhdistettävä kolmella jumpperilla normaalin toiminnan varmistamiseksi.
+Allaolevassa taulukossa on annettu kytkennät Arduino Micron, L293D piirin ja moottoreiden välillä. Hyödynnä tätä, mikäli rakennat piirilevyn itse esimerkiksi reikälevylle tai koekytkentälevylle. 
 
  <table>
 <tr>
@@ -101,6 +101,12 @@ Allaolevassa taulukossa on annettu kytkennät Arduino Micron, L293D piirin ja mo
 </tr>
 </table>
 
+### Kytkentä piirilevylle
+Voit hyödyntää valmiiksi suunniteltua, yllä esitettyä edistyneempää piirilevyä. Tarvittavat tiedostot piirilevyn tilaamiseksi löydät projektin /hardware kansiosta. Kyseinen piirilevy sisältää erillisen rajapinnan ulkoiselle hätäseis-painikkeelle, joka on toteutettu piikkirimalla. Rajapinta on suunniteltu käytettäväksi NC-tyyppisen 3PDT-kytkimen kanssa, jolloin painikkeen aktivointi katkaisee fyysisesti Arduinon ja L293D-moottoriohjainpiirin enable-signaalit. Samalla Arduinon digitaalitulo tunnistaa hätätilan ulkoisen ylösvetovastuksen ansiosta, mikä mahdollistaa tilanteen huomioimisen myös ohjelmistotasolla. Mikäli hätäseis-painiketta ei kytketä järjestelmään, piikkiriman pinnit on yhdistettävä kolmella jumpperilla normaalin toiminnan varmistamiseksi.
+![SeBOT kytkentäkaavio](kuvat/SeBOT_schematic.png)
+Kytkentäkaavio valmiille piirilevylle.
+![Esimerkki valmiista piirilevystä](kuvat/SeBOT_PCB.png)
+Esimerkki valmiista piirilevystä ([ohjeet /hardware kansiossa](hardware)).
 #### Komennot
 Arduinoon on ohjelmoitu seuraavat komennot:
 
