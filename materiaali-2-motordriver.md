@@ -192,15 +192,14 @@ Voimme testata ohjelman toiminnan ennen varsinaista käännöstä seuraavilla va
 
   ```bash
   # julkaisee toistuvasti
-  ros2 topic pub [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+  ros2 topic pub /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
   
   # julkaisee toistuvasti 2 kertaa sekunnissa
-  ros2 topic pub -r 2 [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+  ros2 topic pub -r 2 /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
   
   # julkaise vain kerran
-  ros2 topic pub -t 1 [/[SeBot_namespace]]/motor_command std_msgs/String "{data: 'SPD;100;100;'}"
+  ros2 topic pub -t 1 /motor_command std_msgs/String "{data: 'SPD;100;100;'}"
   ```
-  Huomaa namespacen käyttö. Jos sitä ei ole asetettu, ei sitä tarvitse myöskään tähän kutsuun kirjoittaa.
 
   Komento julkaisee ``motor_command`` topicille viestin joka on tyyppiä ``String`` ja sisältää tekstin ``SPD;100;100;`` Mikäli tekemäsi node on nyt käynnissä ja toimii oikein, moottoreiden pitäisi lähteä pyörimään.
   
