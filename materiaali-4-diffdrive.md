@@ -52,7 +52,7 @@ Oheisessa kuvassa havainnollistetaan, miten renkaiden koko ja niiden välinen et
 		- Suurempi rengas + pitkä etäisyys → pitkä matka ja loiva kaarre.
 
 
-**Uusi paketti Diffdrive**
+####Uusi paketti Diffdrive
 Luodaan uusi diffdrive-niminen ROS2 paketti ja aletaan työstämään sen sisälle tarvittavat kooditiedostot.
 
 ```
