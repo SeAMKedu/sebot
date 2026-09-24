@@ -51,6 +51,17 @@ Oheisessa kuvassa havainnollistetaan, miten renkaiden koko ja niiden välinen et
 		- Pienempi rengas + lyhyt etäisyys → lyhyt matka ja tiukka kaarre.
 		- Suurempi rengas + pitkä etäisyys → pitkä matka ja loiva kaarre.
 
+
+**Uusi paketti Diffdrive**
+Luodaan uusi diffdrive-niminen ROS2 paketti ja aletaan työstämään sen sisälle tarvittavat kooditiedostot.
+
+```
+cd ~/ros2_ws/src/
+ros2 pkg create --build-type ament_python diffdrive
+cd ~/ros2_ws/src/diffdrive/diffdrive
+```
+
+
 **Encoder luokka**
 
 Luodaan Pythonilla apuluokka Encoder, joka vastaa enkooderien lukemien hallinnasta ja laskennasta. Useimmissa enkoodereissa lukema nollautuu maksimilukeman jälkeen, jolloin kierrokset alkavat alusta. Tämä luokka pitää tarkasti kirjaa pyörän pyörimiskierroksista, jotta pyörän absoluuttinen sijainti voidaan laskea oikein myös silloin, kun enkooderin lukema ylittyy tai nollautuu.
